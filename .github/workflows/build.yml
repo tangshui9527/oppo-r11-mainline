@@ -1,0 +1,113 @@
+name: build
+
+on:
+  push:
+    branches: [main, master]
+    paths-ignore:
+      - "docs/**"
+      - "*.md"
+  workflow_dispatch:
+
+env:
+  KERNEL_REPO: https://github.com/sdm660-mainline/linux.git
+  KERNEL_BRANCH: barni2000/qcom-sdm660-6.12.y
+  CROSS: aarch64-linux-gnu-
+  DTB: sdm660-oppo-r11
+
+jobs:
+  kernel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Toolchain and Dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q \
+            gcc-aarch64-linux-gnu bison flex bc cpio libssl-dev \
+            python3 ccache curl tar device-tree-compiler
+          echo "/usr/lib/ccache" >> "$GITHUB_PATH"
+
+      - uses: actions/checkout@v4
+
+      - name: Cache ccache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ccache
+          key: ccache-arm64-${{ github.sha }}
+          restore-keys: ccache-arm64-
+
+      - name: Clone Linux Kernel
+        run: |
+          git clone --depth 1 --branch "$KERNEL_BRANCH" "$KERNEL_REPO" linux
+          cd linux
+          git log -1 --format="kernel %H %cs %s" | tee ../kernel-info.txt
+
+      - name: Install OPPO R11 Device Tree
+        run: |
+          cp dts/$DTB.dts linux/arch/arm64/boot/dts/qcom/
+          if ! grep -q "$DTB.dtb" linux/arch/arm64/boot/dts/qcom/Makefile; then
+            echo "dtb-\$(CONFIG_ARCH_QCOM) += $DTB.dtb" >> linux/arch/arm64/boot/dts/qcom/Makefile
+          fi
+          grep -n "$DTB" linux/arch/arm64/boot/dts/qcom/Makefile
+
+      - name: Configure Kernel
+        run: |
+          cd linux
+          make ARCH=arm64 CROSS_COMPILE="$CROSS" defconfig
+          if [ -f ../configs/r11-extra.config ]; then
+            ./scripts/kconfig/merge_config.sh -m .config ../configs/r11-extra.config
+            make ARCH=arm64 CROSS_COMPILE="$CROSS" olddefconfig
+          fi
+          grep "CONFIG_USB_CONFIGFS=" .config || echo "CONFIG_USB_CONFIGFS not set"
+          grep "CONFIG_USB_F_NCM=" .config || echo "CONFIG_USB_F_NCM not set"
+
+      - name: Build Kernel Image & Device Tree
+        run: |
+          cd linux
+          make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE="$CROSS" Image.gz dtbs
+          ls -lh arch/arm64/boot/Image.gz
+          ls -lh arch/arm64/boot/dts/qcom/$DTB.dtb
+
+      - name: Build Kernel Modules
+        run: |
+          ROOT="$PWD"
+          cd linux
+          make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE="$CROSS" modules
+          make ARCH=arm64 INSTALL_MOD_PATH="$ROOT/modout" modules_install
+          cd "$ROOT"
+          tar -C modout -caf modules.tar.xz lib/modules
+          ls -lh modules.tar.xz
+
+      - name: Build Initramfs
+        run: bash initramfs/build.sh
+
+      - name: Pack Boot Image
+        run: |
+          python3 tools/mkbootimg.py \
+            --kernel linux/arch/arm64/boot/Image.gz \
+            --ramdisk initramfs/initramfs.cpio.gz \
+            --dtb linux/arch/arm64/boot/dts/qcom/$DTB.dtb \
+            --page-size 4096 \
+            --kernel-addr 0x00008000 \
+            --ramdisk-addr 0x01000000 \
+            --tags-addr 0x00000100 \
+            --cmdline 'console=ttyMSM0,115200n8 earlycon=msm_serial_dm,0xc170000 rootwait rw' \
+            --bootimg r11-mainline-boot.img
+          ls -lh r11-mainline-boot.img
+
+      - name: Collect Artifacts
+        run: |
+          mkdir -p out
+          cp r11-mainline-boot.img \
+             linux/arch/arm64/boot/Image.gz \
+             linux/arch/arm64/boot/dts/qcom/$DTB.dtb \
+             initramfs/initramfs.cpio.gz \
+             modules.tar.xz \
+             kernel-info.txt \
+             out/
+          ccache -s || true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: oppo-r11-mainline-boot
+          path: out/
+          retention-days: 30

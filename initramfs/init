@@ -1,0 +1,71 @@
+#!/bin/busybox sh
+# initramfs /init for oppo-r11-mainline -- early USB rescue/control stage.
+#
+# Goal: Prove the mainline kernel boots on OPPO R11 (SDM660) and
+# expose a root shell over USB (NCM gadget, telnet on 172.16.42.1:23).
+#
+# USB host side: interface NCM, configure host IP 172.16.42.2/24, then:
+#   telnet 172.16.42.1
+
+export PATH=/bin:/sbin
+
+/busybox --install -s /bin 2>/dev/null
+
+# --- basic mounts -----------------------------------------------------------
+mkdir -p /proc /sys /dev /tmp /config /dev/pts /run
+busybox mount -t proc     none     /proc
+busybox mount -t sysfs    none     /sys
+busybox mount -t devtmpfs none     /dev 2>/dev/null || busybox mdev -s
+busybox mount -t devpts   none     /dev/pts
+busybox mount -t tmpfs    none     /tmp
+busybox mount -t configfs none     /config
+
+# --- USB NCM gadget ---------------------------------------------------------
+{
+    echo "== OPPO R11 Mainline Linux Initramfs =="
+    date -u
+    echo "kernel: $(uname -a)"
+    echo "udc candidates: $(ls /sys/class/udc/ 2>&1)"
+} > /tmp/boot.log
+
+LOG=/tmp/boot.log
+
+setup_ncm() {
+    mkdir -p /config/usb_gadget/g1 || { echo "configfs mkdir failed" >> $LOG; return 1; }
+    cd /config/usb_gadget/g1
+    echo 0x22d9 > idVendor      # OPPO VID
+    echo 0x2765 > idProduct     # Generic ADB/diagnostic PID
+    mkdir -p strings/0x409
+    echo "OPPO"               > strings/0x409/manufacturer
+    echo "OPPO R11 Mainline"  > strings/0x409/product
+    mkdir -p functions/ncm.usb0
+    mkdir -p configs/c.1
+    echo 500 > configs/c.1/MaxPower
+    ln -sf functions/ncm.usb0 configs/c.1/ncm
+    UDC=$(ls /sys/class/udc | head -n 1)
+    [ -n "$UDC" ] || { echo "no UDC present" >> $LOG; return 1; }
+    echo "$UDC" > UDC || { echo "UDC bind failed" >> $LOG; return 1; }
+    sleep 1
+    busybox ifconfig usb0 172.16.42.1 netmask 255.255.255.0 up 2>>$LOG \
+        || { echo "ifconfig usb0 failed" >> $LOG; return 1; }
+    return 0
+}
+
+if setup_ncm; then
+    echo "USB NCM gadget UP: 172.16.42.1" >> $LOG
+else
+    echo "USB NCM gadget setup failed, log:" >> $LOG
+    echo "---- dmesg tail ----" >> $LOG
+    busybox dmesg | busybox tail -40 >> $LOG 2>/dev/null
+fi
+
+# Telnetd on 0.0.0.0:23
+busybox telnetd -l /bin/sh -b 0.0.0.0:23
+
+# --- keep console alive -----------------------------------------------------
+echo
+echo "=========================================================="
+echo " OPPO R11 Mainline Initramfs Shell"
+echo " Telnet accessible at 172.16.42.1:23"
+echo "=========================================================="
+exec setsid cttyhack /bin/sh
