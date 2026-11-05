@@ -10,54 +10,36 @@ jobs:
   rmtfs:
     runs-on: ubuntu-latest
     steps:
-      - name: Install cross-toolchain and arm64 libraries
+      - name: Install aarch64 gcc
         run: |
-          sudo dpkg --add-architecture arm64
           sudo apt-get update -q
-          sudo apt-get install -y -q gcc-aarch64-linux-gnu make libqrtr-dev:arm64 libudev-dev:arm64
+          sudo apt-get install -y -q gcc-aarch64-linux-gnu
 
       - name: Build and Patch rmtfs
         run: |
+          git clone --depth 1 https://github.com/andersson/qrtr.git
           git clone --depth 1 https://github.com/linux-msm/rmtfs.git
+
           cd rmtfs
           # 1. Add Oppo partitions
           sed -i '/\/oem\/nvbk\/static/i \	{ "/boot/modem_fsg_oem_1", "modem_fsg_oem_1", "oppostanvbk" },\n\t{ "/boot/modem_fsg_oem_2", "modem_fsg_oem_2", "oppodycnvbk" },' storage.c
-          
-          # 2. Allow relative physical addresses in sharedmem.c
-          sed -i 's/ssize_t rmtfs_mem_read(struct rmtfs_mem \*rmem, unsigned long phys_address/ssize_t rmtfs_mem_read(struct rmtfs_mem \*rmem, unsigned long phys_address\n{\n\tif (rmem \&\& phys_address < rmem->size) phys_address += rmem->address;\n\treturn 0; }\nstatic ssize_t __orig_rmtfs_mem_read(struct rmtfs_mem \*rmem, unsigned long phys_address/' sharedmem.c || true
 
-          # Let's use python to cleanly patch sharedmem.c and rmtfs.c
-          python3 -c "
-          with open('sharedmem.c', 'r') as f:
-              s = f.read()
-          # patch rmtfs_mem_ptr to accept relative addresses
-          target = 'static void *rmtfs_mem_ptr(struct rmtfs_mem *rmem, unsigned long phys_address, ssize_t len)\n{'
-          repl = '''static void *rmtfs_mem_ptr(struct rmtfs_mem *rmem, unsigned long phys_address, ssize_t len)
-          {
-          \tif (rmem && phys_address < rmem->size) phys_address += rmem->address;'''
-          s = s.replace(target, repl)
+          # 2. Add relative address support in sharedmem.c
+          sed -i '/static void \*rmtfs_mem_ptr/,/{/{n;s/.*/\tif (rmem \&\& phys_address < rmem->size) phys_address += rmem->address;/}' sharedmem.c
+          sed -i '/offset = phys_address - rmem->address;/i \	if (phys_address < rmem->size) phys_address += rmem->address;' sharedmem.c
 
-          target2 = 'offset = phys_address - rmem->address;'
-          repl2 = '''if (phys_address < rmem->size) phys_address += rmem->address;
-          \toffset = phys_address - rmem->address;'''
-          s = s.replace(target2, repl2)
-          with open('sharedmem.c', 'w') as f:
-              f.write(s)
+          git diff storage.c sharedmem.c
 
-          with open('rmtfs.c', 'r') as f:
-              r = f.read()
-          fail_target = 'fprintf(stderr, \"[RMTFS] failed to %s sector %d\\\\n\",'
-          fail_repl = '''fprintf(stderr, \"[RMTFS] failed to %s sector %d (phys=0x%lx, rmem_addr=0x%llx, rmem_sz=0x%llx, errno=%s)\\\\n\",
-          \t\t\t\t\tis_write ? \"write\" : \"read\", entries[i].sector_addr + j, (unsigned long)(phys_base + offset), (unsigned long long)rmem->address, (unsigned long long)rmem->size, strerror(errno)); //'''
-          r = r.replace(fail_target, fail_repl)
-          with open('rmtfs.c', 'w') as f:
-              f.write(r)
-          "
+          # 3. Direct compile with -DANDROID (uses /sys/class/rmtfs directly, zero libudev dependency!)
+          aarch64-linux-gnu-gcc -O2 -Wall -DANDROID \
+            -I../qrtr/lib \
+            rmtfs.c qmi_rmtfs.c rproc.c sharedmem.c storage.c util.c \
+            ../qrtr/lib/qrtr.c ../qrtr/lib/qmi.c \
+            -o rmtfs
 
-          git diff storage.c sharedmem.c rmtfs.c
-          make CC=aarch64-linux-gnu-gcc CFLAGS="-I/usr/include" LDFLAGS="-L/usr/lib/aarch64-linux-gnu -lqrtr -ludev"
           aarch64-linux-gnu-strip rmtfs
           file rmtfs
+          ls -lh rmtfs
           mkdir -p ../dist
           cp rmtfs ../dist/
 
