@@ -9,10 +9,10 @@ on:
   workflow_dispatch:
 
 env:
-  KERNEL_REPO: https://github.com/sdm660-mainline/linux.git
-  KERNEL_BRANCH: barni2000/qcom-sdm660-6.12.y
+  KERNEL_REPO: https://github.com/CPH1707-Mainline/linux-sdm660-oppor11-t.git
+  KERNEL_BRANCH: r11t/legacy-full-stack
   CROSS: aarch64-linux-gnu-
-  DTB: sdm660-oppo-r11
+  DTB: sdm660-oppo-r11t
 
 jobs:
   kernel:
@@ -23,7 +23,7 @@ jobs:
           sudo apt-get update -q
           sudo apt-get install -y -q \
             gcc-aarch64-linux-gnu bison flex bc cpio libssl-dev \
-            python3 ccache curl tar device-tree-compiler
+            python3 ccache curl tar zstd device-tree-compiler
           echo "/usr/lib/ccache" >> "$GITHUB_PATH"
 
       - uses: actions/checkout@v4
@@ -32,38 +32,29 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/ccache
-          key: ccache-arm64-${{ github.sha }}
-          restore-keys: ccache-arm64-
+          key: ccache-arm64-cph1707-${{ github.sha }}
+          restore-keys: ccache-arm64-cph1707-
 
-      - name: Clone Linux Kernel
+      - name: Clone CPH1707-Mainline Kernel
         run: |
           git clone --depth 1 --branch "$KERNEL_BRANCH" "$KERNEL_REPO" linux
           cd linux
           git log -1 --format="kernel %H %cs %s" | tee ../kernel-info.txt
 
-      - name: Install OPPO R11 Device Tree
-        run: |
-          cp dts/$DTB.dts linux/arch/arm64/boot/dts/qcom/
-          if ! grep -q "$DTB.dtb" linux/arch/arm64/boot/dts/qcom/Makefile; then
-            echo "dtb-\$(CONFIG_ARCH_QCOM) += $DTB.dtb" >> linux/arch/arm64/boot/dts/qcom/Makefile
-          fi
-          grep -n "$DTB" linux/arch/arm64/boot/dts/qcom/Makefile
-
       - name: Configure Kernel
         run: |
           cd linux
-          make ARCH=arm64 CROSS_COMPILE="$CROSS" defconfig
+          make ARCH=arm64 CROSS_COMPILE="$CROSS" sdm660_defconfig
           if [ -f ../configs/r11-extra.config ]; then
             ./scripts/kconfig/merge_config.sh -m .config ../configs/r11-extra.config
             make ARCH=arm64 CROSS_COMPILE="$CROSS" olddefconfig
           fi
-          grep "CONFIG_USB_CONFIGFS=" .config || echo "CONFIG_USB_CONFIGFS not set"
-          grep "CONFIG_USB_F_NCM=" .config || echo "CONFIG_USB_F_NCM not set"
+          grep -E "CONFIG_USB_CONFIGFS=|CONFIG_USB_F_NCM=|CONFIG_USB_DWC3=" .config || true
 
       - name: Build Kernel Image & Device Tree
         run: |
           cd linux
-          make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE="$CROSS" Image.gz dtbs
+          make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE="$CROSS" Image.gz qcom/$DTB.dtb
           ls -lh arch/arm64/boot/Image.gz
           ls -lh arch/arm64/boot/dts/qcom/$DTB.dtb
 
@@ -80,24 +71,28 @@ jobs:
       - name: Build Initramfs
         run: bash initramfs/build.sh
 
-      - name: Pack Boot Image
+      - name: Pack Boot Image (Header Version 1 for Qualcomm SDM660 ABL)
         run: |
-          python3 tools/mkbootimg.py \
+          python3 tools/mkbootimg_v1.py \
             --kernel linux/arch/arm64/boot/Image.gz \
-            --ramdisk initramfs/initramfs.cpio.gz \
             --dtb linux/arch/arm64/boot/dts/qcom/$DTB.dtb \
-            --page-size 4096 \
-            --kernel-addr 0x00008000 \
-            --ramdisk-addr 0x01000000 \
-            --tags-addr 0x00000100 \
-            --cmdline 'console=ttyMSM0,115200n8 earlycon=msm_serial_dm,0xc170000 rootwait rw' \
-            --bootimg r11-mainline-boot.img
-          ls -lh r11-mainline-boot.img
+            --ramdisk initramfs/initramfs.cpio.gz \
+            --base 0x80000000 \
+            --kernel_offset 0x00008000 \
+            --ramdisk_offset 0x03000000 \
+            --second_offset 0x00f00000 \
+            --tags_offset 0x00000100 \
+            --pagesize 4096 \
+            --os_version 9.0.0 \
+            --os_patch_level 2019-09 \
+            --cmdline 'console=tty0 console=ttyMSM0,115200n8 earlycon=msm_serial_dm,0xc170000 rootwait rw' \
+            -o r11-cph1707-boot.img
+          ls -lh r11-cph1707-boot.img
 
       - name: Collect Artifacts
         run: |
           mkdir -p out
-          cp r11-mainline-boot.img \
+          cp r11-cph1707-boot.img \
              linux/arch/arm64/boot/Image.gz \
              linux/arch/arm64/boot/dts/qcom/$DTB.dtb \
              initramfs/initramfs.cpio.gz \
@@ -108,6 +103,6 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: oppo-r11-mainline-boot
+          name: oppo-r11-cph1707-boot
           path: out/
           retention-days: 30
