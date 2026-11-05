@@ -22,7 +22,7 @@ jobs:
           cd rmtfs
           sed -i '/\/oem\/nvbk\/static/i \	{ "/boot/modem_fsg_oem_1", "modem_fsg_oem_1", "oppostanvbk" },\n\t{ "/boot/modem_fsg_oem_2", "modem_fsg_oem_2", "oppodycnvbk" },' storage.c
           git diff storage.c
-          make CROSS_COMPILE=aarch64-linux-gnu- CFLAGS="-I/usr/include" LDFLAGS="-L/usr/lib/aarch64-linux-gnu"
+          make CC=aarch64-linux-gnu-gcc CFLAGS="-I/usr/include" LDFLAGS="-L/usr/lib/aarch64-linux-gnu -lqrtr -ludev"
           aarch64-linux-gnu-strip rmtfs
           file rmtfs
           mkdir -p ../dist
