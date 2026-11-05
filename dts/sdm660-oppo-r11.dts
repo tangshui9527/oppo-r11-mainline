@@ -13,12 +13,14 @@
 #include <dt-bindings/input/gpio-keys.h>
 
 / {
-	model = "OPPO R11";
-	compatible = "oppo,r11", "qcom,sdm660-mtp", "qcom,sdm660";
+	model = "Qualcomm Technologies, Inc. SDM 660 PM660 + PM660A MTP";
+	compatible = "oppo,r11", "qcom,sdm660-mtp", "qcom,sdm660", "qcom,mtp";
 	chassis-type = "handset";
 
-	qcom,msm-id = <0x13d 0x0>;
-	qcom,board-id = <0x8 0x0>;
+	/* Qualcomm ABL exact matching identifiers */
+	qcom,msm-id = <0x13d 0x00>;
+	qcom,board-id = <0x08 0x00 0x3eb3>;
+	qcom,pmic-id = <0x1001b 0x1011a 0x00 0x00 0x1001b 0x2001a 0x00 0x00 0x1001b 0x202001a 0x00 0x00>;
 
 	aliases {
 		serial0 = &blsp1_uart2; /* Debug UART at 0xc170000 */
