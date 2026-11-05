@@ -4,39 +4,28 @@ on:
   push:
     paths:
       - ".github/workflows/build-rmtfs.yml"
+      - "tools/patch_rmtfs.py"
   workflow_dispatch:
 
 jobs:
   rmtfs:
     runs-on: ubuntu-latest
     steps:
-      - name: Install aarch64 gcc
+      - uses: actions/checkout@v4
+
+      - name: Install cross-toolchain and arm64 libraries
         run: |
+          sudo dpkg --add-architecture arm64
           sudo apt-get update -q
-          sudo apt-get install -y -q gcc-aarch64-linux-gnu
+          sudo apt-get install -y -q gcc-aarch64-linux-gnu make libqrtr-dev:arm64 libudev-dev:arm64
 
       - name: Build and Patch rmtfs
         run: |
-          git clone --depth 1 https://github.com/andersson/qrtr.git
           git clone --depth 1 https://github.com/linux-msm/rmtfs.git
-
+          python3 tools/patch_rmtfs.py
           cd rmtfs
-          # 1. Add Oppo partitions
-          sed -i '/\/oem\/nvbk\/static/i \	{ "/boot/modem_fsg_oem_1", "modem_fsg_oem_1", "oppostanvbk" },\n\t{ "/boot/modem_fsg_oem_2", "modem_fsg_oem_2", "oppodycnvbk" },' storage.c
-
-          # 2. Add relative address support in sharedmem.c
-          sed -i '/static void \*rmtfs_mem_ptr/,/{/{n;s/.*/\tif (rmem \&\& phys_address < rmem->size) phys_address += rmem->address;/}' sharedmem.c
-          sed -i '/offset = phys_address - rmem->address;/i \	if (phys_address < rmem->size) phys_address += rmem->address;' sharedmem.c
-
           git diff storage.c sharedmem.c
-
-          # 3. Direct compile with -DANDROID (uses /sys/class/rmtfs directly, zero libudev dependency!)
-          aarch64-linux-gnu-gcc -O2 -Wall -DANDROID \
-            -I../qrtr/lib \
-            rmtfs.c qmi_rmtfs.c rproc.c sharedmem.c storage.c util.c \
-            ../qrtr/lib/qrtr.c ../qrtr/lib/qmi.c \
-            -o rmtfs
-
+          make CC=aarch64-linux-gnu-gcc CFLAGS="-I/usr/include" LDFLAGS="-L/usr/lib/aarch64-linux-gnu -lqrtr -ludev"
           aarch64-linux-gnu-strip rmtfs
           file rmtfs
           ls -lh rmtfs
