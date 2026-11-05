@@ -1,0 +1,637 @@
+// SPDX-License-Identifier: GPL-2.0-only
+/*
+ * Initial mainline device tree for the OPPO R11T.
+ *
+ * The platform and PMIC setup is shared with the supported SDM660 boards
+ * until the board-specific power sequencing has been fully audited.
+ */
+
+/dts-v1/;
+
+#include "sdm660-xiaomi-jason.dts"
+#include <dt-bindings/leds/common.h>
+#include <dt-bindings/sound/qcom,q6afe.h>
+#include <dt-bindings/sound/qcom,q6asm.h>
+
+/*
+ * Stock OPPO R11T PIL layout (from running.dts):
+ *  mpss  @0x8ac00000 size 0x07e00000
+ *  adsp  @0x92a00000 size 0x02000000
+ *  mba   @0x94a00000 size 0x00200000
+ *  cdsp  @0x94c00000 size 0x00600000
+ * Jason/mainline defaults place MBA at 0x94c00000 and CDSP at 0x94e00000,
+ * which collides with the stock OPPO MBA region and can crash MSS after boot.
+ */
+/delete-node/ &adsp_region;
+/delete-node/ &mba_region;
+/delete-node/ &cdsp_region;
+
+/ {
+	/delete-property/ model;
+	/delete-property/ compatible;
+
+	model = "OPPO R11T";
+	compatible = "oppo,r11t", "qcom,sdm660";
+
+	/* Legacy IDs used by the stock Qualcomm bootloader for DTB selection. */
+	qcom,msm-id = <0x13d 0>;
+	qcom,board-id = <8 0 0x3eb3>;
+	qcom,pmic-id = <0x1001b 0x1011a 0 0
+			0x1001b 0x2001a 0 0
+			0x1001b 0x202001a 0 0>;
+
+	/delete-node/ gpio-keys;
+
+	reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		adsp_region: adsp@92a00000 {
+			reg = <0x0 0x92a00000 0x0 0x2000000>;
+			no-map;
+		};
+
+		mba_region: mba@94a00000 {
+			reg = <0x0 0x94a00000 0x0 0x200000>;
+			no-map;
+		};
+
+		cdsp_region: cdsp@94c00000 {
+			reg = <0x0 0x94c00000 0x0 0x600000>;
+			no-map;
+		};
+
+		/* Complete stock's removed 0x85800000-0x8abfffff region. */
+		r11t_secure_gap: reserved@89500000 {
+			reg = <0x0 0x89500000 0x0 0x1700000>;
+			no-map;
+		};
+
+		rmtfs_oem_mem: memory@f6b00000 {
+			compatible = "qcom,rmtfs-mem";
+			reg = <0x0 0xf6b00000 0x0 0x100000>;
+			no-map;
+			qcom,client-id = <4>;
+			qcom,vmid = <QCOM_SCM_VMID_MSS_MSA>;
+		};
+	};
+
+	touch_vdd: regulator-touch-vdd {
+		compatible = "regulator-fixed";
+		regulator-name = "touchpanel_vdd";
+		regulator-min-microvolt = <2800000>;
+		regulator-max-microvolt = <2800000>;
+		gpio = <&tlmm 15 GPIO_ACTIVE_HIGH>;
+		enable-active-high;
+		pinctrl-0 = <&touch_vdd_en>;
+		pinctrl-names = "default";
+	};
+
+	memshare {
+		compatible = "oppo,r11t-memshare";
+	};
+
+	gpio-keys {
+		compatible = "gpio-keys";
+		pinctrl-0 = <&r11t_volume_keys_default>;
+		pinctrl-names = "default";
+
+		key-volume-up {
+			label = "Volume Up";
+			gpios = <&pm660l_gpios 8 GPIO_ACTIVE_LOW>;
+			linux,code = <KEY_VOLUMEUP>;
+			debounce-interval = <15>;
+			wakeup-source;
+		};
+
+		key-volume-down {
+			label = "Volume Down";
+			gpios = <&pm660l_gpios 5 GPIO_ACTIVE_LOW>;
+			linux,code = <KEY_VOLUMEDOWN>;
+			debounce-interval = <15>;
+			wakeup-source;
+		};
+	};
+
+};
+
+&remoteproc_mss {
+	firmware-name = "mba.mbn", "modem.mdt";
+	status = "okay";
+};
+
+&adsp_pil {
+	firmware-name = "adsp.mdt";
+};
+
+&lpass_codec {
+	status = "okay";
+};
+
+&pm660l_codec {
+	vdd-cdc-io-supply = <&vreg_s4a_2p04>;
+	vdd-cdc-tx-rx-cx-supply = <&vreg_s4a_2p04>;
+	vdd-micbias-supply = <&vreg_s4a_2p04>;
+
+	qcom,micbias-lvl = <2700>;
+	qcom,mbhc-external-micbias;
+	qcom,mbhc-vthreshold-low = <60 131 253 425 426>;
+	qcom,mbhc-vthreshold-high = <130 131 253 425 426>;
+	status = "okay";
+};
+
+&q6afedai {
+	dai@16 {
+		reg = <PRIMARY_MI2S_RX>;
+		qcom,sd-lines = <0>;
+	};
+
+	dai@18 {
+		reg = <SECONDARY_MI2S_RX>;
+		qcom,sd-lines = <0>;
+	};
+
+	dai@81 {
+		reg = <INT0_MI2S_RX>;
+		qcom,sd-lines = <0 1>;
+	};
+
+	dai@88 {
+		reg = <INT3_MI2S_TX>;
+		qcom,sd-lines = <0 1>;
+	};
+};
+
+&q6asmdai {
+	dai@0 {
+		reg = <MSM_FRONTEND_DAI_MULTIMEDIA1>;
+	};
+
+	dai@1 {
+		reg = <MSM_FRONTEND_DAI_MULTIMEDIA2>;
+	};
+};
+
+&sound {
+	compatible = "qcom,sdm660-internal-sndcard";
+	model = "OPPO R11T";
+
+	pinctrl-0 = <&cdc_pdm_default>,
+		    <&cdc_dmic_default>,
+		    <&r11t_pri_mi2s_active>,
+		    <&r11t_sec_mi2s_active>;
+	pinctrl-names = "default";
+
+	audio-routing = "RX_BIAS", "Digital MCLK",
+			"INT_LDO_H", "Digital MCLK",
+			"Digital RX_I2S_CLK", "Digital MCLK",
+			"Digital TX_I2S_CLK", "Digital MCLK",
+			"Digital ADC1", "ADC1",
+			"Digital ADC2", "ADC2",
+			"Digital ADC3", "ADC3",
+			"PDM_RX1", "Digital PDM_RX1",
+			"PDM_RX2", "Digital PDM_RX2",
+			"PDM_RX3", "Digital PDM_RX3",
+			"Digital LPASS_PDM_TX", "PDM_TX",
+			"Headphone Jack", "HPH_L",
+			"Headphone Jack", "HPH_R",
+			"Headphone Jack", "HPL",
+			"Headphone Jack", "HPR",
+			"Speaker", "OUT",
+			"AMIC1", "MIC BIAS External1",
+			"AMIC2", "MIC BIAS External2",
+			"Mic Jack", "MIC BIAS External2";
+
+	mm1-dai-link {
+		link-name = "MultiMedia1";
+
+		cpu {
+			sound-dai = <&q6asmdai MSM_FRONTEND_DAI_MULTIMEDIA1>;
+		};
+	};
+
+	mm2-dai-link {
+		link-name = "MultiMedia2";
+
+		cpu {
+			sound-dai = <&q6asmdai MSM_FRONTEND_DAI_MULTIMEDIA2>;
+		};
+	};
+
+	pri-mi2s-dai-link {
+		link-name = "Primary MI2S Playback";
+
+		cpu {
+			sound-dai = <&q6afedai PRIMARY_MI2S_RX>;
+		};
+
+		platform {
+			sound-dai = <&q6routing>;
+		};
+
+		codec {
+			sound-dai = <&ak4376>;
+		};
+	};
+
+	sec-mi2s-dai-link {
+		link-name = "Secondary MI2S Playback";
+
+		cpu {
+			sound-dai = <&q6afedai SECONDARY_MI2S_RX>;
+		};
+
+		platform {
+			sound-dai = <&q6routing>;
+		};
+
+		codec {
+			sound-dai = <&tfa9890>;
+		};
+	};
+
+	int0-mi2s-dai-link {
+		link-name = "Internal MI2S Playback";
+
+		cpu {
+			sound-dai = <&q6afedai INT0_MI2S_RX>;
+		};
+
+		platform {
+			sound-dai = <&q6routing>;
+		};
+
+		codec {
+			sound-dai = <&pm660l_codec 0>,
+				    <&lpass_codec 0>;
+		};
+	};
+
+	int3-mi2s-dai-link {
+		link-name = "Internal MI2S Capture";
+
+		cpu {
+			sound-dai = <&q6afedai INT3_MI2S_TX>;
+		};
+
+		platform {
+			sound-dai = <&q6routing>;
+		};
+
+		codec {
+			sound-dai = <&pm660l_codec 1>,
+				    <&lpass_codec 1>;
+		};
+	};
+};
+
+/* SDM660 uses the IPA 2.6-lite path for the modem/WCN startup handshake. */
+&soc {
+	ipa: ipa@14780000 {
+		compatible = "qcom,ipa-lite-v2.6";
+		reg = <0x14780000 0x47000>;
+		clocks = <&rpmcc RPM_SMD_IPA_CLK>;
+		interrupts = <GIC_SPI 333 IRQ_TYPE_EDGE_RISING>,
+				      <GIC_SPI 432 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "ipa", "dma";
+		interconnects = <&a2noc MASTER_IPA &bimc SLAVE_EBI>,
+					<&a2noc MASTER_IPA &snoc SLAVE_IMEM>,
+					<&gnoc MASTER_APSS_PROC &snoc SLAVE_IPA>;
+		interconnect-names = "ipa-mem", "ipa-imem", "cpu-cfg";
+		iommus = <&anoc2_smmu 0x19c0>,
+			 <&anoc2_smmu 0x19c2>;
+		modem-remoteproc = <&remoteproc_mss>;
+		status = "okay";
+	};
+};
+
+/* The stock board places the touch controller on QUP1/I2C1. */
+&blsp_i2c4 {
+	status = "disabled";
+	/delete-node/ touchscreen@20;
+};
+
+&blsp_i2c2 {
+	status = "okay";
+
+	fuel-gauge@55 {
+		compatible = "ti,bq27541";
+		reg = <0x55>;
+	};
+};
+
+&blsp_i2c6 {
+	status = "okay";
+
+	ak4376: audio-codec@10 {
+		compatible = "asahi-kasei,ak4376";
+		reg = <0x10>;
+		#sound-dai-cells = <0>;
+
+		avdd-supply = <&vreg_l8a_1p8>;
+		tvdd-supply = <&vreg_l8a_1p8>;
+		pdn-gpios = <&tlmm 76 GPIO_ACTIVE_HIGH>;
+	};
+
+	tfa9890: audio-codec@36 {
+		compatible = "nxp,tfa9890";
+		reg = <0x36>;
+		#sound-dai-cells = <0>;
+
+		vddd-supply = <&vreg_l13a_1p8>;
+		reset-gpios = <&tlmm 80 GPIO_ACTIVE_HIGH>;
+	};
+};
+
+/* Stock uses 4.35 V/2 A; keep conventional 5 V charging capped at 1.5 A. */
+&battery {
+	charge-full-design-microamp-hours = <3220000>;
+	voltage-min-design-microvolt = <3400000>;
+	voltage-max-design-microvolt = <4350000>;
+	constant-charge-current-max-microamp = <1500000>;
+};
+
+&pm660_charger {
+	monitored-battery = <&battery>;
+	status = "okay";
+};
+
+&pm660_fg {
+	status = "disabled";
+};
+
+&pm660l_lpg {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	qcom,power-source = <1>;
+	status = "okay";
+
+	/delete-node/ led@1;
+	/delete-node/ led@2;
+	/delete-node/ led@3;
+
+	/* Stock calls PM660L LPG channel 1 its white breathing LED. */
+	led@1 {
+		reg = <1>;
+		color = <LED_COLOR_ID_WHITE>;
+		function = LED_FUNCTION_STATUS;
+		default-state = "off";
+	};
+};
+
+&pm660l_flash {
+	status = "okay";
+
+	/* Rear camera flash/torch is connected only to downstream channel 0. */
+	led-0 {
+		function = LED_FUNCTION_FLASH;
+		color = <LED_COLOR_ID_WHITE>;
+		led-sources = <1>;
+		led-max-microamp = <100000>;
+		flash-max-microamp = <750000>;
+		flash-max-timeout-us = <1280000>;
+	};
+};
+
+&spmi_bus {
+	pmic@0 {
+		usb_otg_vbus: usb-vbus-regulator@1500 {
+			compatible = "qcom,pm660-vbus-reg";
+			reg = <0x1500>;
+			regulator-name = "usb_otg_vbus";
+			regulator-min-microamp = <500000>;
+			regulator-max-microamp = <500000>;
+		};
+	};
+};
+
+&blsp_i2c1 {
+	status = "okay";
+
+	touchscreen@20 {
+		compatible = "syna,rmi4-i2c";
+		reg = <0x20>;
+
+		#address-cells = <1>;
+		#size-cells = <0>;
+		interrupts-extended = <&tlmm 67 IRQ_TYPE_LEVEL_LOW>;
+
+		pinctrl-0 = <&r11t_ts_int_active &r11t_ts_reset_active>;
+		pinctrl-1 = <&ts_int_sleep &ts_reset_sleep>;
+		pinctrl-names = "default", "sleep";
+
+		vdd-supply = <&touch_vdd>;
+		vio-supply = <&vreg_l14a_1p8>;
+		reset-gpios = <&tlmm 66 GPIO_ACTIVE_LOW>;
+
+		syna,reset-delay-ms = <80>;
+		syna,startup-delay-ms = <10>;
+
+		rmi4-f01@1 {
+			reg = <0x01>;
+			syna,nosleep-mode = <1>;
+		};
+
+		rmi4-f12@12 {
+			reg = <0x12>;
+			syna,sensor-type = <1>;
+			touchscreen-inverted-x;
+			touchscreen-inverted-y;
+		};
+
+		rmi4-f1a@1a {
+			reg = <0x1a>;
+			linux,keycodes = <KEY_MENU KEY_BACK>;
+		};
+	};
+};
+
+/* PM660L OLEDB AMOLED bias rail (stock: 5.0-8.1 V, SWIRE/ext-pin control). */
+&pm660l_sid3 {
+	pm660l_oledb: oledb@e000 {
+		compatible = "qcom,qpnp-oledb-regulator";
+		reg = <0xe000>;
+		regulator-name = "oledb";
+		regulator-min-microvolt = <5000000>;
+		regulator-max-microvolt = <8100000>;
+		qcom,swire-control;
+		qcom,ext-pin-control;
+	};
+};
+
+&pm660l_gpios {
+	r11t_volume_keys_default: r11t-volume-keys-default-state {
+		pins = "gpio5", "gpio8";
+		function = PMIC_GPIO_FUNC_NORMAL;
+		bias-pull-up;
+		input-enable;
+		qcom,drive-strength = <PMIC_GPIO_STRENGTH_NO>;
+	};
+};
+
+&rpm_requests {
+	regulators-0 {
+		vreg_l6b_3p0: l6 {
+			regulator-min-microvolt = <3000000>;
+			regulator-max-microvolt = <3000000>;
+			regulator-enable-ramp-delay = <250>;
+			regulator-system-load = <13200>;
+			regulator-allow-set-load;
+		};
+	};
+};
+
+&mdss {
+	status = "okay";
+};
+
+&mdss_dsi0 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	vdd-supply = <&vreg_l1b_0p925>;
+	vdda-supply = <&vreg_l1a_1p225>;
+	status = "okay";
+
+	/delete-node/ panel@0;
+
+	panel@0 {
+		compatible = "samsung,s6e3fa3";
+		reg = <0>;
+		rotation = <180>;
+
+		/* Physical high = panel out of reset (matches stock 1/0/1 sequence). */
+		reset-gpios = <&tlmm 53 GPIO_ACTIVE_HIGH>;
+		vddio-supply = <&vreg_l11a_1p8>;
+		vdd-supply = <&vreg_l6b_3p0>;
+		oledb-supply = <&pm660l_oledb>;
+
+		pinctrl-0 = <&mdss_dsi_active &mdss_te_active>;
+		pinctrl-1 = <&mdss_dsi_suspend &mdss_te_suspend>;
+		pinctrl-names = "default", "sleep";
+
+		port {
+			panel_in: endpoint {
+				remote-endpoint = <&mdss_dsi0_out>;
+			};
+		};
+	};
+};
+
+&mdss_dsi0_out {
+	remote-endpoint = <&panel_in>;
+	data-lanes = <0 1 2 3>;
+};
+
+&mdss_dsi0_phy {
+	vcca-supply = <&vreg_l1b_0p925>;
+	status = "okay";
+};
+
+&mmss_smmu {
+	status = "okay";
+};
+
+&tlmm {
+	/* Jason reserves GPIO0-3, but R11T uses them for BLSP1 QUP1/I2C1. */
+	/delete-property/ gpio-reserved-ranges;
+	gpio-reserved-ranges = <8 4>;
+
+	touch_vdd_en: touch-vdd-en-state {
+		pins = "gpio15";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	r11t_ts_int_active: r11t-ts-int-active-state {
+		pins = "gpio67";
+		function = "gpio";
+		drive-strength = <8>;
+		bias-pull-up;
+	};
+
+	r11t_ts_reset_active: r11t-ts-reset-active-state {
+		pins = "gpio66";
+		function = "gpio";
+		drive-strength = <8>;
+		bias-disable;
+	};
+
+	r11t_pri_mi2s_active: r11t-pri-mi2s-active-state {
+		clock-pins {
+			pins = "gpio12", "gpio61";
+			function = "pri_mi2s";
+			drive-strength = <8>;
+			bias-disable;
+		};
+
+		ws-pins {
+			pins = "gpio13";
+			function = "pri_mi2s_ws";
+			drive-strength = <8>;
+			bias-disable;
+		};
+
+		data-pins {
+			pins = "gpio14";
+			function = "pri_mi2s";
+			drive-strength = <8>;
+			bias-disable;
+		};
+	};
+
+	r11t_sec_mi2s_active: r11t-sec-mi2s-active-state {
+		clock-pins {
+			pins = "gpio24", "gpio25";
+			function = "sec_mi2s";
+			drive-strength = <8>;
+			bias-disable;
+		};
+
+		data-pins {
+			pins = "gpio26";
+			function = "sec_mi2s";
+			drive-strength = <8>;
+			bias-disable;
+		};
+	};
+
+	mdss_dsi_active: mdss-dsi-active-state {
+		pins = "gpio53";
+		function = "gpio";
+		drive-strength = <8>;
+		bias-disable;
+	};
+
+	mdss_dsi_suspend: mdss-dsi-suspend-state {
+		pins = "gpio53";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-pull-down;
+	};
+
+	mdss_te_active: mdss-te-active-state {
+		pins = "gpio59";
+		function = "mdp_vsync";
+		drive-strength = <2>;
+		bias-pull-down;
+	};
+
+	mdss_te_suspend: mdss-te-suspend-state {
+		pins = "gpio59";
+		function = "mdp_vsync";
+		drive-strength = <2>;
+		bias-pull-down;
+	};
+};
+
+/* Default to the diagnostic console; userspace can explicitly enter host. */
+&usb3_dwc3 {
+	/delete-property/ extcon;
+	dr_mode = "otg";
+	usb-role-switch;
+	role-switch-default-mode = "peripheral";
+	vbus-supply = <&usb_otg_vbus>;
+};

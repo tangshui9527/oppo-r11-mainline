@@ -1,5 +1,11 @@
-# Local backups
+# Local backups & large artifacts
 backup/
 *.img
+*.simg
+*.tar.gz
+*.tar.xz
+*.cpio.gz
 out/
+out_cph1707/
 linux/
+.DS_Store
