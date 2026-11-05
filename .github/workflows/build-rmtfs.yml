@@ -1,0 +1,40 @@
+name: build-rmtfs
+
+on:
+  push:
+    paths:
+      - ".github/workflows/build-rmtfs.yml"
+  workflow_dispatch:
+
+jobs:
+  rmtfs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q gcc-aarch64-linux-gnu make libudev-dev
+
+      - name: Build and Patch rmtfs
+        run: |
+          git clone --depth 1 https://github.com/andersson/qrtr.git
+          cd qrtr
+          make CROSS_COMPILE=aarch64-linux-gnu-
+          sudo make install
+          cd ..
+
+          git clone --depth 1 https://github.com/linux-msm/rmtfs.git
+          cd rmtfs
+          sed -i '/\/oem\/nvbk\/static/i \	{ "/boot/modem_fsg_oem_1", "modem_fsg_oem_1", "oppostanvbk" },\n\t{ "/boot/modem_fsg_oem_2", "modem_fsg_oem_2", "oppodycnvbk" },' storage.c
+          git diff storage.c
+          make CROSS_COMPILE=aarch64-linux-gnu- CFLAGS="-I../qrtr" LDFLAGS="-L../qrtr"
+          aarch64-linux-gnu-strip rmtfs
+          file rmtfs
+          mkdir -p ../dist
+          cp rmtfs ../dist/
+
+      - name: Upload rmtfs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rmtfs-aarch64
+          path: dist/rmtfs
