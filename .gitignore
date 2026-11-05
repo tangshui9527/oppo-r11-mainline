@@ -1,0 +1,5 @@
+# Local backups
+backup/
+*.img
+out/
+linux/
