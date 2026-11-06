@@ -1,0 +1,17 @@
+{
+  "name": "qcom",
+  "path": "arch/arm64/boot/dts/qcom",
+  "sha": "d1df723919973484d9e61f237a9d9d5a4377b4fd",
+  "size": 34,
+  "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+  "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/arch/arm64/boot/dts/qcom",
+  "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d1df723919973484d9e61f237a9d9d5a4377b4fd",
+  "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/arch/arm64/boot/dts/qcom",
+  "type": "symlink",
+  "target": "../../../../arch/arm/boot/dts/qcom",
+  "_links": {
+    "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d1df723919973484d9e61f237a9d9d5a4377b4fd",
+    "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/arch/arm64/boot/dts/qcom"
+  }
+}

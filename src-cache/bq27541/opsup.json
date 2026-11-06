@@ -1,0 +1,1442 @@
+[
+  {
+    "name": "88pm860x_battery.c",
+    "path": "drivers/power/supply/88pm860x_battery.c",
+    "sha": "4eda5065b5bbc90dca0bb2cb2793dc0417b19980",
+    "size": 25987,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/88pm860x_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/88pm860x_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/4eda5065b5bbc90dca0bb2cb2793dc0417b19980",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/88pm860x_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/88pm860x_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/4eda5065b5bbc90dca0bb2cb2793dc0417b19980",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/88pm860x_battery.c"
+    }
+  },
+  {
+    "name": "88pm860x_charger.c",
+    "path": "drivers/power/supply/88pm860x_charger.c",
+    "sha": "2b82e44d9027292c28a176862e9d51f4737532f2",
+    "size": 19301,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/88pm860x_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/88pm860x_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2b82e44d9027292c28a176862e9d51f4737532f2",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/88pm860x_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/88pm860x_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2b82e44d9027292c28a176862e9d51f4737532f2",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/88pm860x_charger.c"
+    }
+  },
+  {
+    "name": "Kconfig",
+    "path": "drivers/power/supply/Kconfig",
+    "sha": "7e8aaa482a78235a6fbdf1f85561572fbb9eb6bf",
+    "size": 19279,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/Kconfig?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/Kconfig",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/7e8aaa482a78235a6fbdf1f85561572fbb9eb6bf",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/Kconfig",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/Kconfig?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/7e8aaa482a78235a6fbdf1f85561572fbb9eb6bf",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/Kconfig"
+    }
+  },
+  {
+    "name": "Makefile",
+    "path": "drivers/power/supply/Makefile",
+    "sha": "31305eb2e128cc229d78067ccb3089c8f8379224",
+    "size": 4253,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/Makefile?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/Makefile",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/31305eb2e128cc229d78067ccb3089c8f8379224",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/Makefile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/Makefile?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/31305eb2e128cc229d78067ccb3089c8f8379224",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/Makefile"
+    }
+  },
+  {
+    "name": "ab8500_bmdata.c",
+    "path": "drivers/power/supply/ab8500_bmdata.c",
+    "sha": "7b2b69916f48c7004b5545c07dd015952babd679",
+    "size": 14087,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ab8500_bmdata.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ab8500_bmdata.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/7b2b69916f48c7004b5545c07dd015952babd679",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ab8500_bmdata.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ab8500_bmdata.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/7b2b69916f48c7004b5545c07dd015952babd679",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ab8500_bmdata.c"
+    }
+  },
+  {
+    "name": "ab8500_btemp.c",
+    "path": "drivers/power/supply/ab8500_btemp.c",
+    "sha": "0bec8b90667c873145fa6b9874babebf855c271b",
+    "size": 30654,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ab8500_btemp.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ab8500_btemp.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0bec8b90667c873145fa6b9874babebf855c271b",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ab8500_btemp.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ab8500_btemp.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0bec8b90667c873145fa6b9874babebf855c271b",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ab8500_btemp.c"
+    }
+  },
+  {
+    "name": "ab8500_charger.c",
+    "path": "drivers/power/supply/ab8500_charger.c",
+    "sha": "0f379fa3385e6365cfcd63959d5c648b13c13bcd",
+    "size": 101756,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ab8500_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ab8500_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0f379fa3385e6365cfcd63959d5c648b13c13bcd",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ab8500_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ab8500_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0f379fa3385e6365cfcd63959d5c648b13c13bcd",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ab8500_charger.c"
+    }
+  },
+  {
+    "name": "ab8500_fg.c",
+    "path": "drivers/power/supply/ab8500_fg.c",
+    "sha": "d0cbd7189a622eec720195d527e87b6bad8da493",
+    "size": 84990,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ab8500_fg.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ab8500_fg.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/d0cbd7189a622eec720195d527e87b6bad8da493",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ab8500_fg.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ab8500_fg.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/d0cbd7189a622eec720195d527e87b6bad8da493",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ab8500_fg.c"
+    }
+  },
+  {
+    "name": "abx500_chargalg.c",
+    "path": "drivers/power/supply/abx500_chargalg.c",
+    "sha": "947709cdd14e7522c9d9d47f9ad6eba601e33968",
+    "size": 60314,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/abx500_chargalg.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/abx500_chargalg.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/947709cdd14e7522c9d9d47f9ad6eba601e33968",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/abx500_chargalg.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/abx500_chargalg.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/947709cdd14e7522c9d9d47f9ad6eba601e33968",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/abx500_chargalg.c"
+    }
+  },
+  {
+    "name": "act8945a_charger.c",
+    "path": "drivers/power/supply/act8945a_charger.c",
+    "sha": "c5e6c068d285c90e6cb7adad31b2bcc8184ab9d9",
+    "size": 16116,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/act8945a_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/act8945a_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/c5e6c068d285c90e6cb7adad31b2bcc8184ab9d9",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/act8945a_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/act8945a_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/c5e6c068d285c90e6cb7adad31b2bcc8184ab9d9",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/act8945a_charger.c"
+    }
+  },
+  {
+    "name": "adp5061.c",
+    "path": "drivers/power/supply/adp5061.c",
+    "sha": "1ad0443305997b09a84ced8116d78f46534e6185",
+    "size": 19241,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/adp5061.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/adp5061.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/1ad0443305997b09a84ced8116d78f46534e6185",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/adp5061.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/adp5061.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/1ad0443305997b09a84ced8116d78f46534e6185",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/adp5061.c"
+    }
+  },
+  {
+    "name": "apm_power.c",
+    "path": "drivers/power/supply/apm_power.c",
+    "sha": "50b9636945599196e8ea689be121cce85070cb79",
+    "size": 10450,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/apm_power.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/apm_power.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/50b9636945599196e8ea689be121cce85070cb79",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/apm_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/apm_power.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/50b9636945599196e8ea689be121cce85070cb79",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/apm_power.c"
+    }
+  },
+  {
+    "name": "axp20x_ac_power.c",
+    "path": "drivers/power/supply/axp20x_ac_power.c",
+    "sha": "0771f951b11fbe2c6a95b4984a42f011c0a547d1",
+    "size": 6500,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp20x_ac_power.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp20x_ac_power.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0771f951b11fbe2c6a95b4984a42f011c0a547d1",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/axp20x_ac_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp20x_ac_power.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0771f951b11fbe2c6a95b4984a42f011c0a547d1",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp20x_ac_power.c"
+    }
+  },
+  {
+    "name": "axp20x_battery.c",
+    "path": "drivers/power/supply/axp20x_battery.c",
+    "sha": "9fda98b950bab406dbbd4a758e6031edc5288e57",
+    "size": 16801,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp20x_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp20x_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9fda98b950bab406dbbd4a758e6031edc5288e57",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/axp20x_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp20x_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9fda98b950bab406dbbd4a758e6031edc5288e57",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp20x_battery.c"
+    }
+  },
+  {
+    "name": "axp20x_usb_power.c",
+    "path": "drivers/power/supply/axp20x_usb_power.c",
+    "sha": "42001df4bd13f147b1825e66791150ab4525dc98",
+    "size": 11511,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp20x_usb_power.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp20x_usb_power.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/42001df4bd13f147b1825e66791150ab4525dc98",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/axp20x_usb_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp20x_usb_power.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/42001df4bd13f147b1825e66791150ab4525dc98",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp20x_usb_power.c"
+    }
+  },
+  {
+    "name": "axp288_charger.c",
+    "path": "drivers/power/supply/axp288_charger.c",
+    "sha": "f6644afcbe861e3853d969ad0cc4f2ee4a1c69f7",
+    "size": 26562,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp288_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp288_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/f6644afcbe861e3853d969ad0cc4f2ee4a1c69f7",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/axp288_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp288_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/f6644afcbe861e3853d969ad0cc4f2ee4a1c69f7",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp288_charger.c"
+    }
+  },
+  {
+    "name": "axp288_fuel_gauge.c",
+    "path": "drivers/power/supply/axp288_fuel_gauge.c",
+    "sha": "1641868c345c22e320d0c52d422f109e7504e10e",
+    "size": 23879,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp288_fuel_gauge.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp288_fuel_gauge.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/1641868c345c22e320d0c52d422f109e7504e10e",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/axp288_fuel_gauge.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/axp288_fuel_gauge.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/1641868c345c22e320d0c52d422f109e7504e10e",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/axp288_fuel_gauge.c"
+    }
+  },
+  {
+    "name": "bq2415x_charger.c",
+    "path": "drivers/power/supply/bq2415x_charger.c",
+    "sha": "cbec70f3e73efe48e397abf58b0556876c25b098",
+    "size": 47611,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq2415x_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq2415x_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/cbec70f3e73efe48e397abf58b0556876c25b098",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/bq2415x_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq2415x_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/cbec70f3e73efe48e397abf58b0556876c25b098",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq2415x_charger.c"
+    }
+  },
+  {
+    "name": "bq24190_charger.c",
+    "path": "drivers/power/supply/bq24190_charger.c",
+    "sha": "2fdbff179f9d4accb232da1986a61147fc5b67fc",
+    "size": 54874,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq24190_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq24190_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2fdbff179f9d4accb232da1986a61147fc5b67fc",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/bq24190_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq24190_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2fdbff179f9d4accb232da1986a61147fc5b67fc",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq24190_charger.c"
+    }
+  },
+  {
+    "name": "bq24257_charger.c",
+    "path": "drivers/power/supply/bq24257_charger.c",
+    "sha": "6fc31bdc639bc54ac0fbd9008740d19912391330",
+    "size": 30397,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq24257_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq24257_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6fc31bdc639bc54ac0fbd9008740d19912391330",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/bq24257_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq24257_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6fc31bdc639bc54ac0fbd9008740d19912391330",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq24257_charger.c"
+    }
+  },
+  {
+    "name": "bq24735-charger.c",
+    "path": "drivers/power/supply/bq24735-charger.c",
+    "sha": "6931e1d826f55e82eaecc17a23d81f48b62917bd",
+    "size": 12747,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq24735-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq24735-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6931e1d826f55e82eaecc17a23d81f48b62917bd",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/bq24735-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq24735-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6931e1d826f55e82eaecc17a23d81f48b62917bd",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq24735-charger.c"
+    }
+  },
+  {
+    "name": "bq25890_charger.c",
+    "path": "drivers/power/supply/bq25890_charger.c",
+    "sha": "e90253b3f65613db96a024ca300957eccd5971a5",
+    "size": 25491,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq25890_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq25890_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/e90253b3f65613db96a024ca300957eccd5971a5",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/bq25890_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq25890_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/e90253b3f65613db96a024ca300957eccd5971a5",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq25890_charger.c"
+    }
+  },
+  {
+    "name": "bq27xxx_battery.c",
+    "path": "drivers/power/supply/bq27xxx_battery.c",
+    "sha": "55d8fbf031ebeea29927a72eb3ebfbc878bf2bb8",
+    "size": 54777,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq27xxx_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq27xxx_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/55d8fbf031ebeea29927a72eb3ebfbc878bf2bb8",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/bq27xxx_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq27xxx_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/55d8fbf031ebeea29927a72eb3ebfbc878bf2bb8",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq27xxx_battery.c"
+    }
+  },
+  {
+    "name": "bq27xxx_battery_hdq.c",
+    "path": "drivers/power/supply/bq27xxx_battery_hdq.c",
+    "sha": "9aff896c98020f68379c2532f28c7b2f27ddcd93",
+    "size": 3306,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq27xxx_battery_hdq.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq27xxx_battery_hdq.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9aff896c98020f68379c2532f28c7b2f27ddcd93",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/bq27xxx_battery_hdq.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq27xxx_battery_hdq.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9aff896c98020f68379c2532f28c7b2f27ddcd93",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq27xxx_battery_hdq.c"
+    }
+  },
+  {
+    "name": "bq27xxx_battery_i2c.c",
+    "path": "drivers/power/supply/bq27xxx_battery_i2c.c",
+    "sha": "510faefbb2df0a149a3284a0625d45a3320ea503",
+    "size": 7367,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq27xxx_battery_i2c.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq27xxx_battery_i2c.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/510faefbb2df0a149a3284a0625d45a3320ea503",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/bq27xxx_battery_i2c.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/bq27xxx_battery_i2c.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/510faefbb2df0a149a3284a0625d45a3320ea503",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/bq27xxx_battery_i2c.c"
+    }
+  },
+  {
+    "name": "charger-manager.c",
+    "path": "drivers/power/supply/charger-manager.c",
+    "sha": "eec79db9b750e9c4cde5b8ef307aa78aed8067b6",
+    "size": 55277,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/charger-manager.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/charger-manager.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/eec79db9b750e9c4cde5b8ef307aa78aed8067b6",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/charger-manager.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/charger-manager.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/eec79db9b750e9c4cde5b8ef307aa78aed8067b6",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/charger-manager.c"
+    }
+  },
+  {
+    "name": "collie_battery.c",
+    "path": "drivers/power/supply/collie_battery.c",
+    "sha": "3a0bc608d4b515ea0edaca60dcc5804765b12874",
+    "size": 10297,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/collie_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/collie_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/3a0bc608d4b515ea0edaca60dcc5804765b12874",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/collie_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/collie_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/3a0bc608d4b515ea0edaca60dcc5804765b12874",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/collie_battery.c"
+    }
+  },
+  {
+    "name": "cpcap-battery.c",
+    "path": "drivers/power/supply/cpcap-battery.c",
+    "sha": "e183a22de71538685d9e700041d079fd5ee4fda2",
+    "size": 20992,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/cpcap-battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/cpcap-battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/e183a22de71538685d9e700041d079fd5ee4fda2",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/cpcap-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/cpcap-battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/e183a22de71538685d9e700041d079fd5ee4fda2",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/cpcap-battery.c"
+    }
+  },
+  {
+    "name": "cpcap-charger.c",
+    "path": "drivers/power/supply/cpcap-charger.c",
+    "sha": "37be541e057d117d50fa631e788a08fdd13e4db7",
+    "size": 18270,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/cpcap-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/cpcap-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/37be541e057d117d50fa631e788a08fdd13e4db7",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/cpcap-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/cpcap-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/37be541e057d117d50fa631e788a08fdd13e4db7",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/cpcap-charger.c"
+    }
+  },
+  {
+    "name": "cros_usbpd-charger.c",
+    "path": "drivers/power/supply/cros_usbpd-charger.c",
+    "sha": "123a5572fe5b110ebfaa73d1d1148710b5d058b0",
+    "size": 14936,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/cros_usbpd-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/cros_usbpd-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/123a5572fe5b110ebfaa73d1d1148710b5d058b0",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/cros_usbpd-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/cros_usbpd-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/123a5572fe5b110ebfaa73d1d1148710b5d058b0",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/cros_usbpd-charger.c"
+    }
+  },
+  {
+    "name": "da9030_battery.c",
+    "path": "drivers/power/supply/da9030_battery.c",
+    "sha": "5ca0f4d90792d0c49be2f7225d6174744d867a82",
+    "size": 16264,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/da9030_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/da9030_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/5ca0f4d90792d0c49be2f7225d6174744d867a82",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/da9030_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/da9030_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/5ca0f4d90792d0c49be2f7225d6174744d867a82",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/da9030_battery.c"
+    }
+  },
+  {
+    "name": "da9052-battery.c",
+    "path": "drivers/power/supply/da9052-battery.c",
+    "sha": "830ec46fe7d02380cd20e62c75c16653f79b3962",
+    "size": 15678,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/da9052-battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/da9052-battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/830ec46fe7d02380cd20e62c75c16653f79b3962",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/da9052-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/da9052-battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/830ec46fe7d02380cd20e62c75c16653f79b3962",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/da9052-battery.c"
+    }
+  },
+  {
+    "name": "da9150-charger.c",
+    "path": "drivers/power/supply/da9150-charger.c",
+    "sha": "b2d38eb32288a78d873e0e423010a0f74b46240c",
+    "size": 17571,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/da9150-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/da9150-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/b2d38eb32288a78d873e0e423010a0f74b46240c",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/da9150-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/da9150-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/b2d38eb32288a78d873e0e423010a0f74b46240c",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/da9150-charger.c"
+    }
+  },
+  {
+    "name": "da9150-fg.c",
+    "path": "drivers/power/supply/da9150-fg.c",
+    "sha": "b7f0995b577866d449822e8de8ea6cb52676ad99",
+    "size": 14662,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/da9150-fg.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/da9150-fg.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/b7f0995b577866d449822e8de8ea6cb52676ad99",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/da9150-fg.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/da9150-fg.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/b7f0995b577866d449822e8de8ea6cb52676ad99",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/da9150-fg.c"
+    }
+  },
+  {
+    "name": "ds2760_battery.c",
+    "path": "drivers/power/supply/ds2760_battery.c",
+    "sha": "11bed88a89facfaa76a7b17cd9586f3483597a3b",
+    "size": 22700,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ds2760_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ds2760_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/11bed88a89facfaa76a7b17cd9586f3483597a3b",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ds2760_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ds2760_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/11bed88a89facfaa76a7b17cd9586f3483597a3b",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ds2760_battery.c"
+    }
+  },
+  {
+    "name": "ds2780_battery.c",
+    "path": "drivers/power/supply/ds2780_battery.c",
+    "sha": "370e9109342b8a3e9340f5c7a4eba7d6a0e69b54",
+    "size": 21180,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ds2780_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ds2780_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/370e9109342b8a3e9340f5c7a4eba7d6a0e69b54",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ds2780_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ds2780_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/370e9109342b8a3e9340f5c7a4eba7d6a0e69b54",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ds2780_battery.c"
+    }
+  },
+  {
+    "name": "ds2781_battery.c",
+    "path": "drivers/power/supply/ds2781_battery.c",
+    "sha": "d1b5a19aae7c67e467000545982bb8c155d342c2",
+    "size": 21027,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ds2781_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ds2781_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/d1b5a19aae7c67e467000545982bb8c155d342c2",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ds2781_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ds2781_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/d1b5a19aae7c67e467000545982bb8c155d342c2",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ds2781_battery.c"
+    }
+  },
+  {
+    "name": "ds2782_battery.c",
+    "path": "drivers/power/supply/ds2782_battery.c",
+    "sha": "a1b7e0592245a39d8cd5a7a19fe4b2e50e9a036c",
+    "size": 11231,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ds2782_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ds2782_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/a1b7e0592245a39d8cd5a7a19fe4b2e50e9a036c",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ds2782_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ds2782_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/a1b7e0592245a39d8cd5a7a19fe4b2e50e9a036c",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ds2782_battery.c"
+    }
+  },
+  {
+    "name": "generic-adc-battery.c",
+    "path": "drivers/power/supply/generic-adc-battery.c",
+    "sha": "c2d6378bb897d6612119868d423de13c7ba0389b",
+    "size": 11051,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/generic-adc-battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/generic-adc-battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/c2d6378bb897d6612119868d423de13c7ba0389b",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/generic-adc-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/generic-adc-battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/c2d6378bb897d6612119868d423de13c7ba0389b",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/generic-adc-battery.c"
+    }
+  },
+  {
+    "name": "goldfish_battery.c",
+    "path": "drivers/power/supply/goldfish_battery.c",
+    "sha": "f5c525e4482a18b533ad80c09b1e8a7da8be06a8",
+    "size": 6810,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/goldfish_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/goldfish_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/f5c525e4482a18b533ad80c09b1e8a7da8be06a8",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/goldfish_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/goldfish_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/f5c525e4482a18b533ad80c09b1e8a7da8be06a8",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/goldfish_battery.c"
+    }
+  },
+  {
+    "name": "gpio-charger.c",
+    "path": "drivers/power/supply/gpio-charger.c",
+    "sha": "c3f2a9479468b723d4f4e12df2ecc0fa5d421b32",
+    "size": 6894,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/gpio-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/gpio-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/c3f2a9479468b723d4f4e12df2ecc0fa5d421b32",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/gpio-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/gpio-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/c3f2a9479468b723d4f4e12df2ecc0fa5d421b32",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/gpio-charger.c"
+    }
+  },
+  {
+    "name": "ipaq_micro_battery.c",
+    "path": "drivers/power/supply/ipaq_micro_battery.c",
+    "sha": "2fa6edd6e8b1caff8ecef90f4a8d00ca184d6bf9",
+    "size": 8149,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ipaq_micro_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ipaq_micro_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2fa6edd6e8b1caff8ecef90f4a8d00ca184d6bf9",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ipaq_micro_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ipaq_micro_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2fa6edd6e8b1caff8ecef90f4a8d00ca184d6bf9",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ipaq_micro_battery.c"
+    }
+  },
+  {
+    "name": "isp1704_charger.c",
+    "path": "drivers/power/supply/isp1704_charger.c",
+    "sha": "95af5f305838a6508bf1b95988a28854d829a6dc",
+    "size": 14438,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/isp1704_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/isp1704_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/95af5f305838a6508bf1b95988a28854d829a6dc",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/isp1704_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/isp1704_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/95af5f305838a6508bf1b95988a28854d829a6dc",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/isp1704_charger.c"
+    }
+  },
+  {
+    "name": "jz4740-battery.c",
+    "path": "drivers/power/supply/jz4740-battery.c",
+    "sha": "88f04f4d1a70d8d1311a440f16bfe4f52346df77",
+    "size": 10649,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/jz4740-battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/jz4740-battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/88f04f4d1a70d8d1311a440f16bfe4f52346df77",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/jz4740-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/jz4740-battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/88f04f4d1a70d8d1311a440f16bfe4f52346df77",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/jz4740-battery.c"
+    }
+  },
+  {
+    "name": "lego_ev3_battery.c",
+    "path": "drivers/power/supply/lego_ev3_battery.c",
+    "sha": "1ae3710909b78ccfc2870b2c0200a173c69ffca8",
+    "size": 6526,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/lego_ev3_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/lego_ev3_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/1ae3710909b78ccfc2870b2c0200a173c69ffca8",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/lego_ev3_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/lego_ev3_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/1ae3710909b78ccfc2870b2c0200a173c69ffca8",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/lego_ev3_battery.c"
+    }
+  },
+  {
+    "name": "lp8727_charger.c",
+    "path": "drivers/power/supply/lp8727_charger.c",
+    "sha": "042fb3dacb461d460817093f61b6b69dc6b62a1d",
+    "size": 14655,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/lp8727_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/lp8727_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/042fb3dacb461d460817093f61b6b69dc6b62a1d",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/lp8727_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/lp8727_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/042fb3dacb461d460817093f61b6b69dc6b62a1d",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/lp8727_charger.c"
+    }
+  },
+  {
+    "name": "lp8788-charger.c",
+    "path": "drivers/power/supply/lp8788-charger.c",
+    "sha": "6dcabbeccde126954cf9707c34b9634445f19177",
+    "size": 18584,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/lp8788-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/lp8788-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6dcabbeccde126954cf9707c34b9634445f19177",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/lp8788-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/lp8788-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6dcabbeccde126954cf9707c34b9634445f19177",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/lp8788-charger.c"
+    }
+  },
+  {
+    "name": "ltc2941-battery-gauge.c",
+    "path": "drivers/power/supply/ltc2941-battery-gauge.c",
+    "sha": "ff5febea1a211ed95c627dfa00c9416d00ea0197",
+    "size": 16963,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ltc2941-battery-gauge.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ltc2941-battery-gauge.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/ff5febea1a211ed95c627dfa00c9416d00ea0197",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ltc2941-battery-gauge.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ltc2941-battery-gauge.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/ff5febea1a211ed95c627dfa00c9416d00ea0197",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ltc2941-battery-gauge.c"
+    }
+  },
+  {
+    "name": "ltc3651-charger.c",
+    "path": "drivers/power/supply/ltc3651-charger.c",
+    "sha": "eea63ff211c4b69618bd9b68c60c3ace57c1f21c",
+    "size": 6187,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ltc3651-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ltc3651-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/eea63ff211c4b69618bd9b68c60c3ace57c1f21c",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/ltc3651-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/ltc3651-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/eea63ff211c4b69618bd9b68c60c3ace57c1f21c",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/ltc3651-charger.c"
+    }
+  },
+  {
+    "name": "max14577_charger.c",
+    "path": "drivers/power/supply/max14577_charger.c",
+    "sha": "a58ffac28a50dd2f5bc7bc44e695105ca3191e35",
+    "size": 16834,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max14577_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max14577_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/a58ffac28a50dd2f5bc7bc44e695105ca3191e35",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max14577_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max14577_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/a58ffac28a50dd2f5bc7bc44e695105ca3191e35",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max14577_charger.c"
+    }
+  },
+  {
+    "name": "max14656_charger_detector.c",
+    "path": "drivers/power/supply/max14656_charger_detector.c",
+    "sha": "9e6472834e373010f34b3489895bfb88353b3885",
+    "size": 8440,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max14656_charger_detector.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max14656_charger_detector.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9e6472834e373010f34b3489895bfb88353b3885",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max14656_charger_detector.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max14656_charger_detector.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9e6472834e373010f34b3489895bfb88353b3885",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max14656_charger_detector.c"
+    }
+  },
+  {
+    "name": "max17040_battery.c",
+    "path": "drivers/power/supply/max17040_battery.c",
+    "sha": "2c35c13ad546f8e902eb13a1742c4c6304379c65",
+    "size": 7123,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max17040_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max17040_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2c35c13ad546f8e902eb13a1742c4c6304379c65",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max17040_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max17040_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2c35c13ad546f8e902eb13a1742c4c6304379c65",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max17040_battery.c"
+    }
+  },
+  {
+    "name": "max17042_battery.c",
+    "path": "drivers/power/supply/max17042_battery.c",
+    "sha": "0586167977042ced5ab3322ca55fd5cd2a942463",
+    "size": 32819,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max17042_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max17042_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0586167977042ced5ab3322ca55fd5cd2a942463",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max17042_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max17042_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0586167977042ced5ab3322ca55fd5cd2a942463",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max17042_battery.c"
+    }
+  },
+  {
+    "name": "max1721x_battery.c",
+    "path": "drivers/power/supply/max1721x_battery.c",
+    "sha": "9ca895b0dabb558d084953d65aa00e2802bab37e",
+    "size": 13062,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max1721x_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max1721x_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9ca895b0dabb558d084953d65aa00e2802bab37e",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max1721x_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max1721x_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9ca895b0dabb558d084953d65aa00e2802bab37e",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max1721x_battery.c"
+    }
+  },
+  {
+    "name": "max77693_charger.c",
+    "path": "drivers/power/supply/max77693_charger.c",
+    "sha": "97bebf8c77f80a1daea86b0b16dfaeb747a28d48",
+    "size": 19013,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max77693_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max77693_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/97bebf8c77f80a1daea86b0b16dfaeb747a28d48",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max77693_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max77693_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/97bebf8c77f80a1daea86b0b16dfaeb747a28d48",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max77693_charger.c"
+    }
+  },
+  {
+    "name": "max8903_charger.c",
+    "path": "drivers/power/supply/max8903_charger.c",
+    "sha": "fdc73d68615344e045a1cd70de86b3adf4447507",
+    "size": 11462,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max8903_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max8903_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/fdc73d68615344e045a1cd70de86b3adf4447507",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max8903_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max8903_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/fdc73d68615344e045a1cd70de86b3adf4447507",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max8903_charger.c"
+    }
+  },
+  {
+    "name": "max8925_power.c",
+    "path": "drivers/power/supply/max8925_power.c",
+    "sha": "3b94620ce5c1948ec95f8422e0007dbb983b2a5f",
+    "size": 15366,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max8925_power.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max8925_power.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/3b94620ce5c1948ec95f8422e0007dbb983b2a5f",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max8925_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max8925_power.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/3b94620ce5c1948ec95f8422e0007dbb983b2a5f",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max8925_power.c"
+    }
+  },
+  {
+    "name": "max8997_charger.c",
+    "path": "drivers/power/supply/max8997_charger.c",
+    "sha": "c73fb42216952b81965aab6cadc2cd536c439e6b",
+    "size": 5216,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max8997_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max8997_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/c73fb42216952b81965aab6cadc2cd536c439e6b",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max8997_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max8997_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/c73fb42216952b81965aab6cadc2cd536c439e6b",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max8997_charger.c"
+    }
+  },
+  {
+    "name": "max8998_charger.c",
+    "path": "drivers/power/supply/max8998_charger.c",
+    "sha": "aa65e6c36c55eb7d3e03629032a817bfe147e804",
+    "size": 5583,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max8998_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max8998_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/aa65e6c36c55eb7d3e03629032a817bfe147e804",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/max8998_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/max8998_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/aa65e6c36c55eb7d3e03629032a817bfe147e804",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/max8998_charger.c"
+    }
+  },
+  {
+    "name": "olpc_battery.c",
+    "path": "drivers/power/supply/olpc_battery.c",
+    "sha": "5a97e42a35473d56d5acfb70ee63379a375ef541",
+    "size": 16825,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/olpc_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/olpc_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/5a97e42a35473d56d5acfb70ee63379a375ef541",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/olpc_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/olpc_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/5a97e42a35473d56d5acfb70ee63379a375ef541",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/olpc_battery.c"
+    }
+  },
+  {
+    "name": "pcf50633-charger.c",
+    "path": "drivers/power/supply/pcf50633-charger.c",
+    "sha": "1aba14046a837c6b8384df810dfa8b0488752373",
+    "size": 12674,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pcf50633-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pcf50633-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/1aba14046a837c6b8384df810dfa8b0488752373",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/pcf50633-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pcf50633-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/1aba14046a837c6b8384df810dfa8b0488752373",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pcf50633-charger.c"
+    }
+  },
+  {
+    "name": "pda_power.c",
+    "path": "drivers/power/supply/pda_power.c",
+    "sha": "922a86787c5c4c69901bf2f48933e29653e29bf1",
+    "size": 12174,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pda_power.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pda_power.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/922a86787c5c4c69901bf2f48933e29653e29bf1",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/pda_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pda_power.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/922a86787c5c4c69901bf2f48933e29653e29bf1",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pda_power.c"
+    }
+  },
+  {
+    "name": "pm2301_charger.c",
+    "path": "drivers/power/supply/pm2301_charger.c",
+    "sha": "9ef218d76aa9cf0db65304ef90bbcc9c548a5b78",
+    "size": 30464,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pm2301_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pm2301_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9ef218d76aa9cf0db65304ef90bbcc9c548a5b78",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/pm2301_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pm2301_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9ef218d76aa9cf0db65304ef90bbcc9c548a5b78",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pm2301_charger.c"
+    }
+  },
+  {
+    "name": "pm2301_charger.h",
+    "path": "drivers/power/supply/pm2301_charger.h",
+    "sha": "24181cf9717bef8c4a30f6d6f732057bb9536215",
+    "size": 14218,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pm2301_charger.h?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pm2301_charger.h",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/24181cf9717bef8c4a30f6d6f732057bb9536215",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/pm2301_charger.h",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pm2301_charger.h?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/24181cf9717bef8c4a30f6d6f732057bb9536215",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pm2301_charger.h"
+    }
+  },
+  {
+    "name": "pmu_battery.c",
+    "path": "drivers/power/supply/pmu_battery.c",
+    "sha": "9c8d5253812c64c1a50e757b019ff1d7731b3aea",
+    "size": 5722,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pmu_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pmu_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9c8d5253812c64c1a50e757b019ff1d7731b3aea",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/pmu_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/pmu_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9c8d5253812c64c1a50e757b019ff1d7731b3aea",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/pmu_battery.c"
+    }
+  },
+  {
+    "name": "power_supply.h",
+    "path": "drivers/power/supply/power_supply.h",
+    "sha": "cc439fd89d8dda469c52795bcc59074245b1cec8",
+    "size": 1174,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/power_supply.h?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/power_supply.h",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/cc439fd89d8dda469c52795bcc59074245b1cec8",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/power_supply.h",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/power_supply.h?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/cc439fd89d8dda469c52795bcc59074245b1cec8",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/power_supply.h"
+    }
+  },
+  {
+    "name": "power_supply_core.c",
+    "path": "drivers/power/supply/power_supply_core.c",
+    "sha": "2963570da6020a2f8c9d901ecf6d34922d54d45f",
+    "size": 30468,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/power_supply_core.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/power_supply_core.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2963570da6020a2f8c9d901ecf6d34922d54d45f",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/power_supply_core.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/power_supply_core.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2963570da6020a2f8c9d901ecf6d34922d54d45f",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/power_supply_core.c"
+    }
+  },
+  {
+    "name": "power_supply_leds.c",
+    "path": "drivers/power/supply/power_supply_leds.c",
+    "sha": "9188b7ccdd4c72b41fa498838b60ab7066c4331f",
+    "size": 5004,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/power_supply_leds.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/power_supply_leds.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9188b7ccdd4c72b41fa498838b60ab7066c4331f",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/power_supply_leds.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/power_supply_leds.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/9188b7ccdd4c72b41fa498838b60ab7066c4331f",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/power_supply_leds.c"
+    }
+  },
+  {
+    "name": "power_supply_sysfs.c",
+    "path": "drivers/power/supply/power_supply_sysfs.c",
+    "sha": "7a5a8177723a17e5ac135bc720d85628a76be5cb",
+    "size": 18073,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/power_supply_sysfs.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/power_supply_sysfs.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/7a5a8177723a17e5ac135bc720d85628a76be5cb",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/power_supply_sysfs.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/power_supply_sysfs.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/7a5a8177723a17e5ac135bc720d85628a76be5cb",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/power_supply_sysfs.c"
+    }
+  },
+  {
+    "name": "qcom",
+    "path": "drivers/power/supply/qcom",
+    "sha": "3f6cc55bb9a67c0bab61de8bbe0a145ecfeef163",
+    "size": 0,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/qcom?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/tree/lineage-22.2/drivers/power/supply/qcom",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/trees/3f6cc55bb9a67c0bab61de8bbe0a145ecfeef163",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/qcom?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/trees/3f6cc55bb9a67c0bab61de8bbe0a145ecfeef163",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/tree/lineage-22.2/drivers/power/supply/qcom"
+    }
+  },
+  {
+    "name": "qcom_smbb.c",
+    "path": "drivers/power/supply/qcom_smbb.c",
+    "sha": "11de691b9a7124327c75599b94d23f5f1675f2c8",
+    "size": 26177,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/qcom_smbb.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/qcom_smbb.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/11de691b9a7124327c75599b94d23f5f1675f2c8",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/qcom_smbb.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/qcom_smbb.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/11de691b9a7124327c75599b94d23f5f1675f2c8",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/qcom_smbb.c"
+    }
+  },
+  {
+    "name": "rt5033_battery.c",
+    "path": "drivers/power/supply/rt5033_battery.c",
+    "sha": "7eec7014086d80920ca712bef02cb368ace27ab1",
+    "size": 4898,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/rt5033_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/rt5033_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/7eec7014086d80920ca712bef02cb368ace27ab1",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/rt5033_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/rt5033_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/7eec7014086d80920ca712bef02cb368ace27ab1",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/rt5033_battery.c"
+    }
+  },
+  {
+    "name": "rt9455_charger.c",
+    "path": "drivers/power/supply/rt9455_charger.c",
+    "sha": "a3d41cb26d3621d81672163aba839bd3e87833b4",
+    "size": 49752,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/rt9455_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/rt9455_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/a3d41cb26d3621d81672163aba839bd3e87833b4",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/rt9455_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/rt9455_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/a3d41cb26d3621d81672163aba839bd3e87833b4",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/rt9455_charger.c"
+    }
+  },
+  {
+    "name": "rx51_battery.c",
+    "path": "drivers/power/supply/rx51_battery.c",
+    "sha": "5654708b12790c1b608dae27cf4ed1e5ef392df1",
+    "size": 8096,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/rx51_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/rx51_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/5654708b12790c1b608dae27cf4ed1e5ef392df1",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/rx51_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/rx51_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/5654708b12790c1b608dae27cf4ed1e5ef392df1",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/rx51_battery.c"
+    }
+  },
+  {
+    "name": "s3c_adc_battery.c",
+    "path": "drivers/power/supply/s3c_adc_battery.c",
+    "sha": "8be31f80035c6ed79045f1974278714f7f13c7fb",
+    "size": 11719,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/s3c_adc_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/s3c_adc_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/8be31f80035c6ed79045f1974278714f7f13c7fb",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/s3c_adc_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/s3c_adc_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/8be31f80035c6ed79045f1974278714f7f13c7fb",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/s3c_adc_battery.c"
+    }
+  },
+  {
+    "name": "sbs-battery.c",
+    "path": "drivers/power/supply/sbs-battery.c",
+    "sha": "e5181a438ffac704819e43da775240a31a1931fd",
+    "size": 25669,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/sbs-battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/sbs-battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/e5181a438ffac704819e43da775240a31a1931fd",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/sbs-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/sbs-battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/e5181a438ffac704819e43da775240a31a1931fd",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/sbs-battery.c"
+    }
+  },
+  {
+    "name": "sbs-charger.c",
+    "path": "drivers/power/supply/sbs-charger.c",
+    "sha": "0f9cc82d81618f1d0a21bf0fc0345241442a7eb2",
+    "size": 6660,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/sbs-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/sbs-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0f9cc82d81618f1d0a21bf0fc0345241442a7eb2",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/sbs-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/sbs-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0f9cc82d81618f1d0a21bf0fc0345241442a7eb2",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/sbs-charger.c"
+    }
+  },
+  {
+    "name": "sbs-manager.c",
+    "path": "drivers/power/supply/sbs-manager.c",
+    "sha": "cb6e8f66c7a24610176d81d80ca1dd2add9c6467",
+    "size": 10713,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/sbs-manager.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/sbs-manager.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/cb6e8f66c7a24610176d81d80ca1dd2add9c6467",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/sbs-manager.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/sbs-manager.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/cb6e8f66c7a24610176d81d80ca1dd2add9c6467",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/sbs-manager.c"
+    }
+  },
+  {
+    "name": "smb347-charger.c",
+    "path": "drivers/power/supply/smb347-charger.c",
+    "sha": "0655dbdc7000d6aab02332d7b2ab5c69b57b1f54",
+    "size": 32669,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/smb347-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/smb347-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0655dbdc7000d6aab02332d7b2ab5c69b57b1f54",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/smb347-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/smb347-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0655dbdc7000d6aab02332d7b2ab5c69b57b1f54",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/smb347-charger.c"
+    }
+  },
+  {
+    "name": "test_power.c",
+    "path": "drivers/power/supply/test_power.c",
+    "sha": "925abec45380ff7a9a80679711ea06c6b3b6f71e",
+    "size": 14679,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/test_power.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/test_power.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/925abec45380ff7a9a80679711ea06c6b3b6f71e",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/test_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/test_power.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/925abec45380ff7a9a80679711ea06c6b3b6f71e",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/test_power.c"
+    }
+  },
+  {
+    "name": "tosa_battery.c",
+    "path": "drivers/power/supply/tosa_battery.c",
+    "sha": "6e88c1b37945537fa6a3b08489f65ea81b10a2a9",
+    "size": 12124,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/tosa_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/tosa_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6e88c1b37945537fa6a3b08489f65ea81b10a2a9",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/tosa_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/tosa_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6e88c1b37945537fa6a3b08489f65ea81b10a2a9",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/tosa_battery.c"
+    }
+  },
+  {
+    "name": "tps65090-charger.c",
+    "path": "drivers/power/supply/tps65090-charger.c",
+    "sha": "297bf58f0d4fb773f1d8ea200ff66018e6e98041",
+    "size": 9315,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/tps65090-charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/tps65090-charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/297bf58f0d4fb773f1d8ea200ff66018e6e98041",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/tps65090-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/tps65090-charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/297bf58f0d4fb773f1d8ea200ff66018e6e98041",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/tps65090-charger.c"
+    }
+  },
+  {
+    "name": "tps65217_charger.c",
+    "path": "drivers/power/supply/tps65217_charger.c",
+    "sha": "ba33d1617e0b6d986a9c81d7c91859af9c933aed",
+    "size": 7260,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/tps65217_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/tps65217_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/ba33d1617e0b6d986a9c81d7c91859af9c933aed",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/tps65217_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/tps65217_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/ba33d1617e0b6d986a9c81d7c91859af9c933aed",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/tps65217_charger.c"
+    }
+  },
+  {
+    "name": "twl4030_charger.c",
+    "path": "drivers/power/supply/twl4030_charger.c",
+    "sha": "0e202d4273fb627f671af379f591bdabbcae297b",
+    "size": 29938,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/twl4030_charger.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/twl4030_charger.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0e202d4273fb627f671af379f591bdabbcae297b",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/twl4030_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/twl4030_charger.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/0e202d4273fb627f671af379f591bdabbcae297b",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/twl4030_charger.c"
+    }
+  },
+  {
+    "name": "twl4030_madc_battery.c",
+    "path": "drivers/power/supply/twl4030_madc_battery.c",
+    "sha": "4d41acb985761ad976f9de2b2cdc265a50fc9dea",
+    "size": 7583,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/twl4030_madc_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/twl4030_madc_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/4d41acb985761ad976f9de2b2cdc265a50fc9dea",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/twl4030_madc_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/twl4030_madc_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/4d41acb985761ad976f9de2b2cdc265a50fc9dea",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/twl4030_madc_battery.c"
+    }
+  },
+  {
+    "name": "wm831x_backup.c",
+    "path": "drivers/power/supply/wm831x_backup.c",
+    "sha": "2e33109ca8c7b993247fb0f39a115254003dbbf7",
+    "size": 5612,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/wm831x_backup.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/wm831x_backup.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2e33109ca8c7b993247fb0f39a115254003dbbf7",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/wm831x_backup.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/wm831x_backup.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2e33109ca8c7b993247fb0f39a115254003dbbf7",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/wm831x_backup.c"
+    }
+  },
+  {
+    "name": "wm831x_power.c",
+    "path": "drivers/power/supply/wm831x_power.c",
+    "sha": "6922c195730f207a58129053b3a663550d9544ea",
+    "size": 19711,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/wm831x_power.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/wm831x_power.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6922c195730f207a58129053b3a663550d9544ea",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/wm831x_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/wm831x_power.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/6922c195730f207a58129053b3a663550d9544ea",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/wm831x_power.c"
+    }
+  },
+  {
+    "name": "wm8350_power.c",
+    "path": "drivers/power/supply/wm8350_power.c",
+    "sha": "4fa42d4a8a40afb329cecee6e7dbaad12e6c9552",
+    "size": 16795,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/wm8350_power.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/wm8350_power.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/4fa42d4a8a40afb329cecee6e7dbaad12e6c9552",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/wm8350_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/wm8350_power.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/4fa42d4a8a40afb329cecee6e7dbaad12e6c9552",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/wm8350_power.c"
+    }
+  },
+  {
+    "name": "wm97xx_battery.c",
+    "path": "drivers/power/supply/wm97xx_battery.c",
+    "sha": "2c3ac16f638f9c0c9936ff3e51536abbfdf06c49",
+    "size": 6863,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/wm97xx_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/wm97xx_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2c3ac16f638f9c0c9936ff3e51536abbfdf06c49",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/wm97xx_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/wm97xx_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/2c3ac16f638f9c0c9936ff3e51536abbfdf06c49",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/wm97xx_battery.c"
+    }
+  },
+  {
+    "name": "z2_battery.c",
+    "path": "drivers/power/supply/z2_battery.c",
+    "sha": "bcc2d1a9b0a797fa0897d1357a053779143c5adc",
+    "size": 8193,
+    "url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/z2_battery.c?ref=lineage-22.2",
+    "html_url": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/z2_battery.c",
+    "git_url": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/bcc2d1a9b0a797fa0897d1357a053779143c5adc",
+    "download_url": "https://raw.githubusercontent.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/lineage-22.2/drivers/power/supply/z2_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/contents/drivers/power/supply/z2_battery.c?ref=lineage-22.2",
+      "git": "https://api.github.com/repos/oppo-sdm660-devs/android_kernel_oppo_sdm660/git/blobs/bcc2d1a9b0a797fa0897d1357a053779143c5adc",
+      "html": "https://github.com/oppo-sdm660-devs/android_kernel_oppo_sdm660/blob/lineage-22.2/drivers/power/supply/z2_battery.c"
+    }
+  }
+]

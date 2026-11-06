@@ -699,6 +699,18 @@
 		#size-cells = <0x02>;
 		ranges;
 
+		/* pstore ramoops: survives reboots, gives last-crash kernel log
+		   (matches the reference DTB; region is outside all other
+		   reservations). Diagnoses the mystery hard-freezes. */
+		ramoops@b0000000 {
+			compatible = "ramoops";
+			reg = <0x00 0xb0000000 0x00 0x400000>;
+			console-size = <0x200000>;
+			record-size = <0x00>;
+			ftrace-size = <0x00>;
+			pmsg-size = <0x200000>;
+		};
+
 		wlan-msa-guard@85600000 {
 			reg = <0x00 0x85600000 0x00 0x100000>;
 			no-map;

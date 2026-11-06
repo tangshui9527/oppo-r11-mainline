@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Kconfig",
+    "path": "drivers/power/supply/Kconfig",
+    "sha": "ec128bf6a93a9d4377e195b9c941f7a2290d1c67",
+    "size": 43,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/supply/Kconfig?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply/Kconfig",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/ec128bf6a93a9d4377e195b9c941f7a2290d1c67",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply/Kconfig",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/supply/Kconfig?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/ec128bf6a93a9d4377e195b9c941f7a2290d1c67",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply/Kconfig"
+    }
+  },
+  {
+    "name": "Makefile",
+    "path": "drivers/power/supply/Makefile",
+    "sha": "c8f025f309e710ec2d2aad0d186d7507dd1782ef",
+    "size": 15,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/supply/Makefile?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply/Makefile",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c8f025f309e710ec2d2aad0d186d7507dd1782ef",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply/Makefile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/supply/Makefile?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c8f025f309e710ec2d2aad0d186d7507dd1782ef",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply/Makefile"
+    }
+  },
+  {
+    "name": "qcom",
+    "path": "drivers/power/supply/qcom",
+    "sha": "b04e447babf65319f52e3159918b09204828dc87",
+    "size": 0,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/supply/qcom?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply/qcom",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/b04e447babf65319f52e3159918b09204828dc87",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/supply/qcom?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/b04e447babf65319f52e3159918b09204828dc87",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply/qcom"
+    }
+  }
+]

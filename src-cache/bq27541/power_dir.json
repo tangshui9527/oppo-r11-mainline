@@ -1,0 +1,1266 @@
+[
+  {
+    "name": "88pm860x_battery.c",
+    "path": "drivers/power/88pm860x_battery.c",
+    "sha": "63c57dc82ac1d5845c4f256376cac5fdee26ef04",
+    "size": 25951,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/88pm860x_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/88pm860x_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/63c57dc82ac1d5845c4f256376cac5fdee26ef04",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/88pm860x_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/88pm860x_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/63c57dc82ac1d5845c4f256376cac5fdee26ef04",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/88pm860x_battery.c"
+    }
+  },
+  {
+    "name": "88pm860x_charger.c",
+    "path": "drivers/power/88pm860x_charger.c",
+    "sha": "297e72dc70e603aede8caa31d6f8d3cec22e8a61",
+    "size": 19291,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/88pm860x_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/88pm860x_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/297e72dc70e603aede8caa31d6f8d3cec22e8a61",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/88pm860x_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/88pm860x_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/297e72dc70e603aede8caa31d6f8d3cec22e8a61",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/88pm860x_charger.c"
+    }
+  },
+  {
+    "name": "Kconfig",
+    "path": "drivers/power/Kconfig",
+    "sha": "8017e9a05eb22429c14f9d7bff0a7742069ea17e",
+    "size": 15588,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/Kconfig?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/Kconfig",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8017e9a05eb22429c14f9d7bff0a7742069ea17e",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/Kconfig",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/Kconfig?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8017e9a05eb22429c14f9d7bff0a7742069ea17e",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/Kconfig"
+    }
+  },
+  {
+    "name": "Makefile",
+    "path": "drivers/power/Makefile",
+    "sha": "f7adecea0a7087439ad70960b164cb60cfce165b",
+    "size": 3602,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/Makefile?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/Makefile",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f7adecea0a7087439ad70960b164cb60cfce165b",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/Makefile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/Makefile?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f7adecea0a7087439ad70960b164cb60cfce165b",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/Makefile"
+    }
+  },
+  {
+    "name": "ab8500_bmdata.c",
+    "path": "drivers/power/ab8500_bmdata.c",
+    "sha": "d2986453309348ce8a5fa832c694b27406e89456",
+    "size": 16933,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ab8500_bmdata.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_bmdata.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d2986453309348ce8a5fa832c694b27406e89456",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_bmdata.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ab8500_bmdata.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d2986453309348ce8a5fa832c694b27406e89456",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_bmdata.c"
+    }
+  },
+  {
+    "name": "ab8500_btemp.c",
+    "path": "drivers/power/ab8500_btemp.c",
+    "sha": "8f8044e1acf33910dc495d30abde319a82cd8418",
+    "size": 32812,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ab8500_btemp.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_btemp.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8f8044e1acf33910dc495d30abde319a82cd8418",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_btemp.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ab8500_btemp.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8f8044e1acf33910dc495d30abde319a82cd8418",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_btemp.c"
+    }
+  },
+  {
+    "name": "ab8500_charger.c",
+    "path": "drivers/power/ab8500_charger.c",
+    "sha": "e388171f4e587e8931ec44ca32e03b08cd916a0b",
+    "size": 104528,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ab8500_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/e388171f4e587e8931ec44ca32e03b08cd916a0b",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ab8500_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/e388171f4e587e8931ec44ca32e03b08cd916a0b",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_charger.c"
+    }
+  },
+  {
+    "name": "ab8500_fg.c",
+    "path": "drivers/power/ab8500_fg.c",
+    "sha": "3830dade5d69d145a2fe79d0630f891c4f0936d3",
+    "size": 85616,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ab8500_fg.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_fg.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/3830dade5d69d145a2fe79d0630f891c4f0936d3",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_fg.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ab8500_fg.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/3830dade5d69d145a2fe79d0630f891c4f0936d3",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ab8500_fg.c"
+    }
+  },
+  {
+    "name": "abx500_chargalg.c",
+    "path": "drivers/power/abx500_chargalg.c",
+    "sha": "541f702e0451c732b7d00efed27fd53f05b03b79",
+    "size": 62131,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/abx500_chargalg.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/abx500_chargalg.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/541f702e0451c732b7d00efed27fd53f05b03b79",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/abx500_chargalg.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/abx500_chargalg.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/541f702e0451c732b7d00efed27fd53f05b03b79",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/abx500_chargalg.c"
+    }
+  },
+  {
+    "name": "apm_power.c",
+    "path": "drivers/power/apm_power.c",
+    "sha": "9d1a7fbcaed4226d1893ea610299dcff31687f07",
+    "size": 10386,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/apm_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/apm_power.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9d1a7fbcaed4226d1893ea610299dcff31687f07",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/apm_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/apm_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9d1a7fbcaed4226d1893ea610299dcff31687f07",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/apm_power.c"
+    }
+  },
+  {
+    "name": "avs",
+    "path": "drivers/power/avs",
+    "sha": "c700c2e04843a03235c184a03e145961023e692a",
+    "size": 0,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/avs?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/avs",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/c700c2e04843a03235c184a03e145961023e692a",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/avs?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/c700c2e04843a03235c184a03e145961023e692a",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/avs"
+    }
+  },
+  {
+    "name": "axp20x_usb_power.c",
+    "path": "drivers/power/axp20x_usb_power.c",
+    "sha": "421a90b8356764ceb7c06e18005b260dd3123a57",
+    "size": 6612,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/axp20x_usb_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp20x_usb_power.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/421a90b8356764ceb7c06e18005b260dd3123a57",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp20x_usb_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/axp20x_usb_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/421a90b8356764ceb7c06e18005b260dd3123a57",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp20x_usb_power.c"
+    }
+  },
+  {
+    "name": "axp288_charger.c",
+    "path": "drivers/power/axp288_charger.c",
+    "sha": "e4d569f57acc90d1dd02840b5f2f9f4d0e4ba152",
+    "size": 25631,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/axp288_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp288_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/e4d569f57acc90d1dd02840b5f2f9f4d0e4ba152",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp288_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/axp288_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/e4d569f57acc90d1dd02840b5f2f9f4d0e4ba152",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp288_charger.c"
+    }
+  },
+  {
+    "name": "axp288_fuel_gauge.c",
+    "path": "drivers/power/axp288_fuel_gauge.c",
+    "sha": "50c0110d6b58008df681c5bfcac66e89dcac5e46",
+    "size": 31280,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/axp288_fuel_gauge.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp288_fuel_gauge.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/50c0110d6b58008df681c5bfcac66e89dcac5e46",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp288_fuel_gauge.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/axp288_fuel_gauge.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/50c0110d6b58008df681c5bfcac66e89dcac5e46",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/axp288_fuel_gauge.c"
+    }
+  },
+  {
+    "name": "bq2415x_charger.c",
+    "path": "drivers/power/bq2415x_charger.c",
+    "sha": "4afd76848bce5bac52948e62c7c0bdf5aba79fa0",
+    "size": 46875,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq2415x_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq2415x_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/4afd76848bce5bac52948e62c7c0bdf5aba79fa0",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq2415x_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq2415x_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/4afd76848bce5bac52948e62c7c0bdf5aba79fa0",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq2415x_charger.c"
+    }
+  },
+  {
+    "name": "bq24190_charger.c",
+    "path": "drivers/power/bq24190_charger.c",
+    "sha": "f05d2773fe00ccff87a55a177b1d27d71befabbf",
+    "size": 40786,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq24190_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24190_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f05d2773fe00ccff87a55a177b1d27d71befabbf",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24190_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq24190_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f05d2773fe00ccff87a55a177b1d27d71befabbf",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24190_charger.c"
+    }
+  },
+  {
+    "name": "bq24257_charger.c",
+    "path": "drivers/power/bq24257_charger.c",
+    "sha": "6fc31bdc639bc54ac0fbd9008740d19912391330",
+    "size": 30397,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq24257_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24257_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6fc31bdc639bc54ac0fbd9008740d19912391330",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24257_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq24257_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6fc31bdc639bc54ac0fbd9008740d19912391330",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24257_charger.c"
+    }
+  },
+  {
+    "name": "bq24735-charger.c",
+    "path": "drivers/power/bq24735-charger.c",
+    "sha": "eb2b3689de975ac1b670b2a2226b82734b7fc58e",
+    "size": 10063,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq24735-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24735-charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/eb2b3689de975ac1b670b2a2226b82734b7fc58e",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24735-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq24735-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/eb2b3689de975ac1b670b2a2226b82734b7fc58e",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq24735-charger.c"
+    }
+  },
+  {
+    "name": "bq25890_charger.c",
+    "path": "drivers/power/bq25890_charger.c",
+    "sha": "f993a55cde20f34a00d60d46b762e37ecef7af64",
+    "size": 25502,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq25890_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq25890_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f993a55cde20f34a00d60d46b762e37ecef7af64",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq25890_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq25890_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f993a55cde20f34a00d60d46b762e37ecef7af64",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq25890_charger.c"
+    }
+  },
+  {
+    "name": "bq27xxx_battery.c",
+    "path": "drivers/power/bq27xxx_battery.c",
+    "sha": "6c3a447f378b818cb45b321e16f8dfee5986578f",
+    "size": 34601,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq27xxx_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq27xxx_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6c3a447f378b818cb45b321e16f8dfee5986578f",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq27xxx_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/bq27xxx_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6c3a447f378b818cb45b321e16f8dfee5986578f",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/bq27xxx_battery.c"
+    }
+  },
+  {
+    "name": "charger-manager.c",
+    "path": "drivers/power/charger-manager.c",
+    "sha": "1ea5d1aa268b6a16f88ca24e68e861d3ae31d4fb",
+    "size": 55647,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/charger-manager.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/charger-manager.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/1ea5d1aa268b6a16f88ca24e68e861d3ae31d4fb",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/charger-manager.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/charger-manager.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/1ea5d1aa268b6a16f88ca24e68e861d3ae31d4fb",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/charger-manager.c"
+    }
+  },
+  {
+    "name": "collie_battery.c",
+    "path": "drivers/power/collie_battery.c",
+    "sha": "8a971b3dbe583f0dc2640ddfa867f33c3e2c0ef4",
+    "size": 10296,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/collie_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/collie_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8a971b3dbe583f0dc2640ddfa867f33c3e2c0ef4",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/collie_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/collie_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8a971b3dbe583f0dc2640ddfa867f33c3e2c0ef4",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/collie_battery.c"
+    }
+  },
+  {
+    "name": "da9030_battery.c",
+    "path": "drivers/power/da9030_battery.c",
+    "sha": "5ca0f4d90792d0c49be2f7225d6174744d867a82",
+    "size": 16264,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/da9030_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9030_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/5ca0f4d90792d0c49be2f7225d6174744d867a82",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9030_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/da9030_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/5ca0f4d90792d0c49be2f7225d6174744d867a82",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9030_battery.c"
+    }
+  },
+  {
+    "name": "da9052-battery.c",
+    "path": "drivers/power/da9052-battery.c",
+    "sha": "830ec46fe7d02380cd20e62c75c16653f79b3962",
+    "size": 15678,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/da9052-battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9052-battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/830ec46fe7d02380cd20e62c75c16653f79b3962",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9052-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/da9052-battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/830ec46fe7d02380cd20e62c75c16653f79b3962",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9052-battery.c"
+    }
+  },
+  {
+    "name": "da9150-charger.c",
+    "path": "drivers/power/da9150-charger.c",
+    "sha": "60099815296e75d86cfcde6a18d14c428214f987",
+    "size": 17532,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/da9150-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9150-charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/60099815296e75d86cfcde6a18d14c428214f987",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9150-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/da9150-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/60099815296e75d86cfcde6a18d14c428214f987",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9150-charger.c"
+    }
+  },
+  {
+    "name": "da9150-fg.c",
+    "path": "drivers/power/da9150-fg.c",
+    "sha": "8b8ce978656a53fbde3800ab10b59cf3be3a4962",
+    "size": 14646,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/da9150-fg.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9150-fg.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8b8ce978656a53fbde3800ab10b59cf3be3a4962",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9150-fg.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/da9150-fg.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8b8ce978656a53fbde3800ab10b59cf3be3a4962",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/da9150-fg.c"
+    }
+  },
+  {
+    "name": "ds2760_battery.c",
+    "path": "drivers/power/ds2760_battery.c",
+    "sha": "80f73ccb77ab707b56614e44c66d84d60c143b0e",
+    "size": 18447,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ds2760_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2760_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/80f73ccb77ab707b56614e44c66d84d60c143b0e",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2760_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ds2760_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/80f73ccb77ab707b56614e44c66d84d60c143b0e",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2760_battery.c"
+    }
+  },
+  {
+    "name": "ds2780_battery.c",
+    "path": "drivers/power/ds2780_battery.c",
+    "sha": "d3743d0ad55bdcb5af7db6cc41b728b994f1840e",
+    "size": 21271,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ds2780_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2780_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d3743d0ad55bdcb5af7db6cc41b728b994f1840e",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2780_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ds2780_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d3743d0ad55bdcb5af7db6cc41b728b994f1840e",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2780_battery.c"
+    }
+  },
+  {
+    "name": "ds2781_battery.c",
+    "path": "drivers/power/ds2781_battery.c",
+    "sha": "c3680024f3992af41f7a4ff8a5598b628df67c43",
+    "size": 21118,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ds2781_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2781_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c3680024f3992af41f7a4ff8a5598b628df67c43",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2781_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ds2781_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c3680024f3992af41f7a4ff8a5598b628df67c43",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2781_battery.c"
+    }
+  },
+  {
+    "name": "ds2782_battery.c",
+    "path": "drivers/power/ds2782_battery.c",
+    "sha": "ed4d756d21e4bd7f660e7b5d007b68829c6e95bb",
+    "size": 11220,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ds2782_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2782_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/ed4d756d21e4bd7f660e7b5d007b68829c6e95bb",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2782_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ds2782_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/ed4d756d21e4bd7f660e7b5d007b68829c6e95bb",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ds2782_battery.c"
+    }
+  },
+  {
+    "name": "generic-adc-battery.c",
+    "path": "drivers/power/generic-adc-battery.c",
+    "sha": "fedc5818fab7b74b96b5da2f81b77d4a992c6baf",
+    "size": 11204,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/generic-adc-battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/generic-adc-battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/fedc5818fab7b74b96b5da2f81b77d4a992c6baf",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/generic-adc-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/generic-adc-battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/fedc5818fab7b74b96b5da2f81b77d4a992c6baf",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/generic-adc-battery.c"
+    }
+  },
+  {
+    "name": "goldfish_battery.c",
+    "path": "drivers/power/goldfish_battery.c",
+    "sha": "f5c525e4482a18b533ad80c09b1e8a7da8be06a8",
+    "size": 6810,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/goldfish_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/goldfish_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f5c525e4482a18b533ad80c09b1e8a7da8be06a8",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/goldfish_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/goldfish_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f5c525e4482a18b533ad80c09b1e8a7da8be06a8",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/goldfish_battery.c"
+    }
+  },
+  {
+    "name": "gpio-charger.c",
+    "path": "drivers/power/gpio-charger.c",
+    "sha": "c5869b1941acddbe75a1221527238d6641d6daf3",
+    "size": 7521,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/gpio-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/gpio-charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c5869b1941acddbe75a1221527238d6641d6daf3",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/gpio-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/gpio-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c5869b1941acddbe75a1221527238d6641d6daf3",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/gpio-charger.c"
+    }
+  },
+  {
+    "name": "intel_mid_battery.c",
+    "path": "drivers/power/intel_mid_battery.c",
+    "sha": "9fa4acc107caf1a7bc37d47f4630e44e2c98d839",
+    "size": 21816,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/intel_mid_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/intel_mid_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9fa4acc107caf1a7bc37d47f4630e44e2c98d839",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/intel_mid_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/intel_mid_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9fa4acc107caf1a7bc37d47f4630e44e2c98d839",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/intel_mid_battery.c"
+    }
+  },
+  {
+    "name": "ipaq_micro_battery.c",
+    "path": "drivers/power/ipaq_micro_battery.c",
+    "sha": "f03014ea1dc4a4c229d57acacf040002c875ed8b",
+    "size": 8112,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ipaq_micro_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ipaq_micro_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f03014ea1dc4a4c229d57acacf040002c875ed8b",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ipaq_micro_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ipaq_micro_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f03014ea1dc4a4c229d57acacf040002c875ed8b",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ipaq_micro_battery.c"
+    }
+  },
+  {
+    "name": "isp1704_charger.c",
+    "path": "drivers/power/isp1704_charger.c",
+    "sha": "f2a7d970388f179be4450fa90e6c567dc037d413",
+    "size": 14004,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/isp1704_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/isp1704_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f2a7d970388f179be4450fa90e6c567dc037d413",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/isp1704_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/isp1704_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f2a7d970388f179be4450fa90e6c567dc037d413",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/isp1704_charger.c"
+    }
+  },
+  {
+    "name": "jz4740-battery.c",
+    "path": "drivers/power/jz4740-battery.c",
+    "sha": "abdfc21ec13fc17bf99a2ca15e6ad2fc20ea6f0c",
+    "size": 10633,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/jz4740-battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/jz4740-battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/abdfc21ec13fc17bf99a2ca15e6ad2fc20ea6f0c",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/jz4740-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/jz4740-battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/abdfc21ec13fc17bf99a2ca15e6ad2fc20ea6f0c",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/jz4740-battery.c"
+    }
+  },
+  {
+    "name": "lp8727_charger.c",
+    "path": "drivers/power/lp8727_charger.c",
+    "sha": "042fb3dacb461d460817093f61b6b69dc6b62a1d",
+    "size": 14655,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/lp8727_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/lp8727_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/042fb3dacb461d460817093f61b6b69dc6b62a1d",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/lp8727_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/lp8727_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/042fb3dacb461d460817093f61b6b69dc6b62a1d",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/lp8727_charger.c"
+    }
+  },
+  {
+    "name": "lp8788-charger.c",
+    "path": "drivers/power/lp8788-charger.c",
+    "sha": "f5a48fd68b01249beb0854a8877ace9aa2011344",
+    "size": 18748,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/lp8788-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/lp8788-charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f5a48fd68b01249beb0854a8877ace9aa2011344",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/lp8788-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/lp8788-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f5a48fd68b01249beb0854a8877ace9aa2011344",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/lp8788-charger.c"
+    }
+  },
+  {
+    "name": "ltc2941-battery-gauge.c",
+    "path": "drivers/power/ltc2941-battery-gauge.c",
+    "sha": "4adf2ba021ceb2a2f99510d4ed28bfbae51617c4",
+    "size": 13367,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ltc2941-battery-gauge.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ltc2941-battery-gauge.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/4adf2ba021ceb2a2f99510d4ed28bfbae51617c4",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ltc2941-battery-gauge.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/ltc2941-battery-gauge.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/4adf2ba021ceb2a2f99510d4ed28bfbae51617c4",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/ltc2941-battery-gauge.c"
+    }
+  },
+  {
+    "name": "max14577_charger.c",
+    "path": "drivers/power/max14577_charger.c",
+    "sha": "a36bcaf62dd44fad1044f390db7e908b7f95acfd",
+    "size": 16845,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max14577_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max14577_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/a36bcaf62dd44fad1044f390db7e908b7f95acfd",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max14577_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max14577_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/a36bcaf62dd44fad1044f390db7e908b7f95acfd",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max14577_charger.c"
+    }
+  },
+  {
+    "name": "max17040_battery.c",
+    "path": "drivers/power/max17040_battery.c",
+    "sha": "8689c80202b532047252840f3f12872aeebcf92b",
+    "size": 7327,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max17040_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max17040_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8689c80202b532047252840f3f12872aeebcf92b",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max17040_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max17040_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8689c80202b532047252840f3f12872aeebcf92b",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max17040_battery.c"
+    }
+  },
+  {
+    "name": "max17042_battery.c",
+    "path": "drivers/power/max17042_battery.c",
+    "sha": "da7a75f824891200f9db4c9dd4d274c5125d3dd8",
+    "size": 27392,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max17042_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max17042_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/da7a75f824891200f9db4c9dd4d274c5125d3dd8",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max17042_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max17042_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/da7a75f824891200f9db4c9dd4d274c5125d3dd8",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max17042_battery.c"
+    }
+  },
+  {
+    "name": "max77693_charger.c",
+    "path": "drivers/power/max77693_charger.c",
+    "sha": "060cab5ae3aa2de0f91e2d6b376e2daa7b2b1863",
+    "size": 19014,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max77693_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max77693_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/060cab5ae3aa2de0f91e2d6b376e2daa7b2b1863",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max77693_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max77693_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/060cab5ae3aa2de0f91e2d6b376e2daa7b2b1863",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max77693_charger.c"
+    }
+  },
+  {
+    "name": "max8903_charger.c",
+    "path": "drivers/power/max8903_charger.c",
+    "sha": "6d39d52040d4ab982f01066c47239ff295323427",
+    "size": 8713,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max8903_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8903_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6d39d52040d4ab982f01066c47239ff295323427",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8903_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max8903_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6d39d52040d4ab982f01066c47239ff295323427",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8903_charger.c"
+    }
+  },
+  {
+    "name": "max8925_power.c",
+    "path": "drivers/power/max8925_power.c",
+    "sha": "57eb5c2bfc212b5ff643f9cda13d95eb06ece526",
+    "size": 15336,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max8925_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8925_power.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/57eb5c2bfc212b5ff643f9cda13d95eb06ece526",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8925_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max8925_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/57eb5c2bfc212b5ff643f9cda13d95eb06ece526",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8925_power.c"
+    }
+  },
+  {
+    "name": "max8997_charger.c",
+    "path": "drivers/power/max8997_charger.c",
+    "sha": "0b2eab571528eaed9cbe08fb47c90e313049f01c",
+    "size": 5459,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max8997_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8997_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/0b2eab571528eaed9cbe08fb47c90e313049f01c",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8997_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max8997_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/0b2eab571528eaed9cbe08fb47c90e313049f01c",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8997_charger.c"
+    }
+  },
+  {
+    "name": "max8998_charger.c",
+    "path": "drivers/power/max8998_charger.c",
+    "sha": "b64cf0f1414254336e68c5e07906f420258ab6cd",
+    "size": 5564,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max8998_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8998_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b64cf0f1414254336e68c5e07906f420258ab6cd",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8998_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/max8998_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b64cf0f1414254336e68c5e07906f420258ab6cd",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/max8998_charger.c"
+    }
+  },
+  {
+    "name": "olpc_battery.c",
+    "path": "drivers/power/olpc_battery.c",
+    "sha": "9e29b1321648d12bf55cbc6f423be199826bf4d2",
+    "size": 16780,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/olpc_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/olpc_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9e29b1321648d12bf55cbc6f423be199826bf4d2",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/olpc_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/olpc_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9e29b1321648d12bf55cbc6f423be199826bf4d2",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/olpc_battery.c"
+    }
+  },
+  {
+    "name": "pcf50633-charger.c",
+    "path": "drivers/power/pcf50633-charger.c",
+    "sha": "d05597b4e40f5a613271f8bf0021560508e15997",
+    "size": 12776,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pcf50633-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pcf50633-charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d05597b4e40f5a613271f8bf0021560508e15997",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pcf50633-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pcf50633-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d05597b4e40f5a613271f8bf0021560508e15997",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pcf50633-charger.c"
+    }
+  },
+  {
+    "name": "pda_power.c",
+    "path": "drivers/power/pda_power.c",
+    "sha": "922a86787c5c4c69901bf2f48933e29653e29bf1",
+    "size": 12174,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pda_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pda_power.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/922a86787c5c4c69901bf2f48933e29653e29bf1",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pda_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pda_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/922a86787c5c4c69901bf2f48933e29653e29bf1",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pda_power.c"
+    }
+  },
+  {
+    "name": "pm2301_charger.c",
+    "path": "drivers/power/pm2301_charger.c",
+    "sha": "8f9bd1d0eeb62ff18c69cda8878a671d6d0ab180",
+    "size": 30458,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pm2301_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pm2301_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8f9bd1d0eeb62ff18c69cda8878a671d6d0ab180",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pm2301_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pm2301_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8f9bd1d0eeb62ff18c69cda8878a671d6d0ab180",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pm2301_charger.c"
+    }
+  },
+  {
+    "name": "pm2301_charger.h",
+    "path": "drivers/power/pm2301_charger.h",
+    "sha": "24181cf9717bef8c4a30f6d6f732057bb9536215",
+    "size": 14218,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pm2301_charger.h?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pm2301_charger.h",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/24181cf9717bef8c4a30f6d6f732057bb9536215",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pm2301_charger.h",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pm2301_charger.h?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/24181cf9717bef8c4a30f6d6f732057bb9536215",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pm2301_charger.h"
+    }
+  },
+  {
+    "name": "pmu_battery.c",
+    "path": "drivers/power/pmu_battery.c",
+    "sha": "9c8d5253812c64c1a50e757b019ff1d7731b3aea",
+    "size": 5722,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pmu_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pmu_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9c8d5253812c64c1a50e757b019ff1d7731b3aea",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pmu_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/pmu_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9c8d5253812c64c1a50e757b019ff1d7731b3aea",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/pmu_battery.c"
+    }
+  },
+  {
+    "name": "power_supply.h",
+    "path": "drivers/power/power_supply.h",
+    "sha": "cc439fd89d8dda469c52795bcc59074245b1cec8",
+    "size": 1174,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/power_supply.h?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply.h",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/cc439fd89d8dda469c52795bcc59074245b1cec8",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply.h",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/power_supply.h?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/cc439fd89d8dda469c52795bcc59074245b1cec8",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply.h"
+    }
+  },
+  {
+    "name": "power_supply_core.c",
+    "path": "drivers/power/power_supply_core.c",
+    "sha": "b13cd074c52afc90c086bc16cc011b7adb0ac91f",
+    "size": 25841,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/power_supply_core.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_core.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b13cd074c52afc90c086bc16cc011b7adb0ac91f",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_core.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/power_supply_core.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b13cd074c52afc90c086bc16cc011b7adb0ac91f",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_core.c"
+    }
+  },
+  {
+    "name": "power_supply_leds.c",
+    "path": "drivers/power/power_supply_leds.c",
+    "sha": "2277ad9c2f6825da0a96e77e087c4999d0f4f74e",
+    "size": 4866,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/power_supply_leds.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_leds.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/2277ad9c2f6825da0a96e77e087c4999d0f4f74e",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_leds.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/power_supply_leds.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/2277ad9c2f6825da0a96e77e087c4999d0f4f74e",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_leds.c"
+    }
+  },
+  {
+    "name": "power_supply_sysfs.c",
+    "path": "drivers/power/power_supply_sysfs.c",
+    "sha": "1974d6ee032b5190916bd1b6728b069162a5f48f",
+    "size": 13466,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/power_supply_sysfs.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_sysfs.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/1974d6ee032b5190916bd1b6728b069162a5f48f",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_sysfs.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/power_supply_sysfs.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/1974d6ee032b5190916bd1b6728b069162a5f48f",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/power_supply_sysfs.c"
+    }
+  },
+  {
+    "name": "qcom",
+    "path": "drivers/power/qcom",
+    "sha": "346d2a189a4132a05509b3325ea94b9eddfdd8b6",
+    "size": 0,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/qcom?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/qcom",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/346d2a189a4132a05509b3325ea94b9eddfdd8b6",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/qcom?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/346d2a189a4132a05509b3325ea94b9eddfdd8b6",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/qcom"
+    }
+  },
+  {
+    "name": "qcom_smbb.c",
+    "path": "drivers/power/qcom_smbb.c",
+    "sha": "5eb1e9e543e2a3cfbf50570a35c213b5c1a831e8",
+    "size": 23763,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/qcom_smbb.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/qcom_smbb.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/5eb1e9e543e2a3cfbf50570a35c213b5c1a831e8",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/qcom_smbb.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/qcom_smbb.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/5eb1e9e543e2a3cfbf50570a35c213b5c1a831e8",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/qcom_smbb.c"
+    }
+  },
+  {
+    "name": "reset",
+    "path": "drivers/power/reset",
+    "sha": "f0d5fcdf150ffd0d18c8714b3bd9b9fbb411ab51",
+    "size": 0,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/reset?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/reset",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/f0d5fcdf150ffd0d18c8714b3bd9b9fbb411ab51",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/reset?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/f0d5fcdf150ffd0d18c8714b3bd9b9fbb411ab51",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/reset"
+    }
+  },
+  {
+    "name": "rt5033_battery.c",
+    "path": "drivers/power/rt5033_battery.c",
+    "sha": "bcdd8304849291e6f1ddcbcfa0725cc4e05ce47e",
+    "size": 4692,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/rt5033_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rt5033_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/bcdd8304849291e6f1ddcbcfa0725cc4e05ce47e",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rt5033_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/rt5033_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/bcdd8304849291e6f1ddcbcfa0725cc4e05ce47e",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rt5033_battery.c"
+    }
+  },
+  {
+    "name": "rt9455_charger.c",
+    "path": "drivers/power/rt9455_charger.c",
+    "sha": "cfdbde9daf94bd3c88a6e0ffd36a3658c40a2cf1",
+    "size": 49713,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/rt9455_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rt9455_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/cfdbde9daf94bd3c88a6e0ffd36a3658c40a2cf1",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rt9455_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/rt9455_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/cfdbde9daf94bd3c88a6e0ffd36a3658c40a2cf1",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rt9455_charger.c"
+    }
+  },
+  {
+    "name": "rx51_battery.c",
+    "path": "drivers/power/rx51_battery.c",
+    "sha": "af9383d23d122e36b99efb8868f9c84790f17267",
+    "size": 8132,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/rx51_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rx51_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/af9383d23d122e36b99efb8868f9c84790f17267",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rx51_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/rx51_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/af9383d23d122e36b99efb8868f9c84790f17267",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/rx51_battery.c"
+    }
+  },
+  {
+    "name": "s3c_adc_battery.c",
+    "path": "drivers/power/s3c_adc_battery.c",
+    "sha": "0ffe5cd3abf627fc14516384e7718601604571c8",
+    "size": 11623,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/s3c_adc_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/s3c_adc_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/0ffe5cd3abf627fc14516384e7718601604571c8",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/s3c_adc_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/s3c_adc_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/0ffe5cd3abf627fc14516384e7718601604571c8",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/s3c_adc_battery.c"
+    }
+  },
+  {
+    "name": "sbs-battery.c",
+    "path": "drivers/power/sbs-battery.c",
+    "sha": "d6226d68b5746d67cfb8561afa0906684280b76d",
+    "size": 25116,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/sbs-battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/sbs-battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d6226d68b5746d67cfb8561afa0906684280b76d",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/sbs-battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/sbs-battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/d6226d68b5746d67cfb8561afa0906684280b76d",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/sbs-battery.c"
+    }
+  },
+  {
+    "name": "smb347-charger.c",
+    "path": "drivers/power/smb347-charger.c",
+    "sha": "072c5189bd6d10acc40e2fbf22f7cba55b62eb73",
+    "size": 32652,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/smb347-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/smb347-charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/072c5189bd6d10acc40e2fbf22f7cba55b62eb73",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/smb347-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/smb347-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/072c5189bd6d10acc40e2fbf22f7cba55b62eb73",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/smb347-charger.c"
+    }
+  },
+  {
+    "name": "supply",
+    "path": "drivers/power/supply",
+    "sha": "4cb6d9a10abeef2e9e4ee6ee8e81ab6f86c86f75",
+    "size": 0,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/supply?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/4cb6d9a10abeef2e9e4ee6ee8e81ab6f86c86f75",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/supply?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/trees/4cb6d9a10abeef2e9e4ee6ee8e81ab6f86c86f75",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/tree/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/supply"
+    }
+  },
+  {
+    "name": "test_power.c",
+    "path": "drivers/power/test_power.c",
+    "sha": "83c42ea88f2b252b0c77a65cfe1bab12135e9dca",
+    "size": 14510,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/test_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/test_power.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/83c42ea88f2b252b0c77a65cfe1bab12135e9dca",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/test_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/test_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/83c42ea88f2b252b0c77a65cfe1bab12135e9dca",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/test_power.c"
+    }
+  },
+  {
+    "name": "tosa_battery.c",
+    "path": "drivers/power/tosa_battery.c",
+    "sha": "6e88c1b37945537fa6a3b08489f65ea81b10a2a9",
+    "size": 12124,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/tosa_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tosa_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6e88c1b37945537fa6a3b08489f65ea81b10a2a9",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tosa_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/tosa_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6e88c1b37945537fa6a3b08489f65ea81b10a2a9",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tosa_battery.c"
+    }
+  },
+  {
+    "name": "tps65090-charger.c",
+    "path": "drivers/power/tps65090-charger.c",
+    "sha": "1b4b5e09538e15cad0b5921b234929457e1f664a",
+    "size": 9304,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/tps65090-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tps65090-charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/1b4b5e09538e15cad0b5921b234929457e1f664a",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tps65090-charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/tps65090-charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/1b4b5e09538e15cad0b5921b234929457e1f664a",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tps65090-charger.c"
+    }
+  },
+  {
+    "name": "tps65217_charger.c",
+    "path": "drivers/power/tps65217_charger.c",
+    "sha": "040a40b4b173b214fcc89d1760434ed2a2f3f853",
+    "size": 6886,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/tps65217_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tps65217_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/040a40b4b173b214fcc89d1760434ed2a2f3f853",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tps65217_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/tps65217_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/040a40b4b173b214fcc89d1760434ed2a2f3f853",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/tps65217_charger.c"
+    }
+  },
+  {
+    "name": "twl4030_charger.c",
+    "path": "drivers/power/twl4030_charger.c",
+    "sha": "bcd4dc304f270c50739e2b2ddfc2850e1efe3bf0",
+    "size": 29939,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/twl4030_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/twl4030_charger.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/bcd4dc304f270c50739e2b2ddfc2850e1efe3bf0",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/twl4030_charger.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/twl4030_charger.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/bcd4dc304f270c50739e2b2ddfc2850e1efe3bf0",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/twl4030_charger.c"
+    }
+  },
+  {
+    "name": "twl4030_madc_battery.c",
+    "path": "drivers/power/twl4030_madc_battery.c",
+    "sha": "f5817e422d6499aafc097791301092ce7d763751",
+    "size": 7619,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/twl4030_madc_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/twl4030_madc_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f5817e422d6499aafc097791301092ce7d763751",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/twl4030_madc_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/twl4030_madc_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f5817e422d6499aafc097791301092ce7d763751",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/twl4030_madc_battery.c"
+    }
+  },
+  {
+    "name": "wm831x_backup.c",
+    "path": "drivers/power/wm831x_backup.c",
+    "sha": "2e33109ca8c7b993247fb0f39a115254003dbbf7",
+    "size": 5612,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/wm831x_backup.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm831x_backup.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/2e33109ca8c7b993247fb0f39a115254003dbbf7",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm831x_backup.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/wm831x_backup.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/2e33109ca8c7b993247fb0f39a115254003dbbf7",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm831x_backup.c"
+    }
+  },
+  {
+    "name": "wm831x_power.c",
+    "path": "drivers/power/wm831x_power.c",
+    "sha": "7082301da945baab5a708f594368f97ce1ec2513",
+    "size": 17948,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/wm831x_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm831x_power.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/7082301da945baab5a708f594368f97ce1ec2513",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm831x_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/wm831x_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/7082301da945baab5a708f594368f97ce1ec2513",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm831x_power.c"
+    }
+  },
+  {
+    "name": "wm8350_power.c",
+    "path": "drivers/power/wm8350_power.c",
+    "sha": "5c5880664e09b9c0072fdc9d6ccb91ee0525965e",
+    "size": 15260,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/wm8350_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm8350_power.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/5c5880664e09b9c0072fdc9d6ccb91ee0525965e",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm8350_power.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/wm8350_power.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/5c5880664e09b9c0072fdc9d6ccb91ee0525965e",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm8350_power.c"
+    }
+  },
+  {
+    "name": "wm97xx_battery.c",
+    "path": "drivers/power/wm97xx_battery.c",
+    "sha": "c2f09ed35050a15d20148c4439614b8098ee90a7",
+    "size": 7401,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/wm97xx_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm97xx_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c2f09ed35050a15d20148c4439614b8098ee90a7",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm97xx_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/wm97xx_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c2f09ed35050a15d20148c4439614b8098ee90a7",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/wm97xx_battery.c"
+    }
+  },
+  {
+    "name": "z2_battery.c",
+    "path": "drivers/power/z2_battery.c",
+    "sha": "b201e3facf7343abe17439d93ea4eacd234a1e30",
+    "size": 8218,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/z2_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/z2_battery.c",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b201e3facf7343abe17439d93ea4eacd234a1e30",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/z2_battery.c",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/drivers/power/z2_battery.c?ref=KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b201e3facf7343abe17439d93ea4eacd234a1e30",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL/drivers/power/z2_battery.c"
+    }
+  }
+]

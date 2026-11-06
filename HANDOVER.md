@@ -207,3 +207,12 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
      逐一对照，这是唯一尚未对比的协商面。
 * **基础设施均已就绪**：ssh r11（NCM 双通道）、CI 补丁流水线、模块热替换流程、
   磁盘上的 0004/0005 补丁、电量计唤醒已生效。
+
+## 18. 本轮新增修复与验证
+
+* **ramoops 已刷入**（DTB ramoops@b0000000 4MB，注册成功 `pstore: Registered ramoops as persistent store backend`）——下次卡死/崩溃后 /sys/fs/pstore/console-ramoops-1 可读上次内核日志。
+* **蓝牙进展**：hci_uart 链路通（hci0 注册成功）；预配工具 bt-hci-test 已从参考源码
+  （initramfs/bt-hci-test.c）交叉编译部署（src-cache/bt/bt-hci-test.c）。当前卡点：
+  MGMT SET_POWERED status=0x03（控制器未就绪）——下一步查 qca 固件下载/rampatch
+  与 WCN 芯片 BT 电源链路。
+* 音频：r11t-audio.service 存在，验证待做（需播放工具）。

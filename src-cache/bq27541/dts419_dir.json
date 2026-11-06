@@ -1,0 +1,578 @@
+[
+  {
+    "name": "Makefile",
+    "path": "arch/arm64/boot/dts/qcom/Makefile",
+    "sha": "48c84598f20cdcbf46f23023257998b8e37550ad",
+    "size": 482,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/Makefile?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/Makefile",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/48c84598f20cdcbf46f23023257998b8e37550ad",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/Makefile",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/Makefile?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/48c84598f20cdcbf46f23023257998b8e37550ad",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/Makefile"
+    }
+  },
+  {
+    "name": "apq8016-sbc-pmic-pins.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/apq8016-sbc-pmic-pins.dtsi",
+    "sha": "ec2f0de67993d03b9e1b587aad0e8bb37920ebe9",
+    "size": 963,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8016-sbc-pmic-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc-pmic-pins.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/ec2f0de67993d03b9e1b587aad0e8bb37920ebe9",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc-pmic-pins.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8016-sbc-pmic-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/ec2f0de67993d03b9e1b587aad0e8bb37920ebe9",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc-pmic-pins.dtsi"
+    }
+  },
+  {
+    "name": "apq8016-sbc-soc-pins.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/apq8016-sbc-soc-pins.dtsi",
+    "sha": "21d0822f1ca60f99fe1f93597fbddbbf78839a06",
+    "size": 1367,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8016-sbc-soc-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc-soc-pins.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/21d0822f1ca60f99fe1f93597fbddbbf78839a06",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc-soc-pins.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8016-sbc-soc-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/21d0822f1ca60f99fe1f93597fbddbbf78839a06",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc-soc-pins.dtsi"
+    }
+  },
+  {
+    "name": "apq8016-sbc.dts",
+    "path": "arch/arm64/boot/dts/qcom/apq8016-sbc.dts",
+    "sha": "825f489a2af7e61d94b93bb260d4f6a0560f84de",
+    "size": 694,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8016-sbc.dts?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc.dts",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/825f489a2af7e61d94b93bb260d4f6a0560f84de",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc.dts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8016-sbc.dts?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/825f489a2af7e61d94b93bb260d4f6a0560f84de",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc.dts"
+    }
+  },
+  {
+    "name": "apq8016-sbc.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi",
+    "sha": "f38b815e696d8a081bae01d09f7283fc662aefda",
+    "size": 15489,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f38b815e696d8a081bae01d09f7283fc662aefda",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f38b815e696d8a081bae01d09f7283fc662aefda",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8016-sbc.dtsi"
+    }
+  },
+  {
+    "name": "apq8096-db820c-pins.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/apq8096-db820c-pins.dtsi",
+    "sha": "6a573875d45ace01ddf3f916234cd5487870230b",
+    "size": 1424,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8096-db820c-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c-pins.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6a573875d45ace01ddf3f916234cd5487870230b",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c-pins.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8096-db820c-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6a573875d45ace01ddf3f916234cd5487870230b",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c-pins.dtsi"
+    }
+  },
+  {
+    "name": "apq8096-db820c-pmic-pins.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/apq8096-db820c-pmic-pins.dtsi",
+    "sha": "a6ad3d7fe655bb3dbd976b1e7ddcc2541535b597",
+    "size": 1700,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8096-db820c-pmic-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c-pmic-pins.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/a6ad3d7fe655bb3dbd976b1e7ddcc2541535b597",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c-pmic-pins.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8096-db820c-pmic-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/a6ad3d7fe655bb3dbd976b1e7ddcc2541535b597",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c-pmic-pins.dtsi"
+    }
+  },
+  {
+    "name": "apq8096-db820c.dts",
+    "path": "arch/arm64/boot/dts/qcom/apq8096-db820c.dts",
+    "sha": "230e9c8484ac1f2a4ed4967ff4ed44357c9a90ac",
+    "size": 692,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8096-db820c.dts?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c.dts",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/230e9c8484ac1f2a4ed4967ff4ed44357c9a90ac",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c.dts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8096-db820c.dts?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/230e9c8484ac1f2a4ed4967ff4ed44357c9a90ac",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c.dts"
+    }
+  },
+  {
+    "name": "apq8096-db820c.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi",
+    "sha": "9b41d77aa39b58c725169b7d69b4ce530dbe36fe",
+    "size": 16494,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9b41d77aa39b58c725169b7d69b4ce530dbe36fe",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9b41d77aa39b58c725169b7d69b4ce530dbe36fe",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi"
+    }
+  },
+  {
+    "name": "ipq8074-hk01.dts",
+    "path": "arch/arm64/boot/dts/qcom/ipq8074-hk01.dts",
+    "sha": "c13ddee8262b97905e118cd6ab783feea048d1b1",
+    "size": 1711,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/ipq8074-hk01.dts?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/ipq8074-hk01.dts",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c13ddee8262b97905e118cd6ab783feea048d1b1",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/ipq8074-hk01.dts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/ipq8074-hk01.dts?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c13ddee8262b97905e118cd6ab783feea048d1b1",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/ipq8074-hk01.dts"
+    }
+  },
+  {
+    "name": "ipq8074.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/ipq8074.dtsi",
+    "sha": "18226980f7c32fde64577a8e09074b664e5f805b",
+    "size": 12898,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/ipq8074.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/ipq8074.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/18226980f7c32fde64577a8e09074b664e5f805b",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/ipq8074.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/ipq8074.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/18226980f7c32fde64577a8e09074b664e5f805b",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/ipq8074.dtsi"
+    }
+  },
+  {
+    "name": "msm8916-mtp.dts",
+    "path": "arch/arm64/boot/dts/qcom/msm8916-mtp.dts",
+    "sha": "b0a064d3806b318d4ffa5a2b962876f971e87532",
+    "size": 724,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8916-mtp.dts?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-mtp.dts",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b0a064d3806b318d4ffa5a2b962876f971e87532",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-mtp.dts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8916-mtp.dts?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b0a064d3806b318d4ffa5a2b962876f971e87532",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-mtp.dts"
+    }
+  },
+  {
+    "name": "msm8916-mtp.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8916-mtp.dtsi",
+    "sha": "ceeb8a6feed656cc8e02f704e236d85b1a03b1b0",
+    "size": 867,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8916-mtp.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-mtp.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/ceeb8a6feed656cc8e02f704e236d85b1a03b1b0",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-mtp.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8916-mtp.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/ceeb8a6feed656cc8e02f704e236d85b1a03b1b0",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-mtp.dtsi"
+    }
+  },
+  {
+    "name": "msm8916-pins.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8916-pins.dtsi",
+    "sha": "6754817658fa4f383779732ac4d6cdec7d1db5d6",
+    "size": 12206,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8916-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-pins.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6754817658fa4f383779732ac4d6cdec7d1db5d6",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-pins.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8916-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6754817658fa4f383779732ac4d6cdec7d1db5d6",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916-pins.dtsi"
+    }
+  },
+  {
+    "name": "msm8916.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8916.dtsi",
+    "sha": "2c5193ae2027779dd1b7105ba1e3f265af85a8c9",
+    "size": 34545,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8916.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/2c5193ae2027779dd1b7105ba1e3f265af85a8c9",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8916.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/2c5193ae2027779dd1b7105ba1e3f265af85a8c9",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8916.dtsi"
+    }
+  },
+  {
+    "name": "msm8992-bullhead-rev-101.dts",
+    "path": "arch/arm64/boot/dts/qcom/msm8992-bullhead-rev-101.dts",
+    "sha": "8c69516f97ed01dbb9ef438c629c43a4e7436628",
+    "size": 1401,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8992-bullhead-rev-101.dts?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992-bullhead-rev-101.dts",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8c69516f97ed01dbb9ef438c629c43a4e7436628",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992-bullhead-rev-101.dts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8992-bullhead-rev-101.dts?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/8c69516f97ed01dbb9ef438c629c43a4e7436628",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992-bullhead-rev-101.dts"
+    }
+  },
+  {
+    "name": "msm8992-pins.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8992-pins.dtsi",
+    "sha": "31bc9d98e31f67e8847e817808eb26627bf5c5f9",
+    "size": 2018,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8992-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992-pins.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/31bc9d98e31f67e8847e817808eb26627bf5c5f9",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992-pins.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8992-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/31bc9d98e31f67e8847e817808eb26627bf5c5f9",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992-pins.dtsi"
+    }
+  },
+  {
+    "name": "msm8992.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8992.dtsi",
+    "sha": "cf5cacdd624d8e05fa548ea2752cd5bc34ed7d5d",
+    "size": 7381,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8992.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/cf5cacdd624d8e05fa548ea2752cd5bc34ed7d5d",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8992.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/cf5cacdd624d8e05fa548ea2752cd5bc34ed7d5d",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8992.dtsi"
+    }
+  },
+  {
+    "name": "msm8994-angler-rev-101.dts",
+    "path": "arch/arm64/boot/dts/qcom/msm8994-angler-rev-101.dts",
+    "sha": "dfa08f513dc46e911e4e377ed0034125e71aee01",
+    "size": 1050,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8994-angler-rev-101.dts?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-angler-rev-101.dts",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/dfa08f513dc46e911e4e377ed0034125e71aee01",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-angler-rev-101.dts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8994-angler-rev-101.dts?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/dfa08f513dc46e911e4e377ed0034125e71aee01",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-angler-rev-101.dts"
+    }
+  },
+  {
+    "name": "msm8994-pins.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8994-pins.dtsi",
+    "sha": "0e4eea0df25dc5a1ed999e3f764e70e7c205fe28",
+    "size": 959,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8994-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-pins.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/0e4eea0df25dc5a1ed999e3f764e70e7c205fe28",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-pins.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8994-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/0e4eea0df25dc5a1ed999e3f764e70e7c205fe28",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-pins.dtsi"
+    }
+  },
+  {
+    "name": "msm8994-smd-rpm.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8994-smd-rpm.dtsi",
+    "sha": "47ebd16cb6801f942389a01e945ab02f6c16a161",
+    "size": 6527,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8994-smd-rpm.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-smd-rpm.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/47ebd16cb6801f942389a01e945ab02f6c16a161",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-smd-rpm.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8994-smd-rpm.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/47ebd16cb6801f942389a01e945ab02f6c16a161",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994-smd-rpm.dtsi"
+    }
+  },
+  {
+    "name": "msm8994.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8994.dtsi",
+    "sha": "f33c41d01c8604260b643fac7c4e076d34291bf3",
+    "size": 4804,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8994.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f33c41d01c8604260b643fac7c4e076d34291bf3",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8994.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/f33c41d01c8604260b643fac7c4e076d34291bf3",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8994.dtsi"
+    }
+  },
+  {
+    "name": "msm8996-mtp.dts",
+    "path": "arch/arm64/boot/dts/qcom/msm8996-mtp.dts",
+    "sha": "619af44a595da7ae649c238da25927b1bcd373bc",
+    "size": 671,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8996-mtp.dts?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-mtp.dts",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/619af44a595da7ae649c238da25927b1bcd373bc",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-mtp.dts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8996-mtp.dts?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/619af44a595da7ae649c238da25927b1bcd373bc",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-mtp.dts"
+    }
+  },
+  {
+    "name": "msm8996-mtp.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8996-mtp.dtsi",
+    "sha": "9bab5c011c070be801646fb880b197fda615336b",
+    "size": 708,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8996-mtp.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-mtp.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9bab5c011c070be801646fb880b197fda615336b",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-mtp.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8996-mtp.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/9bab5c011c070be801646fb880b197fda615336b",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-mtp.dtsi"
+    }
+  },
+  {
+    "name": "msm8996-pins.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8996-pins.dtsi",
+    "sha": "c5c42e94f38785f33513c9ca3cf98692ecaece89",
+    "size": 8492,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8996-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-pins.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c5c42e94f38785f33513c9ca3cf98692ecaece89",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-pins.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8996-pins.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/c5c42e94f38785f33513c9ca3cf98692ecaece89",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996-pins.dtsi"
+    }
+  },
+  {
+    "name": "msm8996.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/msm8996.dtsi",
+    "sha": "3e7baabf64507c5ec9985ee8fb31c7181b9c1e9e",
+    "size": 28554,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8996.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/3e7baabf64507c5ec9985ee8fb31c7181b9c1e9e",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/msm8996.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/3e7baabf64507c5ec9985ee8fb31c7181b9c1e9e",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/msm8996.dtsi"
+    }
+  },
+  {
+    "name": "pm7250b.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/pm7250b.dtsi",
+    "sha": "50463363228f68febe77bdd69b3560986de97d11",
+    "size": 7662,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm7250b.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm7250b.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/50463363228f68febe77bdd69b3560986de97d11",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm7250b.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm7250b.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/50463363228f68febe77bdd69b3560986de97d11",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm7250b.dtsi"
+    }
+  },
+  {
+    "name": "pm8004.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/pm8004.dtsi",
+    "sha": "297b57bfa87a3b8bb6ec44a295b9016b96b06276",
+    "size": 403,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8004.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8004.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/297b57bfa87a3b8bb6ec44a295b9016b96b06276",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8004.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8004.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/297b57bfa87a3b8bb6ec44a295b9016b96b06276",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8004.dtsi"
+    }
+  },
+  {
+    "name": "pm8005.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/pm8005.dtsi",
+    "sha": "4d5aca3eeb69d13ae0bce0f8309b547ea0f6ab15",
+    "size": 771,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8005.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8005.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/4d5aca3eeb69d13ae0bce0f8309b547ea0f6ab15",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8005.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8005.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/4d5aca3eeb69d13ae0bce0f8309b547ea0f6ab15",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8005.dtsi"
+    }
+  },
+  {
+    "name": "pm8916.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/pm8916.dtsi",
+    "sha": "b968afa8da175aad43b73a503e4a74fbb0b8d9f1",
+    "size": 3529,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8916.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8916.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b968afa8da175aad43b73a503e4a74fbb0b8d9f1",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8916.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8916.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/b968afa8da175aad43b73a503e4a74fbb0b8d9f1",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8916.dtsi"
+    }
+  },
+  {
+    "name": "pm8994.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/pm8994.dtsi",
+    "sha": "80024c0b1c7c26f7109cf0cd3750847ef961a08d",
+    "size": 1895,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8994.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8994.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/80024c0b1c7c26f7109cf0cd3750847ef961a08d",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8994.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8994.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/80024c0b1c7c26f7109cf0cd3750847ef961a08d",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8994.dtsi"
+    }
+  },
+  {
+    "name": "pm8998.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/pm8998.dtsi",
+    "sha": "92bed1e7d4bbfa5c8caf1e1e6acd938943a1ae38",
+    "size": 1541,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8998.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8998.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/92bed1e7d4bbfa5c8caf1e1e6acd938943a1ae38",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8998.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pm8998.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/92bed1e7d4bbfa5c8caf1e1e6acd938943a1ae38",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pm8998.dtsi"
+    }
+  },
+  {
+    "name": "pmi8994.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/pmi8994.dtsi",
+    "sha": "dae1cdc23f5433ba4bb3f7d14a937e491e491a61",
+    "size": 914,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pmi8994.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pmi8994.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/dae1cdc23f5433ba4bb3f7d14a937e491e491a61",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pmi8994.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/pmi8994.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/dae1cdc23f5433ba4bb3f7d14a937e491e491a61",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/pmi8994.dtsi"
+    }
+  },
+  {
+    "name": "sdm845-mtp.dts",
+    "path": "arch/arm64/boot/dts/qcom/sdm845-mtp.dts",
+    "sha": "6921f8dc5ebbcf057e46044ac03a2715b48cce36",
+    "size": 889,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/sdm845-mtp.dts?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/sdm845-mtp.dts",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6921f8dc5ebbcf057e46044ac03a2715b48cce36",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/sdm845-mtp.dts",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/sdm845-mtp.dts?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/6921f8dc5ebbcf057e46044ac03a2715b48cce36",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/sdm845-mtp.dts"
+    }
+  },
+  {
+    "name": "sdm845.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/sdm845.dtsi",
+    "sha": "0c9a2aa6a1b5235fa5307784045d6e14ac036435",
+    "size": 25564,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/sdm845.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/sdm845.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/0c9a2aa6a1b5235fa5307784045d6e14ac036435",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/sdm845.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/sdm845.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/0c9a2aa6a1b5235fa5307784045d6e14ac036435",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/sdm845.dtsi"
+    }
+  },
+  {
+    "name": "skeleton64.dtsi",
+    "path": "arch/arm64/boot/dts/qcom/skeleton64.dtsi",
+    "sha": "bd349aeb056622cf5bdb44a3e2f96b6387c022dc",
+    "size": 386,
+    "url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/skeleton64.dtsi?ref=android-msm-sdm660-4.19-android11",
+    "html_url": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/skeleton64.dtsi",
+    "git_url": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/bd349aeb056622cf5bdb44a3e2f96b6387c022dc",
+    "download_url": "https://raw.githubusercontent.com/YuxuanZuo/android_kernel_oppo_sdm660/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/skeleton64.dtsi",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/contents/arch/arm64/boot/dts/qcom/skeleton64.dtsi?ref=android-msm-sdm660-4.19-android11",
+      "git": "https://api.github.com/repos/YuxuanZuo/android_kernel_oppo_sdm660/git/blobs/bd349aeb056622cf5bdb44a3e2f96b6387c022dc",
+      "html": "https://github.com/YuxuanZuo/android_kernel_oppo_sdm660/blob/android-msm-sdm660-4.19-android11/arch/arm64/boot/dts/qcom/skeleton64.dtsi"
+    }
+  }
+]
