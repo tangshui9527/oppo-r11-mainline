@@ -128,3 +128,10 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 * 助手任务已分派（交付物：assistant-reports/icnss-vs-ath10k-qmi.md 与 bq27541-frozen-gauge.md）：
   A) stock ICNSS vs 主线 ath10k_qmi 关联态差异分析（看门狗主攻线）
   B) BQ27541 冻结诊断与修复（电池读数线）
+
+## 12. NCM 双通道部署（待手机插回数据口验证）
+
+* 手机侧：`/usr/lib/r11t/setup-usb-acm` 已替换为 ACM+NCM 双功能版（gadget `r11t`，手机侧 IP `172.16.42.1/24`），开机自动生效。**教训：NCM 不能在运行中动态加（UDC 重绑定会杀死唯一调试通道），必须开机组合。**
+* 笔记本侧：udev 规则 `/etc/udev/rules.d/99-r11t-ncm.rules` + `/usr/local/bin/r11t-ncm-up.sh`——检测到 cdc_ncm 接口自动配 `172.16.42.2/24`。手机插上后 `ssh root@172.16.42.1` 直达。
+* MAC 线索：persist/bluetooth/.bt_nv.bin = `01 00 06 22 93 00 01 21 60`（候选 BT MAC `22:93:00:01:21:60`，本地管理地址；WLAN 原厂 MAC 仍以路由器 .11 绑定记录为准）。
+* 重启震动：PMIC/PON 引导层行为，主线不可控，放弃。
