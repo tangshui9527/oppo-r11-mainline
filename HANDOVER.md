@@ -109,12 +109,20 @@ wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant-wlan0.conf -B
 * 电池计 `bq27541-0` 读数失真（voltage_now=2.48V 不可能、capacity=2774 异常），DTS 侧待修
 * 显示/图形未回归验证
 
-## 5. Linux 内重启进 fastboot（搁置中的调查）
+## 5. Linux 内重启进 fastboot（✅ 已彻底解决）
 
-* ❌ BCB 写 `misc`（`/dev/mmcblk1p53`）两种命令 `bootonce-bootloader` / `reboot-bootloader` 均被 OPPO ABL 忽略（写入与回读均验证成功，手机直接回 Arch）
-* 内核 `qcom,pshold` 驱动（`msm-poweroff.c`）**不处理**重启原因，纯硬复位
-* **待试线索**：原厂 DTS 有 `qcom,msm-imem-restart_reason`，IMEM 基址 `0x146bf000` + 偏移 `0x65c` = 物理地址 **`0x146BF65C`**——仿照下游 Android 在重启前往该地址写 reason 值（具体 magic 值需查下游 `restart.c`，如 YuxuanZuo/android_kernel_oppo_sdm660，分支 `KERNEL.LA.UM.7.2.r1-06900-sdm660.0-REL`），需确认 `/dev/mem` 可写性（CONFIG_STRICT_DEVMEM）
-* 现阶段：手动按键进 fastboot，`fastboot flash boot /tmp/boot-r11t-nomsa.img`（宿主机 `/tmp` 与工作区各有一份）
+* **原理实证**：高通 SDM660 ABL 启动时直接读取物理寄存器 IMEM 地址 **`0x146BF65C`**（IMEM 物理基址 `0x146BF000` + 偏移 `0x65C`）。
+* **高通 Magic 重启码**：
+  * `0x77665500`：进入 `bootloader` / `fastboot`
+  * `0x77665502`：进入 `recovery`
+  * `0x776655ee`：进入 `edl`（高通 9008 深度救砖模式）
+  * `0x77665501`：正常开机启动
+* **原生工具构建**：源码位于 `tools/qcom-reboot.c`，已在设备安装 `/usr/local/bin/qcom-reboot`（67KB 动态链接无依赖 ELF）。
+* **便捷软链接**：设备已创建全局命令：
+  * `reboot-fastboot` / `reboot-bootloader`：立即重启进 fastboot 模式（经真机验证，瞬间响应 `18d1:d00d`，`fastboot getvar product` 耗时 0.001s）
+  * `reboot-recovery`：重启进 recovery 模式
+  * `reboot-edl`：直接拉入 9008 EDL 刷机模式
+* **长期集成方案**：在 DTS `sram@146bf000` 节点下增加 `syscon-reboot-mode` 子节点（驱动 `drivers/power/reset/syscon-reboot-mode.c`），即可让内核原生的 `systemctl reboot bootloader` 自动写值生效。
 
 ## 6. 关键参考
 
