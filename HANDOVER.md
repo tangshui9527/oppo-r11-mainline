@@ -120,3 +120,11 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 * **修复**：DTB 中 charger@1000 → `status="disabled"`（带注释），重打包刷入 `/tmp/boot-r11t-chgfix.img`。验证：`qcom_smbx` 加载后 `/sys/class/power_supply/` 只剩 `bq27541-0`，pm660-charger 不再出现。
 * **BQ27541 电量计芯片本体卡死**：读数 40 秒三次采样零变化（2.688V/-693mA/Full 恒定），且跨重启保持——芯片未做转换。stock recovery 内核下读数正常（用户实测 100%→拔线 72%），说明芯片硬件 OK、需要正确初始化或从 stock 侧复位。明日任务：i2cdump 0x55 原始寄存器诊断 + 对照 stock 驱动初始化序列。
 * **用户证据**：stock recovery 内电量 100%，拔线后 72%——电池健康、充电硬件正常、范围 72~100%。
+
+## 11. recovery 更换 + 助手任务分派
+
+* 新 recovery（参考发行版 installer-r11t-ecm-all-write.img，ACM+ECM+RNDIS）已刷入 recovery 分区并确认 OKAY；原 TWRP 3.7.0 已备份至手机 `/root/rec-twrp.img`（64MB）。进入方式：开机组合键（`fastboot reboot recovery` 与 IMEM recovery cookie 均被 ABL 忽略，实测无效）。
+* TWRP 内核实测读数正常：Battery 100%+、CPU 39°C——再次证实电池满电健康、电量计硬件无恙、仅主线驱动配置有问题。
+* 助手任务已分派（交付物：assistant-reports/icnss-vs-ath10k-qmi.md 与 bq27541-frozen-gauge.md）：
+  A) stock ICNSS vs 主线 ath10k_qmi 关联态差异分析（看门狗主攻线）
+  B) BQ27541 冻结诊断与修复（电池读数线）
