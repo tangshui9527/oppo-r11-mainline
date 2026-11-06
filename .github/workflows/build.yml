@@ -105,7 +105,7 @@ jobs:
             --pagesize 4096 \
             --os_version 9.0.0 \
             --os_patch_level 2019-09 \
-            --cmdline 'console=tty0 console=ttyMSM0,115200n8 earlycon=msm_serial_dm,0xc170000 rootwait rw' \
+            --cmdline 'console=tty0 console=ttyMSM0,115200n8 earlycon=msm_serial_dm,0xc170000 loglevel=7 panic=10 consoleblank=120 rootwait rw rdinit=/init' \
             -o r11-cph1707-boot.img
           ls -lh r11-cph1707-boot.img
 
