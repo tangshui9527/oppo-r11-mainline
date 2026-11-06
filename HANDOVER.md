@@ -164,3 +164,25 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
   2. rootfs 从 Mac 构建遗留 uid 501 属主 → ssh 拒绝运行（"Bad owner or permissions"）。已修 `/usr/lib/systemd/ssh{,_config}.d/*.conf` 属主（注意 `chown -R` 不跟符号链接，真身在 /usr/lib/systemd 下）。
   3. NetworkManager 会冲掉手动配的 NCM IP → 已建 NM 持久连接 `r11t-ncm`（enp0s20f0u5i2 静态 172.16.42.2/24）。
 * TCP 数据面全程验证可用（curl 532KB 往返成功）。今后调试一律 `ssh r11`。
+
+## 16. 夜间战报（patches 0004/0005 已构建部署，验证被卡死打断）
+
+* **patches/0004**（rejuvenate 协商）+ **patches/0005**（bq27541 唤醒）已按助手报告实现，
+  CI 构建通过（BUILD-OK），模块经 NCM scp 推送（MD5 校验一致）并安装到手机
+  `/lib/modules/...`（旧模块备份 .bak）。srcversion 对比确认新模块已加载。
+* **0003 bank-29 补丁已删除**——上游 legacy-full-stack 已原生包含，保留会 patch 冲突。
+* **rejuvenate 协商日志未出现**：加载的新模块含补丁字符串（strings 验证 2 处），
+  但 dmesg 无 "dynamic feature mask" 行。待办：干净重启后第一时间观察
+  `dmesg | grep -iE "dynamic feature|rejuvenat"`——若出现成功行（prev/curr mask）
+  → 协商生效，看关联存活；若出现 "fw rejuvenation requested: cause ..." → 固件错误
+  路径触发但自恢复已接管（重大进展，cause 字段直接给出固件侧错误点）；若无任何
+  行 → 检查 ath10k_dbg 是否被 debug_mask 覆盖（modprobe.d 是 0x200001，够用）。
+* **bq27541 已见效**：安装 0005 后读数从冻结的 2657000 变为 2656000（CLR_HIB 生效，
+  转换恢复）。
+* **意外事件**：手机两次"卡死"（用户侧观察 + 本轮重启后 SSH 拒绝、串口僵死），
+  需物理强制重启。卡死原因未知（可能与 MSS 崩溃循环叠加有关），下次会话优先排查。
+* **明日剧本**（手机强制重启后）：
+  1. `ssh r11 'dmesg | grep -iE "dynamic feature|rejuvenat"'` → 按 §16 第 3 点解读
+  2. `/usr/local/bin/wifi-connect` → 关联 → `ping 192.168.31.1` → 存活 >60s 判定
+  3. `watch -n1 cat /sys/class/power_supply/bq27541-0/voltage_now` → 读数应实时变化
+  4. 若 rejuvenate 日志给出 cause → 转报告 A §四.修复 3（SSR 衔接）
