@@ -228,3 +228,16 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
   （模块重载后 0/1/2 顺序变化，用 name 字段区分，勿写死编号）。
 * MSS 恢复流程要点：crashed 状态直接 echo start 会 -EINVAL；先 rmmod
   qcom_q6v5_mss → modprobe（编号漂移！）→ 按 name 找 4080000 → echo start。
+
+## 20. 任务书 C 实验回收（夜间第三轮）
+
+* **C1（wlan_cfg 对照）**：干净的阴性结果——stock 与主线的 QMI_WLFW_WLAN_CFG
+  载荷逐字段一致（CE 表 12 条、svc 映射、shadow reg 全同）。协商面正式排除。
+* **C2（VBATT 探针）**：已实施（patches/0006，ath10k_snoc.vbatt_probe=1，每 5s 发
+  3.7V）。实测：固件正常接受 VBATT 消息但崩溃照旧（23→31 波动）——**电压变量排除**。
+* **C3（SSR 快速路径）**：第 1 层（msa-fixed-perm DT）已刷入；第 2/3 层补丁
+  （SSR 保留 BDF + watchdog 兜底）见 c3-ssr-fastpath-patch.md，待实施。
+* **剩余唯一未探区**：ath10k ce.c 运行层（中断/轮询/CE 策略）与 stock HIF 的差异。
+  任务书 D 候选。当前 ath10k 的 SSR 循环让系统保持"半可用"（扫描间歇成功，
+  MSS running），但 wlan_process 每 ~20s 死亡使稳定 Wi-Fi 仍不可用。
+* 模块状态：/lib/modules 中已是 0006 版（含 rejuvenate+vbatt），重启后自动加载。
