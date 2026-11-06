@@ -1,0 +1,39 @@
+--- a/drivers/power/supply/bq27xxx_battery.c
++++ b/drivers/power/supply/bq27xxx_battery.c
+@@ -1001,6 +1001,9 @@
+ #define BQ27XXX_O_ZERO		BIT(0)
+ #define BQ27XXX_O_OTDC		BIT(1) /* has OTC/OTD overtemperature flags */
+ #define BQ27XXX_O_UTOT		BIT(2) /* has OT overtemperature flag */
++/* Local: bq27541 family enters HIBERNATE which stops the conversion
++ * engine; a Control(CLR_HIB) write is needed to wake it again. */
++#define BQ27XXX_O_HIB		BIT(5)
+ #define BQ27XXX_O_CFGUP		BIT(3)
+ #define BQ27XXX_O_RAM		BIT(4)
+ #define BQ27Z561_O_BITS		BIT(5)
+@@ -1040,7 +1043,7 @@
+ 	[BQ27521]   = BQ27XXX_DATA(bq27521,   0         , 0),
+ 	[BQ27530]   = BQ27XXX_DATA(bq27530,   0         , BQ27XXX_O_UTOT),
+ 	[BQ27531]   = BQ27XXX_DATA(bq27531,   0         , BQ27XXX_O_UTOT),
+-	[BQ27541]   = BQ27XXX_DATA(bq27541,   0         , BQ27XXX_O_OTDC),
++	[BQ27541]   = BQ27XXX_DATA(bq27541,   0         , BQ27XXX_O_OTDC | BQ27XXX_O_HIB),
+ 	[BQ27542]   = BQ27XXX_DATA(bq27542,   0         , BQ27XXX_O_OTDC),
+ 	[BQ27546]   = BQ27XXX_DATA(bq27546,   0         , BQ27XXX_O_OTDC),
+ 	[BQ27742]   = BQ27XXX_DATA(bq27742,   0         , BQ27XXX_O_OTDC),
+@@ -1917,6 +1920,17 @@
+ 	union power_supply_propval status = di->last_status;
+ 	struct bq27xxx_reg_cache cache = {0, };
+ 	bool has_singe_flag = di->opts & BQ27XXX_O_ZERO;
++
++	/*
++	 * bq27541-family gauges auto-enter HIBERNATE after prolonged low
++	 * current; in HIBERNATE the conversion engine stops and every
++	 * register returns the same frozen snapshot. Reading does not wake
++	 * the gauge, only a Control() subcommand does - send CLR_HIBERNATE
++	 * (0x0012) before each refresh (bq27541.h of the stock Oppo driver
++	 * uses the same approach).
++	 */
++	if (di->opts & BQ27XXX_O_HIB)
++		bq27xxx_write(di, BQ27XXX_REG_CTRL, 0x0012, false);
+ 
+ 	cache.flags = bq27xxx_read(di, BQ27XXX_REG_FLAGS, has_singe_flag);
+ 	if (di->chip == BQ27000 && (cache.flags & 0xff) == 0xff)

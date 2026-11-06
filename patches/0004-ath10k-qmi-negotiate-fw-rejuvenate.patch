@@ -1,0 +1,166 @@
+From: OPPO R11 mainline bringup <r11t@local>
+Subject: [PATCH] ath10k: qmi: negotiate FW rejuvenation like stock ICNSS
+
+Stock ICNSS enables the FW_REJUVENATE feature (IND_REGISTER +
+DYNAMIC_FEATURE_MASK) and acknowledges REJUVENATE_IND so that the
+WCN3990 firmware self-restarts on internal errors. Mainline ath10k_qmi
+never negotiates it; on SDM660 the wlan_process then takes an
+unrecoverable fatal path ~20s after WLAN enable (MSS watchdog), killing
+the radio. Port the negotiation trio from icnss.c so the firmware can
+self-heal and we get cause diagnostics in dmesg.
+--- a/drivers/net/wireless/ath/ath10k/qmi.h
++++ b/drivers/net/wireless/ath/ath10k/qmi.h
+@@ -108,6 +108,7 @@
+ 	struct ath10k_qmi_cal_data cal_data[MAX_NUM_CAL_V01];
+ 	bool msa_fixed_perm;
+ 	bool no_msa_ready_indicator;
++	bool rejuvenate_pending;	/* REJUVENATE_IND seen, ACK pending */
+ 	enum ath10k_qmi_state state;
+ };
+ 
+
+--- a/drivers/net/wireless/ath/ath10k/qmi.c
++++ b/drivers/net/wireless/ath/ath10k/qmi.c
+@@ -817,6 +817,13 @@
+ 	req.fw_ready_enable = 1;
+ 	req.msa_ready_enable_valid = 1;
+ 	req.msa_ready_enable = 1;
++	/* Stock ICNSS negotiates these (icnss.c:1375-1387); without the
++	 * rejuvenate handshake the FW takes an unrecoverable fatal path on
++	 * internal errors instead of self-restarting. */
++	req.rejuvenate_enable_valid = 1;
++	req.rejuvenate_enable = 1;
++	req.pin_connect_result_enable_valid = 1;
++	req.pin_connect_result_enable = 1;
+ 
+ 	if (ar_snoc->xo_cal_supported) {
+ 		req.xo_cal_enable_valid = 1;
+@@ -857,6 +864,41 @@
+ 
+ out:
+ 	return ret;
++}
++
++/* Stock ICNSS enables FW_REJUVENATE via DYNAMIC_FEATURE_MASK right after
++ * capabilities are exchanged (icnss.c:1928-1985, 2171). */
++static int ath10k_qmi_dynamic_feature_mask_send_sync(struct ath10k_qmi *qmi)
++{
++	struct wlfw_dynamic_feature_mask_req_msg_v01 req = {};
++	struct wlfw_dynamic_feature_mask_resp_msg_v01 resp = {};
++	struct qmi_txn txn;
++	int ret;
++
++	req.mask_valid = 1;
++	req.mask = QMI_WLFW_FW_REJUVENATE_V01;
++
++	ret = qmi_txn_init(&qmi->qmi_hdl, &txn,
++			   wlfw_dynamic_feature_mask_resp_msg_v01_ei, &resp);
++	if (ret < 0)
++		return ret;
++
++	ret = qmi_send_request(&qmi->qmi_hdl, NULL, &txn,
++			       QMI_WLFW_DYNAMIC_FEATURE_MASK_REQ_V01,
++			       WLFW_DYNAMIC_FEATURE_MASK_REQ_MSG_V01_MAX_MSG_LEN,
++			       wlfw_dynamic_feature_mask_req_msg_v01_ei, &req);
++	if (ret < 0) {
++		qmi_txn_cancel(&txn);
++		return ret;
++	}
++
++	ret = qmi_txn_wait(&txn, ATH10K_QMI_TIMEOUT * HZ);
++	if (ret < 0)
++		return ret;
++
++	ath10k_info(qmi->ar, "dynamic feature mask: prev 0x%llx curr 0x%llx\n",
++		    resp.prev_mask, resp.curr_mask);
++	return 0;
+ }
+ 
+ static void ath10k_qmi_event_server_arrive(struct ath10k_qmi *qmi)
+@@ -900,6 +942,11 @@
+ 	if (ret)
+ 		goto err_setup_msa;
+ 
++	ret = ath10k_qmi_dynamic_feature_mask_send_sync(qmi);
++	if (ret)
++		ath10k_dbg(ar, ATH10K_DBG_QMI,
++			   "dynamic feature mask not accepted: %d\n", ret);
++
+ 	return;
+ 
+ err_setup_msa:
+@@ -951,7 +998,34 @@
+ {
+ 	struct ath10k *ar = qmi->ar;
+ 	struct ath10k_snoc *ar_snoc = ath10k_snoc_priv(ar);
++
++	/* Stock acknowledges REJUVENATE after the PD drops its service
++	 * (icnss.c:2422-2437); the FW then self-restarts and re-arrives. */
++	if (qmi->rejuvenate_pending) {
++		struct wlfw_rejuvenate_ack_req_msg_v01 ack_req = {};
++		struct wlfw_rejuvenate_ack_resp_msg_v01 ack_resp = {};
++		struct qmi_txn ack_txn;
++		int ack_ret;
+ 
++		ack_ret = qmi_txn_init(&qmi->qmi_hdl, &ack_txn,
++				       wlfw_rejuvenate_ack_resp_msg_v01_ei,
++				       &ack_resp);
++		if (!ack_ret) {
++			ack_ret = qmi_send_request(&qmi->qmi_hdl, NULL,
++					&ack_txn,
++					QMI_WLFW_REJUVENATE_ACK_REQ_V01,
++					WLFW_REJUVENATE_ACK_REQ_MSG_V01_MAX_MSG_LEN,
++					wlfw_rejuvenate_ack_req_msg_v01_ei,
++					&ack_req);
++			if (!ack_ret)
++				qmi_txn_wait(&ack_txn,
++					     ATH10K_QMI_TIMEOUT * HZ);
++			else
++				qmi_txn_cancel(&ack_txn);
++		}
++		qmi->rejuvenate_pending = false;
++	}
++
+ 	ath10k_qmi_remove_msa_permission(qmi);
+ 	ath10k_core_free_board_files(ar);
+ 	if (!test_bit(ATH10K_SNOC_FLAG_UNREGISTERING, &ar_snoc->flags) &&
+@@ -1012,6 +1086,25 @@
+ 	ath10k_qmi_driver_event_post(qmi, ATH10K_QMI_EVENT_MSA_READY_IND, NULL);
+ }
+ 
++static void ath10k_qmi_rejuvenate_ind(struct qmi_handle *qmi_hdl,
++				      struct sockaddr_qrtr *sq,
++				      struct qmi_txn *txn, const void *data)
++{
++	struct ath10k_qmi *qmi = container_of(qmi_hdl, struct ath10k_qmi,
++					      qmi_hdl);
++	const struct wlfw_rejuvenate_ind_msg_v01 *ind = data;
++
++	ath10k_info(qmi->ar,
++		    "fw rejuvenation requested: cause 0x%x subsystem 0x%x line %u func %s\n",
++		    ind->cause_for_rejuvenation_valid ?
++				ind->cause_for_rejuvenation : 0,
++		    ind->requesting_sub_system_valid ?
++				ind->requesting_sub_system : 0,
++		    ind->line_number_valid ? ind->line_number : 0,
++		    ind->function_name_valid ? ind->function_name : "n/a");
++	qmi->rejuvenate_pending = true;
++}
++
+ static const struct qmi_msg_handler qmi_msg_handler[] = {
+ 	{
+ 		.type = QMI_INDICATION,
+@@ -1027,6 +1120,13 @@
+ 		.decoded_size = sizeof(struct wlfw_msa_ready_ind_msg_v01),
+ 		.fn = ath10k_qmi_msa_ready_ind,
+ 	},
++	{
++		.type = QMI_INDICATION,
++		.msg_id = QMI_WLFW_REJUVENATE_IND_V01,
++		.ei = wlfw_rejuvenate_ind_msg_v01_ei,
++		.decoded_size = sizeof(struct wlfw_rejuvenate_ind_msg_v01),
++		.fn = ath10k_qmi_rejuvenate_ind,
++	},
+ 	{}
+ };
+ 
