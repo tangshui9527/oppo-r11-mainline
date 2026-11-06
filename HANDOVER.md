@@ -113,3 +113,10 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 * 用户确认电池有电（整机连续运行 >8h 佐证）；bq27541 读数（2.688V/-693mA/temp=-25.95°C）整体不可信，疑为 DTS 参数（sense resistor/参数表）或 gauge 芯片初始化问题。
 * 无人值守测试方法论已验证：`/usr/local/bin/wifi-test2`（串口断联状态下自跑 20min 并记 `/var/log/wifi-test2.log`），脚本与 wpa 配置（sxwifi priority=100）已固化在手机。
 * 待办：A) 墙充 30min 后重测关联（供电变量唯一受控实验）；B) 修复电源仪表（qcom_smbx/rradc/bq27541 读数死值排查）；C) 若 A 证伪供电说 → 对比 stock ICNSS 关联态行为（icnss.c 已取回 /tmp/icnss.c）。
+
+## 10. 充电驱动修复（已刷入，待验证）
+
+* **根因**：参考作者的提交 81dc0439 明确禁用 `pm660_charger` 和 `pm660_fg`（"Keep charging policy untouched"），让 PM660 充电 IC 以自主模式充电；而我们的 DTB 里 charger@1000 是 `status=okay`，主线 qcom_smbx 绑定后进入坏状态（假 Full + 输入 0/0），**主动终止了充电**。
+* **修复**：DTB 中 charger@1000 → `status="disabled"`（带注释），重打包刷入 `/tmp/boot-r11t-chgfix.img`。验证：`qcom_smbx` 加载后 `/sys/class/power_supply/` 只剩 `bq27541-0`，pm660-charger 不再出现。
+* **BQ27541 电量计芯片本体卡死**：读数 40 秒三次采样零变化（2.688V/-693mA/Full 恒定），且跨重启保持——芯片未做转换。stock recovery 内核下读数正常（用户实测 100%→拔线 72%），说明芯片硬件 OK、需要正确初始化或从 stock 侧复位。明日任务：i2cdump 0x55 原始寄存器诊断 + 对照 stock 驱动初始化序列。
+* **用户证据**：stock recovery 内电量 100%，拔线后 72%——电池健康、充电硬件正常、范围 72~100%。

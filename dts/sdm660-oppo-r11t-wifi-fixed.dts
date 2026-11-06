@@ -1656,7 +1656,11 @@
 					interrupt-names = "usb-plugin", "bat-ov", "wdog-bark", "usbin-icl-change";
 					io-channels = <0x3b 0x03 0x3b 0x04>;
 					io-channel-names = "usbin_i", "usbin_v";
-					status = "okay";
+					/* Disabled like the reference build: the PM660 charger IC
+					 * charges autonomously with stock-safe defaults; the
+					 * mainline qcom_smbx driver wedges at status=Full with no
+					 * input current and actively stops charging. */
+					status = "disabled";
 					monitored-battery = <0x3c>;
 					phandle = <0x3e>;
 				};
