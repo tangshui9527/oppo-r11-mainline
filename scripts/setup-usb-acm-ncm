@@ -1,0 +1,28 @@
+#!/bin/sh
+# Compose the R11T USB gadget: ACM console + NCM network (172.16.42.1/24).
+# Host side: assign 172.16.42.2/24 to the NCM interface, then ssh root@172.16.42.1
+set -eu
+
+g=/sys/kernel/config/usb_gadget/r11t
+mkdir -p "$g/strings/0x409" "$g/configs/c.1/strings/0x409"
+[ -f "$g/idVendor" ] || {
+	echo 0x18d1 > "$g/idVendor"
+	echo 0xd003 > "$g/idProduct"
+	echo r11t-arch > "$g/strings/0x409/serialnumber"
+	echo OPPO > "$g/strings/0x409/manufacturer"
+	echo 'R11T Arch Linux ARM' > "$g/strings/0x409/product"
+}
+printf '%s' 'ACM + NCM' > "$g/configs/c.1/strings/0x409/configuration"
+
+mkdir -p "$g/functions/acm.usb0" "$g/functions/ncm.usb0"
+[ -e "$g/configs/c.1/acm.usb0" ] || \
+	ln -s "$g/functions/acm.usb0" "$g/configs/c.1/acm.usb0"
+[ -e "$g/configs/c.1/ncm.usb0" ] || \
+	ln -s "$g/functions/ncm.usb0" "$g/configs/c.1/ncm.usb0"
+
+udc=$(ls /sys/class/udc | head -1)
+[ -n "$(cat "$g/UDC")" ] || printf '%s' "$udc" > "$g/UDC"
+
+sleep 1
+ip link set usb0 up 2>/dev/null || true
+ip addr add 172.16.42.1/24 dev usb0 2>/dev/null || true
