@@ -1,0 +1,50 @@
+--- a/drivers/remoteproc/qcom_q6v5_mss.c
++++ b/drivers/remoteproc/qcom_q6v5_mss.c
+@@ -162,6 +162,7 @@
+ 	char **proxy_pd_names;
+ 	int version;
+ 	bool need_mem_protection;
++	bool keep_proxy_pds;
+ 	bool has_alt_reset;
+ 	bool has_mba_logs;
+ 	bool has_spare_reg;
+@@ -239,6 +240,7 @@
+ 	struct qcom_rproc_ssr ssr_subdev;
+ 	struct qcom_sysmon *sysmon;
+ 	struct platform_device *bam_dmux;
++	bool keep_proxy_pds;
+ 	bool need_mem_protection;
+ 	bool has_alt_reset;
+ 	bool has_mba_logs;
+@@ -1755,7 +1757,14 @@
+ 			       qproc->proxy_reg_count);
+ 	q6v5_regulator_disable(qproc, qproc->fallback_proxy_regs,
+ 			       qproc->fallback_proxy_reg_count);
+-	q6v5_pds_disable(qproc, qproc->proxy_pds, qproc->proxy_pd_count);
++	/*
++	 * Keep proxy power-domain votes (cx/mx) after handover: the WLAN PD
++	 * hosted in the modem requires the CX/MX rails to stay at boot voltage
++	 * once the radio is active; dropping the votes trips the Hexagon
++	 * watchdog ~12-16s after association on SDM660.
++	 */
++	if (!qproc->keep_proxy_pds)
++		q6v5_pds_disable(qproc, qproc->proxy_pds, qproc->proxy_pd_count);
+ }
+ 
+ static int q6v5_init_mem(struct q6v5 *qproc, struct platform_device *pdev)
+@@ -2078,6 +2087,7 @@
+ 	qproc->has_ext_cntl_regs = desc->has_ext_cntl_regs;
+ 	qproc->has_vq6 = desc->has_vq6;
+ 	qproc->has_spare_reg = desc->has_spare_reg;
++	qproc->keep_proxy_pds = desc->keep_proxy_pds;
+ 	ret = q6v5_init_mem(qproc, pdev);
+ 	if (ret)
+ 		return ret;
+@@ -2285,6 +2295,7 @@
+ 			NULL
+ 	},
+ 	.need_mem_protection = true,
++	.keep_proxy_pds = true,
+ 	.has_alt_reset = false,
+ 	.has_mba_logs = false,
+ 	.has_spare_reg = false,

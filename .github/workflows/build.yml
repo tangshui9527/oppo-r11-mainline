@@ -41,6 +41,16 @@ jobs:
           cd linux
           git log -1 --format="kernel %H %cs %s" | tee ../kernel-info.txt
 
+      - name: Apply Local Patches
+        run: |
+          cd linux
+          shopt -s nullglob
+          for p in ../patches/*.patch; do
+            echo "applying $p"
+            git apply --check "$p"
+            git apply "$p"
+          done
+
       - name: Configure Kernel
         run: |
           cd linux
@@ -71,11 +81,21 @@ jobs:
       - name: Build Initramfs
         run: bash initramfs/build.sh
 
+      - name: Build Device Tree Blob (workspace source of truth)
+        run: |
+          dtc -I dts -O dtb -o r11t.dtb dts/sdm660-oppo-r11t-wifi-fixed.dts
+          ls -lh r11t.dtb
+
+      - name: Extract Wi-Fi Critical Modules
+        run: |
+          cp linux/drivers/remoteproc/qcom_q6v5_mss.ko qcom_q6v5_mss.ko
+          ls -lh qcom_q6v5_mss.ko
+
       - name: Pack Boot Image (Header Version 1 for Qualcomm SDM660 ABL)
         run: |
           python3 tools/mkbootimg_v1.py \
             --kernel linux/arch/arm64/boot/Image.gz \
-            --dtb linux/arch/arm64/boot/dts/qcom/$DTB.dtb \
+            --dtb r11t.dtb \
             --ramdisk initramfs/initramfs.cpio.gz \
             --base 0x80000000 \
             --kernel_offset 0x00008000 \
@@ -93,8 +113,9 @@ jobs:
         run: |
           mkdir -p out
           cp r11-cph1707-boot.img \
+             r11t.dtb \
+             qcom_q6v5_mss.ko \
              linux/arch/arm64/boot/Image.gz \
-             linux/arch/arm64/boot/dts/qcom/$DTB.dtb \
              initramfs/initramfs.cpio.gz \
              modules.tar.xz \
              kernel-info.txt \

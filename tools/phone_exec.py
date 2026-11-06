@@ -2,6 +2,7 @@
 import os, sys, time, tty, termios
 
 import glob
+import re
 
 def get_serial_port():
     candidates = glob.glob("/dev/cu.usbmodemr11t*")
@@ -24,7 +25,7 @@ def run_command(cmd, timeout=5.0):
             break
 
     marker_sent = f"__END_{int(time.time()*1000)}__"
-    full_cmd = f"\n{cmd}\necho RESULT_{marker_sent}:$?\n"
+    full_cmd = f"\x03\x0c\n{cmd}\necho RESULT_{marker_sent}:$?\n"
     target = f"RESULT_{marker_sent}:"
     os.write(fd, full_cmd.encode("utf-8"))
 
@@ -52,7 +53,12 @@ def run_command(cmd, timeout=5.0):
 
     os.close(fd)
     out_text = buf.decode("utf-8", errors="replace")
-    return exit_code, out_text
+    # Drop terminal OSC/bracketed-paste noise and the echoed command line
+    out_text = re.sub(r"\x1b\][^\x07\x1b]*(\x07|\x1b\\)", "", out_text)
+    out_text = re.sub(r"\x1b\[\?2004[hl]|\x1b\[\?[0-9;]*[a-zA-Z]", "", out_text)
+    lines = [ln for ln in out_text.split("\r\n")
+             if ln.strip() and marker_sent not in ln and cmd not in ln]
+    return exit_code, "\n".join(lines)
 
 if __name__ == "__main__":
     timeout = 10.0
