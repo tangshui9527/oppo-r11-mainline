@@ -155,3 +155,12 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
   非完全冻结；电压读数与 TWRP 的 100% 显示依然矛盾，任务书 B 继续。
 * 本轮 infra：USB-NCM 双通道已通（ping 2.6ms），ssh 收尾中（rootfs 文件属主
   501:20 遗留问题导致 ssh 拒绝工作，已修 ssh_config 链，sshd_config 链待查）。
+
+## 15. SSH over NCM 全线打通 ✅
+
+* 正确访问方式：`ssh r11`（Mac 上已配 ProxyJump 别名：Mac→笔记本 192.168.31.90→手机 172.16.42.1）。
+* 三个坑及修复：
+  1. **Mac 不能直接测 172.16.42.1**（NCM 在笔记本上，Mac 的连接经家路由/VPN 落到陌生主机——之前"Connection closed"全是假象）。笔记本上策略路由 table 2022 也曾把 172.16.x 劫持进 tun0，已用 `ip rule add to 172.16.42.0/24 lookup main priority 100` 修正。
+  2. rootfs 从 Mac 构建遗留 uid 501 属主 → ssh 拒绝运行（"Bad owner or permissions"）。已修 `/usr/lib/systemd/ssh{,_config}.d/*.conf` 属主（注意 `chown -R` 不跟符号链接，真身在 /usr/lib/systemd 下）。
+  3. NetworkManager 会冲掉手动配的 NCM IP → 已建 NM 持久连接 `r11t-ncm`（enp0s20f0u5i2 静态 172.16.42.2/24）。
+* TCP 数据面全程验证可用（curl 532KB 往返成功）。今后调试一律 `ssh r11`。
