@@ -216,3 +216,15 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
   MGMT SET_POWERED status=0x03（控制器未就绪）——下一步查 qca 固件下载/rampatch
   与 WCN 芯片 BT 电源链路。
 * 音频：r11t-audio.service 存在，验证待做（需播放工具）。
+
+## 19. 全修复终验轮（夜间第二轮）
+
+* 干净重启 → MSS 正常拉起 → 新 ath10k_snoc（0004）加载 → `dynamic feature mask` 协商
+  成功执行（curr=0x0）→ 原厂 MAC 预配 ✓ → 但 wlan_process 仍崩（scan -108 洪流）。
+  **rejuvenate 路线正式关闭**（固件拒绝授予），进入任务书 C（wlan_cfg 对照 + VBATT
+  探针 + SSR 快速路径）。
+* 基础设施验证完毕：ssh r11 全程稳定（本次会话主力通道）；ALSA 声卡注册
+  （R11T sdm660-internal）；ADSP 可拉起（remoteproc1）；remoteproc 编号会漂移
+  （模块重载后 0/1/2 顺序变化，用 name 字段区分，勿写死编号）。
+* MSS 恢复流程要点：crashed 状态直接 echo start 会 -EINVAL；先 rmmod
+  qcom_q6v5_mss → modprobe（编号漂移！）→ 按 name 找 4080000 → echo start。
