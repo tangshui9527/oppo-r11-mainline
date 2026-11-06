@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 import os, sys, time, tty, termios
 
-SERIAL_PORT = "/dev/cu.usbmodemr11t_mainline1"
+import glob
+
+def get_serial_port():
+    candidates = glob.glob("/dev/cu.usbmodemr11t*")
+    if candidates:
+        return candidates[0]
+    return "/dev/cu.usbmodemr11t_arch1"
+
+SERIAL_PORT = get_serial_port()
 
 def run_command(cmd, timeout=5.0):
     fd = os.open(SERIAL_PORT, os.O_RDWR | os.O_NOCTTY | os.O_NONBLOCK)
@@ -15,8 +23,9 @@ def run_command(cmd, timeout=5.0):
         except BlockingIOError:
             break
 
-    marker = f"__END_{int(time.time()*1000)}__"
-    full_cmd = f"\n{cmd}\necho {marker}:$?\n"
+    marker_sent = f"__END_{int(time.time()*1000)}__"
+    full_cmd = f"\n{cmd}\necho RESULT_{marker_sent}:$?\n"
+    target = f"RESULT_{marker_sent}:"
     os.write(fd, full_cmd.encode("utf-8"))
 
     start = time.time()
@@ -29,18 +38,13 @@ def run_command(cmd, timeout=5.0):
             if chunk:
                 buf += chunk
                 text = buf.decode("utf-8", errors="replace")
-                if marker in text:
-                    # Find exit code
-                    parts = text.split(marker + ":")
+                if target in text:
+                    parts = text.split(target)
+                    # The last part will follow the actual output of echo
                     if len(parts) > 1:
-                        code_part = parts[1].split("\n")[0].strip()
-                        if code_part.isdigit():
-                            exit_code = int(code_part)
-                            # Clean output before marker
-                            clean_output = parts[0]
-                            # Remove the echoed command line if present
-                            lines = clean_output.split("\r\n")
-                            # Filter out echo of command
+                        tokens = parts[-1].strip().split()
+                        if tokens and tokens[0].isdigit():
+                            exit_code = int(tokens[0])
                             break
         except BlockingIOError:
             pass
@@ -51,7 +55,12 @@ def run_command(cmd, timeout=5.0):
     return exit_code, out_text
 
 if __name__ == "__main__":
-    cmd = " ".join(sys.argv[1:]) if len(sys.argv) > 1 else "uname -a"
-    code, output = run_command(cmd)
+    timeout = 10.0
+    args = sys.argv[1:]
+    if args and args[0].startswith("--timeout="):
+        timeout = float(args[0].split("=")[1])
+        args = args[1:]
+    cmd = " ".join(args) if args else "uname -a"
+    code, output = run_command(cmd, timeout=timeout)
     print(f"Exit: {code}")
     print(f"Output:\n{output}")
