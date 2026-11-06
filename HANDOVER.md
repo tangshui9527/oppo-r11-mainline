@@ -186,3 +186,24 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
   2. `/usr/local/bin/wifi-connect` → 关联 → `ping 192.168.31.1` → 存活 >60s 判定
   3. `watch -n1 cat /sys/class/power_supply/bq27541-0/voltage_now` → 读数应实时变化
   4. 若 rejuvenate 日志给出 cause → 转报告 A §四.修复 3（SSR 衔接）
+
+## 17. rejuvenate 实测结果（0x0004 验证）+ 下一步定论
+
+* **协商已执行**：干净重启后 dmesg 出现 `dynamic feature mask: prev 0x0 curr 0x0`——
+  固件响应了 DYNAMIC_FEATURE_MASK 但**拒绝授予 FW_REJUVENATE**（curr=0，非预期 0x1）。
+  结论：这台 2019 年的 OPPO 固件不给 host 开自恢复通道 → 报告 A 的"自愈路径"对本机不可用。
+* **崩溃依旧**： negotiated 后 MSS 仍在 WLAN 使能后 ~20s 崩（本轮 `WLAN RT:1074`，
+  PC 同 b00c56a0，错误族累计 1074/1075/1076/1078/107b）。ath10k SSR 反复自动恢复
+  （state 在 crashed↔running 间循环，扫描间歇可用）。
+* **已知行为模型（当前最完整版）**：崩溃仅出现在 ath10k/WLAN 使能之后；与关联、AP、
+  功率、数据、cx/mx 投票、bank29、rejuvenate 协商全部无关。wlan_process 异常，
+  PC 恒定，RT 码在窄区间漂移。
+* **下一步（报告 A §四.修复 3，未实施）**：
+  1. 实验性 VBATT 探针（ath10k_qmi 模块参数 vbatt_probe，fw_ready 后每 5s 发
+     QMI_WLFW_VBATT_REQ 固定值）——若崩溃时序改变即坐实 FW 在等电压信息；
+  2. SSR 衔接快速路径（rejuvenate_pending 的 del→arrive <5s 时跳过 SCM 重授）；
+  3. 深挖方向：对照 stock ICNSS 的 `QMI_WLFW_WLAN_CFG`（num_vdevs/num_peers 等
+     enable 配置差异）——stock icnss.c:1500+ 的 cfg 字段与 ath10k_qmi 的默认值
+     逐一对照，这是唯一尚未对比的协商面。
+* **基础设施均已就绪**：ssh r11（NCM 双通道）、CI 补丁流水线、模块热替换流程、
+  磁盘上的 0004/0005 补丁、电量计唤醒已生效。
