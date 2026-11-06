@@ -135,3 +135,11 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 * 笔记本侧：udev 规则 `/etc/udev/rules.d/99-r11t-ncm.rules` + `/usr/local/bin/r11t-ncm-up.sh`——检测到 cdc_ncm 接口自动配 `172.16.42.2/24`。手机插上后 `ssh root@172.16.42.1` 直达。
 * MAC 线索：persist/bluetooth/.bt_nv.bin = `01 00 06 22 93 00 01 21 60`（候选 BT MAC `22:93:00:01:21:60`，本地管理地址；WLAN 原厂 MAC 仍以路由器 .11 绑定记录为准）。
 * 重启震动：PMIC/PON 引导层行为，主线不可控，放弃。
+
+## 13. 原厂 MAC 已确认（用户从路由器绑定读取）
+
+`60:21:01:00:93:23`——与 persist/bt_nv.bin 的 BT 地址（`22:93:00:01:21:60`）构成
+**字节序倒排 + 尾字节 +1** 的派生关系，双源交叉验证成立。待手机插回数据口后写入
+`/etc/modprobe.d/ath10k.conf`（`options ath10k_snoc mac_addr=60:21:01:00:93:23`）
+并重载 ath10k 验证（日志应出现 `provisioned MAC address 60:21:01:00:93:23 through WLFW QMI`）。
+路由器对 192.168.31.11 的绑定届时即生效。
