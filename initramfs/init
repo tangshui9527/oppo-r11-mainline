@@ -1,71 +1,67 @@
 #!/bin/busybox sh
-# initramfs /init for oppo-r11-mainline -- early USB rescue/control stage.
-#
-# Goal: Prove the mainline kernel boots on OPPO R11 (SDM660) and
-# expose a root shell over USB (NCM gadget, telnet on 172.16.42.1:23).
-#
-# USB host side: interface NCM, configure host IP 172.16.42.2/24, then:
-#   telnet 172.16.42.1
+set -eu
 
-export PATH=/bin:/sbin
+/bin/busybox --install -s /bin
+mount -t devtmpfs devtmpfs /dev
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
 
-/busybox --install -s /bin 2>/dev/null
-
-# --- basic mounts -----------------------------------------------------------
-mkdir -p /proc /sys /dev /tmp /config /dev/pts /run
-busybox mount -t proc     none     /proc
-busybox mount -t sysfs    none     /sys
-busybox mount -t devtmpfs none     /dev 2>/dev/null || busybox mdev -s
-busybox mount -t devpts   none     /dev/pts
-busybox mount -t tmpfs    none     /tmp
-busybox mount -t configfs none     /config
-
-# --- USB NCM gadget ---------------------------------------------------------
-{
-    echo "== OPPO R11 Mainline Linux Initramfs =="
-    date -u
-    echo "kernel: $(uname -a)"
-    echo "udc candidates: $(ls /sys/class/udc/ 2>&1)"
-} > /tmp/boot.log
-
-LOG=/tmp/boot.log
-
-setup_ncm() {
-    mkdir -p /config/usb_gadget/g1 || { echo "configfs mkdir failed" >> $LOG; return 1; }
-    cd /config/usb_gadget/g1
-    echo 0x22d9 > idVendor      # OPPO VID
-    echo 0x2765 > idProduct     # Generic ADB/diagnostic PID
-    mkdir -p strings/0x409
-    echo "OPPO"               > strings/0x409/manufacturer
-    echo "OPPO R11 Mainline"  > strings/0x409/product
-    mkdir -p functions/ncm.usb0
-    mkdir -p configs/c.1
-    echo 500 > configs/c.1/MaxPower
-    ln -sf functions/ncm.usb0 configs/c.1/ncm
-    UDC=$(ls /sys/class/udc | head -n 1)
-    [ -n "$UDC" ] || { echo "no UDC present" >> $LOG; return 1; }
-    echo "$UDC" > UDC || { echo "UDC bind failed" >> $LOG; return 1; }
-    sleep 1
-    busybox ifconfig usb0 172.16.42.1 netmask 255.255.255.0 up 2>>$LOG \
-        || { echo "ifconfig usb0 failed" >> $LOG; return 1; }
-    return 0
+resolve_userdata() {
+	for retry in $(seq 1 150); do
+		for b in /sys/class/block/mmcblk*p*; do
+			[ -r "$b/uevent" ] || continue
+			partname=$(sed -n 's/^PARTNAME=//p' "$b/uevent")
+			[ "$partname" = userdata ] || continue
+			printf '/dev/%s\n' "${b##*/}"
+			return 0
+		done
+		sleep 0.1
+	done
+	return 1
 }
 
-if setup_ncm; then
-    echo "USB NCM gadget UP: 172.16.42.1" >> $LOG
+emergency_shell() {
+	echo "Arch root mount failed: $*" >&2
+	mount -t configfs configfs /sys/kernel/config 2>/dev/null || true
+	g=/sys/kernel/config/usb_gadget/r11t-rescue
+	mkdir -p "$g/strings/0x409" "$g/configs/c.1/strings/0x409"
+	echo 0x18d1 > "$g/idVendor"
+	echo 0xd004 > "$g/idProduct"
+	echo r11t-root-failure > "$g/strings/0x409/serialnumber"
+	echo OPPO > "$g/strings/0x409/manufacturer"
+	echo 'R11T root mount failure' > "$g/strings/0x409/product"
+	echo 'Emergency ACM console' > "$g/configs/c.1/strings/0x409/configuration"
+	mkdir -p "$g/functions/acm.usb0"
+	[ -e "$g/configs/c.1/acm.usb0" ] || \
+		ln -s "$g/functions/acm.usb0" "$g/configs/c.1/acm.usb0"
+	set -- /sys/class/udc/*
+	[ -e "$1" ] && echo "${1##*/}" > "$g/UDC"
+	while [ ! -e /dev/ttyGS0 ]; do sleep 1; done
+	stty -F /dev/ttyGS0 raw -echo
+	exec setsid sh -c 'exec sh < /dev/ttyGS0 > /dev/ttyGS0 2>&1'
+}
+
+ROOT_DEV=$(resolve_userdata) || emergency_shell 'userdata partition not found'
+mkdir -p /newroot
+
+# Try mounting as ext4 first, then btrfs
+mount -t ext4 -o rw,noatime "$ROOT_DEV" /newroot 2>/dev/null || \
+mount -t btrfs -o rw,noatime,compress=zstd:3,space_cache=v2,subvol=@ "$ROOT_DEV" /newroot 2>/dev/null || \
+emergency_shell "cannot mount $ROOT_DEV"
+
+INIT_BIN=""
+if [ -x /newroot/sbin/init ]; then
+	INIT_BIN="/sbin/init"
+elif [ -x /newroot/usr/lib/systemd/systemd ]; then
+	INIT_BIN="/usr/lib/systemd/systemd"
+elif [ -x /newroot/bin/sh ]; then
+	INIT_BIN="/bin/sh"
 else
-    echo "USB NCM gadget setup failed, log:" >> $LOG
-    echo "---- dmesg tail ----" >> $LOG
-    busybox dmesg | busybox tail -40 >> $LOG 2>/dev/null
+	emergency_shell 'No init binary found in rootfs'
 fi
 
-# Telnetd on 0.0.0.0:23
-busybox telnetd -l /bin/sh -b 0.0.0.0:23
-
-# --- keep console alive -----------------------------------------------------
-echo
-echo "=========================================================="
-echo " OPPO R11 Mainline Initramfs Shell"
-echo " Telnet accessible at 172.16.42.1:23"
-echo "=========================================================="
-exec setsid cttyhack /bin/sh
+mkdir -p /newroot/dev /newroot/proc /newroot/sys
+mount --move /dev /newroot/dev
+mount --move /proc /newroot/proc
+mount --move /sys /newroot/sys
+exec switch_root /newroot "$INIT_BIN"

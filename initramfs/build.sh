@@ -30,11 +30,13 @@ BB="$WORK/fs/bin/busybox.static"
 [ -f "$BB" ] || { echo "busybox.static not found in apk"; exit 1; }
 
 STAGE="$WORK/stage"
-mkdir -p "$STAGE/bin" "$STAGE/sbin" "$STAGE/dev" "$STAGE/proc" "$STAGE/sys" \
-         "$STAGE/tmp" "$STAGE/config" "$STAGE/etc" "$STAGE/dev/pts" "$STAGE/run"
-install -m 0755 "$BB" "$STAGE/busybox"
+# Layout must match initramfs/init: /bin/busybox, /newroot, plus the usual
+# pseudo-filesystem mountpoints. (The rescue-era layout of /busybox at the
+# initramfs root produced images that panic-looped with rdinit=/init.)
+mkdir -p "$STAGE/bin" "$STAGE/dev" "$STAGE/proc" "$STAGE/sys" "$STAGE/newroot"
+install -m 0755 "$BB" "$STAGE/bin/busybox"
 install -m 0755 init "$STAGE/init"
-install -m 0755 setup-ncm.sh "$STAGE/etc/setup-ncm.sh"
+[ -f setup-ncm.sh ] && install -m 0755 setup-ncm.sh "$STAGE/etc/setup-ncm.sh" || true
 
 (cd "$STAGE" && find . | cpio -o -H newc --owner=0:0 2>/dev/null) | gzip -9 > initramfs.cpio.gz
 ls -l initramfs.cpio.gz

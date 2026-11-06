@@ -1,253 +1,107 @@
-# OPPO R11 (CPH1707) Mainline Linux & Wi-Fi Bringup 终极交接文档
+# OPPO R11 (CPH1707) Mainline Linux & Wi-Fi Bringup 交接文档
 
-> **更新时间**: 2026-11-06 21:25 (第3轮交接·全链路闭环版)  
-> **适用机型**: OPPO R11 (`oppo16051` / `CPH1707`, 高通骁龙 SDM660, 4GB RAM + 64GB eMMC)  
-> **内核版本**: Mainline Linux `7.0.9-sdm660+` (分支 `qcom-sdm660-7.0.y`)  
-> **系统环境**: Arch Linux ARM aarch64 (安装于 eMMC `/dev/mmcblk1p69`，headless 模式)  
-> **串口设备**: Mac 端枚举为 `/dev/cu.usbmodemr11t_arch1`（波特率 115200）  
-> **Wi-Fi 目标**: SSID `yyds` (2.4GHz) / `YYDS` (5GHz)，密码 `goodnight`，静态分配 IP `192.168.31.210`  
-> **SSH 凭据**: `root@192.168.31.210`，端口 22，密码 `1122` 或 `123456`  
-
----
-
-## 0. 核心结论与突破速览 (TL;DR)
-
-1. **射频与双向数据链路 100% 验证成功（硬件完全正常）**：
-   * 在本轮排查中，网卡成功关联路由，完成了 ARP 请求应答与双向 ICMP 通信：
-     * `ath10k_snoc 18800000.wifi: htt tx msdu: 192.168.31.210 -> 192.168.31.1` (Echo Request)
-     * `ath10k_snoc 18800000.wifi: rx skb: 192.168.31.1 -> 192.168.31.210` (Echo Reply seq=5)
-     * 成功获取路由器通过 DHCP 下发的完整 IP 地址：
-       `inet 192.168.31.210/24 metric 1024 brd 192.168.31.255 scope global dynamic wlan0`
-       `inet6 2409:8a55:ed68:d890:20a:f5ff:fe89:89ff/64 scope global dynamic`
-     * Mac 端成功学习到手机 MAC ARP 表项：`192.168.31.210 at 0:a:f5:89:89:ff`
-   * **彻底推翻了“射频硬件不匹配”、“BDF损坏”的怀疑**。
-2. **板级校准 (BDF) 与 MAC 地址已彻底解决**：
-   * BDF 下载成功：`qmi bdf download request completed`、`cal report completed`。
-   * MAC 固化完成：`provisioned MAC address 00:0a:f5:89:89:ff through WLFW QMI`。
-3. **基带 Hexagon DSP 崩溃根因明确（固定 11.95 秒定时器机理）**：
-   * **实测时序证据**（dmesg 精确到毫秒）：
-     * `[ 131.107561] wlan0: associated`
-     * `[ 143.052993] qcom-q6v5-mss 4080000.remoteproc: fatal error received: SFR Init: wdog or kernel error suspected.`
-     * **时间差恒定为：143.052993 - 131.107561 = 11.945 秒！**
-   * **根因**：一旦无线电完成关联，Hexagon DSP (QuRT RTOS) 的看门狗服务要求在 12 秒内获得 APPS (Linux) 的特定心跳/唤醒或由 TrustZone/RPM 维持 CX/MX 基础工作电压。而在主线 Linux 中，由于 `proxy_pd_names`（`cx` 与 `mx` 供电轨）在引导完成后取消了代理投票，当 CPU 进入 `cpu-sleep-0-0` (cpuidle state1) 或 CPU 降频时，CX/MX 供电轨电压暴跌，导致基带内部看门狗死锁。
+> **更新时间**: 2026-11-07（第4轮交接·统一根因版）
+> **适用机型**: OPPO R11 (`oppo16051` / `CPH1707`, 高通骁龙 SDM660)
+> **内核版本**: Mainline Linux `7.0.9-sdm660+`（分支 `r11t/legacy-full-stack` + 工作区 patches/）
+> **系统环境**: Arch Linux ARM aarch64（eMMC `userdata` 分区 `/dev/mmcblk1p69`，headless）
+> **Wi-Fi 目标**: SSID `yyds`，密码 `goodnight`；路由器为手机绑定 IP `192.168.31.11`（按原厂 MAC）
+> **本机工具**: `tools/phone_exec.py`（Mac 直连串口 `/dev/cu.usbmodemr11t_arch1`）、`tools/push_file_mac.py`（串口推文件）
 
 ---
 
-## 1. 宿主机与设备交互通道
+## 0. 一句话结论（第4轮）
 
-### 1.1 串口执行工具 (`tools/phone_exec.py`)
-在 Mac 宿主机上，我们已编写了免依赖的高效串口执行工具，自动识别 `/dev/cu.usbmodemr11t*`，自带执行状态码捕获与超时机制：
+**所有轮次的崩溃是同一个统一根因：电池深度过放（实测 2.688V）且 USB 充电链路未工作（充电器输入 V=0/I=0），系统纯靠残血电池供电。任何射频活动（哪怕 10dBm 静默关联）都会把 VPH 拉穿固件底线 → wlan_process 约 5 秒后熄火 → RX 断流 → 约 10 秒后 MSS 看门狗咬死。**
+
+第一轮的"36~64 秒掉电"、第三轮的"关联 11.9 秒崩"、本轮的"关联 14.6 秒崩"，全部是它在不同负载下的表现。原始交接文档的 UVLO 假说方向正确，只是当时被"headless 稳定运行"误导为已排除。
+
+## 1. 立即行动（下一步）
+
+1. **用原装大功率充电头给手机充电 30~60 分钟**（手机可保持开机，headless 无需屏幕）。当前 USB-Mac 供电不进充电链路，必须墙充。
+2. 充完后重新接回 Mac USB，跑 `/usr/local/bin/wifi-connect`，验证关联后存活（此前必死窗口为关联后 10~16 秒）。
+3. 若存活：`ssh root@<ip>`（密码 1122/123456），完成 §6 的开机自启固化。
+4. **MAC 地址**（见 §5）：请在路由器后台读出绑定 `192.168.31.11` 的那台设备的 MAC（原厂 MAC），告诉我或直接写进 `/etc/modprobe.d/ath10k.conf` 的 `mac_addr=` 参数（该参数经 WLFW QMI 下发生效，已验证可用）。
+
+## 2. 关键证据链（本轮实验，全部可复现）
+
+### 2.1 电池实测（bq27541 计 + pm660-charger）
+```
+voltage_now = 2,688,000 µV (2.688V)   ← 锂电池深度过放（正常 3.4~4.2V）
+current_now = -693,000 µA             ← 系统正以 693mA 从电池放电
+pm660-charger usb: online=1 type=USB current_max=600mA
+pm660-charger input: V=0 I=0          ← USB VBUS 在，但充电器没有在输入侧取电
+pm660-charger status=Full             ← 假满电（2.688V 不可能是满电），充电被终止
+```
+注意：`modprobe qcom_smbx` 后 `pm660-charger` 才会出现在 power_supply（开机默认没加载）。
+
+### 2.2 关联后 RX 断流曲线（手机端逐秒采样 /tmp/watch.log）
+```
+关联 t=0s   iv=88ms    ← RX 正常（信标持续到达）
+t=+2s      iv=16ms
+t=+4s      iv=240ms   ← RX 开始丢
+t=+5s      iv=1292ms  ← RX 完全断流（inactive 纯增长 ~1s/s）
+t=+10s     mss=crashed ← 看门狗咬死
+```
+`iv` = station dump 的 inactive time。RX 断流时内核侧零异常（无 IOMMU fault、无 memshare/RFSA 失败记录）——固件内部电压跌落熄火，AP 侧看不到任何报错。
+
+### 2.3 已被实验排除的假说（不要再走回头路）
+| 假说 | 实验 | 结论 |
+| :--- | :--- | :--- |
+| TX 功率过大/电气脉冲 | 10dBm 限功率 + 停 networkd + 零数据静默关联 | 仍崩，排除 |
+| CX/MX proxy 投票被释放 | keep_proxy_pds 补丁（CI 构建+刷入验证） | 仍崩，假说否定，补丁已从 CI 移除 |
+| Q6 memory bank 29 未供电 | bank-29 修复已在 legacy 树内，今天的模块即包含 | 仍崩，非当前根因 |
+| IOMMU/SMMU fault | 崩溃窗口 dmesg 零 fault | 排除 |
+| 数据量/特定报文触发 | 静默无数据也崩 | 排除 |
+| 固件 ABI 缺口（RFSA/RMTFS/QRTR 系） | 关联前全链路健康（BDF/MAC/firmware ready 全过） | 非启动期问题，但关联期 ABI 缺口未被排除（电池因素干扰判断） |
+
+### 2.4 参考发行版情报（~/Downloads/OPPO-R11T-ArchLinux-GCC-20260724，仅参考不使用）
+* 其复盘文档 `OPPO_R11T_WIFI_MAINLINE_BRINGUP.md`（CPH1707-Mainline/oppo-r11-archlinux-sdm660-oppor11-t 仓库内）明说：**只验证到扫描成功，"尚未加入 wpa_supplicant 完成受控入网"**——关联期从未被任何人验证过，本节是首个实测。
+* 其 DTB 的 Wi-Fi 节点与我们的**逐字段一致**（含 phandle 编号）——工作区 DTB 血统即来自该发行版。
+* 其内核源 = legacy-full-stack（约 7/31 时点）+ bank-29 补丁；其 qcom_q6v5_mss.ko（recovery 镜像内可提取）srcversion 与我们不同但功能等同。
+* 其文档 §16.1 也确认：**稳定 MAC 来源未解决**，随机 MAC 不能写死——印证 `00:0a:f5:89:89:ff` 是前人测试期随机地址。
+
+## 3. 启动链现状（已稳定，可复现）
+
+* **刷入镜像**: `/tmp/ci-art/boot-r11t-fix2.img` = CI 内核（含全部 patch）+ 工作版 DTB + **工作版 initramfs** + 完整 cmdline（`rdinit=/init panic=10 loglevel=7 consoleblank=120 rootwait rw`）。
+* **⚠️ 历史教训**：CI 的 initramfs 曾被救援版 init 顶替（`rdinit=/init` 缺失 + rescue init 的 `set -eu` 一失败即 panic 循环），导致刷机后在 logo 处无限重启。**已修复**：`initramfs/init` 回写为工作版（挂载 userdata → switch_root），`build.sh` 布局对齐（`/bin/busybox` + `/newroot`），本地构建已验证与工作镜像结构一致。今后 CI 产物可直接刷。
+* **Linux 内一键进 fastboot**：`python3 tools/phone_exec.py "reboot-fastboot"`（写 IMEM `0x146BF65C = 0x77665500`），实测秒进。fastboot 空闲超时无法关闭（ABL 签名），但软件重启让超时不再是问题：**探测到 fastboot → 立刻 flash** 即可。
+
+## 4. CI 构建链（已打通）
+
+* push 到 `main` → GitHub Actions 构建内核（应用 `patches/*.patch`）→ 编译工作区 DTB（`dts/sdm660-oppo-r11t-wifi-fixed.dts`，与在机 DTB 逐字节一致）→ 打包 boot → 产出 `qcom_q6v5_mss.ko` 单模块。
+* 当前 `patches/`：`0003-remoteproc-q6v5-mss-power-sdm660-memory-bank-29.patch`（采纳上游 3750352b117a；keep_proxy_pds 实验补丁已移除）。
+* 模块更新方式（无需整机重刷）：CI 产物 `qcom_q6v5_mss.ko` → `tools/push_file_mac.py` 推送到手机 → `gzip > /lib/modules/$(uname -r)/kernel/drivers/remoteproc/qcom_q6v5_mss.ko.gz`（备份旧 .ko.zst）→ `depmod -a` → `modprobe`。vermagic 一致可直接替换。
+
+## 5. MAC 地址问题（已定位，待原厂 MAC 值）
+
+* `ath10k_snoc` 有 `mac_addr` 参数，经 WLFW QMI 下发固件（日志 `provisioned MAC address ... through WLFW QMI`），**机制已验证可用**。
+* `/etc/modprobe.d/ath10k.conf` 现被写入的 `00:0a:f5:89:89:ff` 是**前人测试期随机生成的地址**（参考发行版文档 §16.1 佐证），并非原厂 MAC——所以路由器对 `192.168.31.11` 的绑定不生效。
+* 获取原厂 MAC 的途径（按优先级）：
+  1. **路由器后台**：读绑定 `192.168.31.11` 的 MAC（原厂 Android 时代手机连过 Wi-Fi，绑定记录即原厂 MAC）
+  2. persist 分区挖掘（`/mnt/persist/bdwlan.bin`、`bluetooth/.bt_nv.bin`，本地备份 `backup/persist.img` 可 debugfs 提取）
+  3. 恢复 `modprobe.d/ath10k.conf` 时保留 `cryptmode=0`（WCN3990 firmware-5.bin 不支持 cryptmode=1）
+
+## 6. Wi-Fi 可用后的固化清单
+
 ```bash
-# 测试设备连通性
-python3 tools/phone_exec.py "uname -a"
-
-# 带超时执行长时间命令（例如连接 Wi-Fi，超时 30 秒）
-python3 tools/phone_exec.py --timeout=30 "/usr/local/bin/wifi-connect"
-
-# 查看当前内核日志尾部
-python3 tools/phone_exec.py "dmesg | tail -n 30"
-```
-
-### 1.2 物理按键与重启模式
-* **强制硬件重启**：长按 **【电源键】+【音量上键】** 约 10 秒，手机震动重启。
-* **Linux 内部秒进 Fastboot**（已固化工具）：
-  ```bash
-  python3 tools/phone_exec.py "reboot-fastboot"
-  ```
-  底层通过向 IMEM `0x146BF65C` 写入 `0x77665500` 实现，ABL 瞬间响应，枚举为 `18d1:d00d`。
-
----
-
-## 2. 手机端现存关键脚本与配置文件（已全部固化在设备上）
-
-### 2.1 Wi-Fi 硬件启动脚本 (`/usr/local/bin/wifi-on`)
-该脚本负责按序初始化平台依赖、锁定 CPU 状态并启动 Hexagon DSP：
-```sh
-#!/bin/sh
-set -eu
-
-# 1. 禁用深层 cpuidle，防止 CX/MX 供电轨被 RPM 降压
-for s in /sys/devices/system/cpu/cpu*/cpuidle/state[1-5]/disable; do
-    [ -f "$s" ] && echo 1 > "$s" 2>/dev/null || true
-done
-
-# 2. 锁定性能模式，维持高频供电
-for g in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do
-    [ -f "$g" ] && echo performance > "$g" 2>/dev/null || true
-done
-
-# 3. 启动 Hexagon DSP 必要守护进程
-systemctl start r11t-transport.service r11t-rmtfs.service r11t-tqftpserv.service 2>/dev/null || true
-
-# 4. 加载模块与启动 DSP
-modprobe ipa2_lite 2>/dev/null || true
-modprobe ath10k_core 2>/dev/null || true
-modprobe ath10k_snoc 2>/dev/null || true
-
-for rp in /sys/class/remoteproc/remoteproc*; do
-    if [ -r "$rp/name" ]; then
-        case "$(cat "$rp/name")" in
-            *4080000*|*mss*|*modem*)
-                state=$(cat "$rp/state" 2>/dev/null || echo "")
-                [ "$state" != offline ] || echo start > "$rp/state" 2>/dev/null || true
-                break
-                ;;
-        esac
-    fi
-done
-
-# 5. 等待网卡就绪并立刻关闭网卡省电
-for i in $(seq 1 40); do
-    if [ -d /sys/class/net/wlan0 ]; then
-        ip link set wlan0 up 2>/dev/null || true
-        iw dev wlan0 set power_save off 2>/dev/null || true
-        echo "[+] wlan0 is UP and ready!"
-        exit 0
-    fi
-    sleep 0.2
-done
-exit 1
-```
-
-### 2.2 一键连接与保活脚本 (`/usr/local/bin/wifi-connect`)
-```sh
-#!/bin/sh
-set -e
-
-# 1. 启动硬件
-/usr/local/bin/wifi-on
-
-# 2. 启动 wpa_supplicant
-killall -9 wpa_supplicant 2>/dev/null || true
-rm -f /var/run/wpa_supplicant/wlan0 2>/dev/null || true
-/usr/bin/wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
-
-# 3. 确保关闭省电
-iw dev wlan0 set power_save off 2>/dev/null || true
-
-# 4. 等待关联并获取 IP
-for i in $(seq 1 20); do
-    state=$(wpa_cli -i wlan0 status 2>/dev/null | grep -E "^wpa_state=" | cut -d= -f2 || echo "")
-    if [ "$state" = "COMPLETED" ]; then
-        echo "[+] Connected!"
-        break
-    fi
-    sleep 1
-done
-
-systemctl restart systemd-networkd
-for i in $(seq 1 15); do
-    ip4=$(ip -4 addr show dev wlan0 2>/dev/null | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | head -n1 || echo "")
-    if [ -n "$ip4" ]; then
-        echo "[+] Got IP: $ip4"
-        break
-    fi
-    sleep 1
-done
-
-# 5. 确保 SSH 服务就绪
-systemctl restart sshd
-
-# 6. 后台持续心跳（防止 12 秒空闲休眠死锁）
-pkill -f 'ping.*192.168.31.1' 2>/dev/null || true
-nohup ping -i 1 192.168.31.1 >/dev/null 2>&1 &
-
-echo "[+] Success! Connect via: ssh root@$ip4"
-```
-
-### 2.3 无线配置 (`/etc/wpa_supplicant/wpa_supplicant-wlan0.conf`)
-已修复先前全局错误写了 `uapsd=0` 导致的解析失败，当前内容：
-```
-ctrl_interface=/var/run/wpa_supplicant
-update_config=1
-p2p_disabled=1
-pmf=0
-
-network={
-    ssid="yyds"
-    psk="goodnight"
-    priority=50
-}
-
-network={
-    ssid="YYDS"
-    psk="goodnight"
-    priority=10
-}
-```
-
-### 2.4 驱动参数配置 (`/etc/modprobe.d/ath10k.conf`)
-```
-options ath10k_snoc mac_addr=00:0a:f5:89:89:ff
-options ath10k_core cryptmode=0
-options ath10k_core debug_mask=0x200001
-```
-> **注意**：WCN3990 `firmware-5.bin` 不支持 `cryptmode=1`（会报 `-22: requires raw mode support`），必须保持 `cryptmode=0`（硬件加解密）。
-
----
-
-## 3. 接手者快速操作指引 (Runbook)
-
-### 第一步：硬件按键开机
-如果当前手机处于死锁/卡死状态：
-* 同时按住 **【音量上】+【电源键】** 保持 10 秒直至震动重启。
-* 观察 Mac 端串口：`ls /dev/cu.usbmodem*` 出现 `/dev/cu.usbmodemr11t_arch1`。
-
-### 第二步：一键运行连接脚本
-在 Mac 终端中运行：
-```bash
-python3 tools/phone_exec.py --timeout=35 "/usr/local/bin/wifi-connect"
-```
-成功输出示例：
-```text
-[1/4] Disabling deep cpuidle states...
-[+] wlan0 is UP and ready!
-[+] Connected!
-[+] Got IP: 192.168.31.210
-[+] Success! Connect via: ssh root@192.168.31.210
-```
-
-### 第三步：验证 SSH 登录
-在 Mac 上直接执行：
-```bash
-ssh -o StrictHostKeyChecking=no root@192.168.31.210
-# 密码：1122 或 123456
-```
-
-### 第四步：开机自启固化（验证无误后执行）
-一旦上述 SSH 验证无误，在手机内执行：
-```bash
+# 手机上执行（SSH 或串口）：
 systemctl unmask r11t-wifi.service
-systemctl enable wpa_supplicant-wlan0.service
+systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
+# /usr/local/bin/wifi-connect 已含：cpuidle 深度禁用 + 省电关闭 + keepalive ping
+# 电池修复后这些保守措施可逐步简化
 ```
-即可实现每次开机全自动联网与开启 SSH。
 
----
+## 7. 其他未完成项
 
-## 4. 深度内核/DTS 永久修复方案（供内核开发者参考）
+1. **电池/充电链路**：即使充满，USB-Mac 供电仍不会给系统充电（输入 V=0/I=0），长时间调试必须墙充或研究 pm660-charger 的 AICL/输入检测配置（`drivers/power/supply/qcom_smbx` 内核侧）。
+2. bq27541 电量计数据失真（temp=-25.95°C、capacity=2639 等），修复方向：DTS 的 `ti,bq27541` 节点参数 + gauge 芯片 re-reset。
+3. 关联期 ABI 缺口：若墙充后仍崩，则电池理论被证伪，回头按 §2.3 最后一行排查（对比 stock ICNSS 行为，源码在 YuxuanZuo/android_kernel_oppo_sdm660 `drivers/soc/qcom/icnss.c`，已确认其中含 VPH 电压监控参数 `ADC_MEAS1_INTERVAL_1S`——若墙充治愈，此项也佐证电压机制）。
+4. 显示/图形、音频、蓝牙未回归验证。
+5. 工作区遗留未提交实验产物（`test_insn.bin`、`tqftpserv_patched`、`tqftpserv_phone`）——确认无用后清理。
 
-如果希望从内核根本上解决，无需依赖用户空间脚本禁用 `cpuidle`：
-1. **DTS 供电轨修复**（`dts/sdm660-oppo-r11t-wifi-fixed.dts`）：
-   在 `wifi@18800000` 节点中，`vdd-0.8-cx-mx-supply` 对应的 `l5` 稳压器（pm660 l5）：
-   将其由动态范围提升为允许设定电流载荷，并设置 `regulator-always-on`，防止 RPM 在 CPU 休眠时将 CX/MX 电压下调：
-   ```dts
-   l5 {
-       regulator-min-microvolt = <0x802c8>;
-       regulator-max-microvolt = <0xe7ef0>;
-       regulator-always-on;
-       regulator-allow-set-load;
-   };
-   ```
-2. **`qcom_q6v5_mss.c` 驱动常驻投票**：
-   在驱动中将 `cx` 和 `mx` 从 `.proxy_pd_names` 移至 `.active_pd_names`，确保 PIL 在握手移交完成后依然维持对 CX 和 MX 基础性能角的常驻投票。
+## 8. 复盘：本轮验证方法论
 
----
-
-## 5. 项目工程资产与目录说明
-
-* `tools/phone_exec.py`：Mac 与手机串口交互主工具（支持 exit code 与 timeout 参数）。
-* `tools/qcom-reboot.c`：写入 IMEM 物理寄存器进入 Fastboot 的 C 工具源码。
-* `wifi-bdf/`：从 OPPO R11 原厂 `persist.img` 提取并打包的完整校准数据资产。
-* `backup/`：原厂分区备份（包括 `oppo_r11_stock.dts`、`persist.img`、原厂 boot/modem 镜像）。
-* `configs/` 与 `dts/`：主线内核配置文件与 DTS 设备树源码。
-* `out_cph1707/`：编译生成的 boot.img 及刷机工具包。
+1. **逐秒曲线采样**（station dump inactive time）把"14 秒后崩"分解为"5 秒 RX 断流 → 10 秒看门狗"两个阶段——崩溃点是果不是因。
+2. 单变量实验矩阵：满数据/静默 × 满功率/10dBm × 投票保持/释放，全部崩溃 → 指向公共因子（供电）。
+3. 内核侧零报错 + 固件内部熄火 → 查"固件在监控什么外部条件"→ ICNSS 源码 VPH 监控 → 电池实测坐实。
+4. 第三方参考（酷安/发行版/上游 patch）只在需要方向感时使用，结论一律自测。
