@@ -143,3 +143,15 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 `/etc/modprobe.d/ath10k.conf`（`options ath10k_snoc mac_addr=60:21:01:00:93:23`）
 并重载 ath10k 验证（日志应出现 `provisioned MAC address 60:21:01:00:93:23 through WLFW QMI`）。
 路由器对 192.168.31.11 的绑定届时即生效。
+
+## 14. 精化观察：崩溃与关联无关，是 WLAN 启动后定时死亡
+
+* sxwifi 无人值守测试（factory MAC 已生效）：`assoc_result=DISCONNECTED`（关联未完成），
+  MSS 依然崩溃。综合全部时间线：**wlan_process 在 WLAN 模式使能后 ~20s 必死**，
+  与关联与否、AP、功率、数据量均无关。助手任务书 A 的问题定义以此为准。
+* 原厂 MAC 已生效：`provisioned MAC address 60:21:01:00:93:23 through WLFW QMI`，
+  wlan0 地址正确，路由器 .11 绑定即日可用。
+* 电量计补充：batV 在数小时内从 2688000 缓慢漂移至 2657000——芯片有极低频转换，
+  非完全冻结；电压读数与 TWRP 的 100% 显示依然矛盾，任务书 B 继续。
+* 本轮 infra：USB-NCM 双通道已通（ping 2.6ms），ssh 收尾中（rootfs 文件属主
+  501:20 遗留问题导致 ssh 拒绝工作，已修 ssh_config 链，sshd_config 链待查）。
