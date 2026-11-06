@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-TARGET_SERIAL="${ADB_SERIAL:-REDACTED_SERIAL}"
+TARGET_SERIAL="${ADB_SERIAL:?请设置 ADB_SERIAL 环境变量为设备序列号}"
 BACKUP_DIR="${1:-./backup}"
 mkdir -p "$BACKUP_DIR"
 

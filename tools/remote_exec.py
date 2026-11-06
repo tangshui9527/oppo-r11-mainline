@@ -2,13 +2,16 @@
 """Run a command on the R11 via the remote host's USB serial console.
 
 Usage: remote_exec.py <command> [timeout]
-Assumes SSH key auth to REDACTED_HOST and phone console on /dev/ttyACM*.
+Assumes SSH key auth and a phone console on /dev/ttyACM*.
+Set R11_HOST=user@host before use.
 """
+import os
 import subprocess
 import sys
 import time
 
-HOST = "REDACTED_HOST"
+# SSH target comes from the environment; never hardcode host credentials here.
+HOST = os.environ["R11_HOST"]
 REMOTE_PORT_CMD = "ls /dev/ttyACM* 2>/dev/null | head -1"
 MARKER = "__R11_EXEC_END__"
 

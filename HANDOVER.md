@@ -23,8 +23,8 @@
 
 ## 1. 设备与通道实况
 
-* **宿主机**: `REDACTED_HOST`（sudo 密码 `REDACTED`），fastboot / 串口都在这台机器上
-* **串口**: 手机枚举为 `/dev/ttyACM1`（USB `18d1:d003`）；fastboot 为 `18d1:d00d`（序列号 `REDACTED_SERIAL`）
+* **宿主机**: 内网 Linux 主机（SSH 目标由环境变量 `R11_HOST` 指定，凭据不写入仓库），fastboot / 串口都在这台机器上
+* **串口**: 手机枚举为 `/dev/ttyACM1`（USB `18d1:d003`）；fastboot 为 `18d1:d00d`（设备序列号由 `ADB_SERIAL` 环境变量提供）
 * **命令通道**: `python3 tools/remote_exec.py '<cmd>' [timeout]`（已内置 Ctrl-C/Ctrl-L 救援前缀）
 * **文件推送**: `python3 tools/push_file.py <本地文件> <设备路径> [chunk]`（串口分块 base64，MD5 校验）
 * **串口脆弱性（重要）**:

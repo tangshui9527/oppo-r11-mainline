@@ -3,15 +3,17 @@
 
 Usage: push_file.py <local_file> <device_path> [chunk_size]
 Sends base64 chunks appended to /tmp/.push.b64 on the device, then decodes
-and verifies MD5.
+and verifies MD5. Set R11_HOST=user@host before use.
 """
 import base64
 import hashlib
+import os
 import subprocess
 import sys
 import time
 
-HOST = "REDACTED_HOST"
+# SSH target comes from the environment; never hardcode host credentials here.
+HOST = os.environ["R11_HOST"]
 MARKER = "__PUSH_END__"
 
 
