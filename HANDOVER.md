@@ -241,3 +241,17 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
   任务书 D 候选。当前 ath10k 的 SSR 循环让系统保持"半可用"（扫描间歇成功，
   MSS running），但 wlan_process 每 ~20s 死亡使稳定 Wi-Fi 仍不可用。
 * 模块状态：/lib/modules 中已是 0006 版（含 rejuvenate+vbatt），重启后自动加载。
+
+## 21. OTG + USB 有线网络路线（已构建，待部署验证）
+
+* 动机：Wi-Fi 看门狗未除期间，给手机一条**完全不经过 WLAN 的网络路径**（装包/调试/上网）。
+* 内核配置盘点：USB_OTG=y、xHCI/EHCI=y、DWC3 双角色 + 上游已有
+  "dwc3: add R11T host VBUS support"（VBUS 供电处理过）；驱动缺口
+  （AX88179/AX8817X/CDCETHER 等）已补进 configs/r11-extra.config，CI 构建通过。
+* 部署步骤（手机插回笔记本后）：
+  1. 从 modules.tar.xz 提取 usbnet/rtl8152/ax88179_178a/cdc_ether 等 .ko.zst
+     → NCM scp → 安装 /lib/modules；
+  2. 用户侧：micro-USB OTG 线 + USB 网卡 + 网线插上（需注意 VBUS 供电能力）；
+  3. 验证：`lsusb`（手机侧主机枚举）、新 netdev、DHCP。
+* 未知项：OTG 角色/ID 引脚切换是否在运行中自动生效（可能需要重启或手动 role
+  switch）；转接器芯片型号决定走哪个驱动。
