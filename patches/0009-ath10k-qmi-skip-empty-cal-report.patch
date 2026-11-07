@@ -1,0 +1,75 @@
+From: OPPO R11 mainline bringup <r11t@local>
+Subject: [PATCH] ath10k: qmi: skip empty cal report request and allow bdf skip
+
+On SDM660 (WCN3990 with integrated MSS modem), calibration data is loaded
+directly by the modem via RFSA (memshare client 4) from the modem NV partition.
+ath10k_qmi constructs a CAL_REPORT_REQ with meta_data_len=0 and xo_cal_data_valid=0,
+which crashes the WCN3990 firmware within 28ms with an SFR watchdog fatal error.
+Skip CAL_REPORT_REQ when no calibration data is present (default: true).
+Also add skip_bdf_dnld module parameter for runtime flexibility.
+
+diff --git a/drivers/net/wireless/ath/ath10k/qmi.c b/drivers/net/wireless/ath/ath10k/qmi.c
+index 1833b6d..f1d1fb5 100644
+--- a/drivers/net/wireless/ath/ath10k/qmi.c
++++ b/drivers/net/wireless/ath/ath10k/qmi.c
+@@ -36,6 +36,14 @@
+ static bool vbatt_probe;
+ module_param(vbatt_probe, bool, 0644);
+ MODULE_PARM_DESC(vbatt_probe, "send periodic VBATT QMI messages (experimental)");
++
++static bool skip_empty_cal_report = true;
++module_param(skip_empty_cal_report, bool, 0644);
++MODULE_PARM_DESC(skip_empty_cal_report, "skip QMI cal report request if empty (default: true)");
++
++static bool skip_bdf_dnld;
++module_param(skip_bdf_dnld, bool, 0644);
++MODULE_PARM_DESC(skip_bdf_dnld, "skip QMI BDF download (experimental)");
+ #define SMEM_IMAGE_VERSION_TABLE       469
+ #define SMEM_IMAGE_TABLE_CNSS_INDEX     13
+ #define SMEM_IMAGE_VERSION_ENTRY_SIZE	128
+@@ -352,11 +360,6 @@ static int ath10k_qmi_send_cal_report_req(struct ath10k_qmi *qmi)
+ 		req.xo_cal_data = ar_snoc->xo_cal_data;
+ 	}
+ 
+-	ret = qmi_txn_init(&qmi->qmi_hdl, &txn, wlfw_cal_report_resp_msg_v01_ei,
+-			   &resp);
+-	if (ret < 0)
+-		goto out;
+-
+ 	for (i = 0; i < QMI_WLFW_MAX_NUM_CAL_V01; i++) {
+ 		if (qmi->cal_data[i].total_size &&
+ 		    qmi->cal_data[i].data) {
+@@ -366,6 +369,16 @@ static int ath10k_qmi_send_cal_report_req(struct ath10k_qmi *qmi)
+ 	}
+ 	req.meta_data_len = j;
+ 
++	if (skip_empty_cal_report && !req.meta_data_len && !req.xo_cal_data_valid) {
++		ath10k_dbg(ar, ATH10K_DBG_QMI, "skipping empty cal report request\n");
++		return 0;
++	}
++
++	ret = qmi_txn_init(&qmi->qmi_hdl, &txn, wlfw_cal_report_resp_msg_v01_ei,
++			   &resp);
++	if (ret < 0)
++		goto out;
++
+ 	ret = qmi_send_request(&qmi->qmi_hdl, NULL, &txn,
+ 			       QMI_WLFW_CAL_REPORT_REQ_V01,
+ 			       WLFW_CAL_REPORT_REQ_MSG_V01_MAX_MSG_LEN,
+@@ -1055,9 +1068,13 @@ static void ath10k_qmi_event_msa_ready(struct ath10k_qmi *qmi)
+ 	if (ret)
+ 		goto out;
+ 
+-	ret = ath10k_qmi_bdf_dnld_send_sync(qmi);
+-	if (ret)
+-		goto out;
++	if (!skip_bdf_dnld) {
++		ret = ath10k_qmi_bdf_dnld_send_sync(qmi);
++		if (ret)
++			goto out;
++	} else {
++		ath10k_dbg(qmi->ar, ATH10K_DBG_QMI, "skipping bdf download request\n");
++	}
+ 
+ 	ret = ath10k_qmi_send_cal_report_req(qmi);
+ 	if (ret)
