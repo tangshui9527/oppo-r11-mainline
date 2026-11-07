@@ -126,6 +126,14 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
+          name: ath10k-fast
+          path: |
+            linux/drivers/net/wireless/ath/ath10k/ath10k_core.ko
+            linux/drivers/net/wireless/ath/ath10k/ath10k_snoc.ko
+          retention-days: 7
+
+      - uses: actions/upload-artifact@v4
+        with:
           name: oppo-r11-cph1707-boot
           path: out/
           retention-days: 30
