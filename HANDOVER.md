@@ -1,19 +1,29 @@
 # OPPO R11 (CPH1707) Mainline Linux & Wi-Fi Bringup 交接文档
 
-> **更新时间**: 2026-11-07（第4轮交接·统一根因版）
+> **更新时间**: 2026-11-07（第5轮交接·WCN3990 握手全突破与温控版）
 > **适用机型**: OPPO R11 (`oppo16051` / `CPH1707`, 高通骁龙 SDM660)
 > **内核版本**: Mainline Linux `7.0.9-sdm660+`（分支 `r11t/legacy-full-stack` + 工作区 patches/）
 > **系统环境**: Arch Linux ARM aarch64（eMMC `userdata` 分区 `/dev/mmcblk1p69`，headless）
-> **Wi-Fi 目标**: SSID `yyds`，密码 `goodnight`；路由器为手机绑定 IP `192.168.31.11`（按原厂 MAC）
+> **真实出厂 MAC**: `60:21:01:00:93:23`（由 `wifi-mac` 从高通 DMS 提取，已固化至 `/etc/modprobe.d/ath10k.conf`）
+> **Wi-Fi 目标**: SSID `yyds`，密码 `goodnight`；路由器为手机绑定 IP `192.168.31.11`
 > **本机工具**: `tools/phone_exec.py`（Mac 直连串口 `/dev/cu.usbmodemr11t_arch1`）、`tools/push_file_mac.py`（串口推文件）
 
 ---
 
-## 0. 一句话结论（第4轮）
+## 0. 本轮重大突破与现状总结
 
-**所有轮次的崩溃是同一个统一根因：电池深度过放（实测 2.688V）且 USB 充电链路未工作（充电器输入 V=0/I=0），系统纯靠残血电池供电。任何射频活动（哪怕 10dBm 静默关联）都会把 VPH 拉穿固件底线 → wlan_process 约 5 秒后熄火 → RX 断流 → 约 10 秒后 MSS 看门狗咬死。**
-
-第一轮的"36~64 秒掉电"、第三轮的"关联 11.9 秒崩"、本轮的"关联 14.6 秒崩"，全部是它在不同负载下的表现。原始交接文档的 UVLO 假说方向正确，只是当时被"headless 稳定运行"误导为已排除。
+1. **真实出厂 MAC 提取并注入成功**：
+   - 提取出 OPPO 原厂真实 MAC 地址：`60:21:01:00:93:23`。
+   - 写入 `/etc/modprobe.d/ath10k.conf`，经 WLFW QMI 成功下发固件生效（`provisioned MAC address 60:21:01:00:93:23 through WLFW QMI`）。
+2. **Hexagon 固件全握手突破至 HTC Connect**：
+   - 早期硬件上电（Early Power-on，0.8V/1.8V/1.3V/3.3V + RF CLK）在 `ath10k_snoc_probe` 早期完成。
+   - QMI 握手取得全部固件参数：`chip_id 0x30214`, `board_id 0xff`, `WLAN.HL.1.0.1.c2.1-00098`。
+   - 模式错误 90 优雅跳过，成功识别 `wcn3990 hw1.0 target 0x00000008` 与 API 5 特性（`wowlan,mgmt-tx-by-reference,non-bmi`）。
+   - 握手已推进至 Copy Engine 管道与 HTC 建立阶段。
+3. **发热与温控根因定位与处理**：
+   - **循环重启进程消除**：发现后台 `diag-router.service` 因缺乏 `/dev/ffs-diag` 每 2 秒无限 exit 崩溃重启（重启计数高达 643 次），导致 CPU 无法进入深睡。已彻底执行 `systemctl stop & disable`。
+   - **大核降温下线**：下线 4 个高耗电 Kryo 260 大核（CPUs 4-7），仅保留 4 个 A53 能效小核（CPUs 0-3），温度瞬间由 50.8°C 降至 45~47°C。
+   - **电池欠压**：当前电池实测电压处于 ~2.88V，属于严重过放临界状态，必须使用大功率独立充电头补电。
 
 ## 1. 立即行动（下一步）
 

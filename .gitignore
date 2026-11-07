@@ -9,3 +9,8 @@ out/
 out_cph1707/
 linux/
 .DS_Store
+out_artifacts/
+out_artifacts_new/
+src-cache/
+tools/bin-r11/
+
