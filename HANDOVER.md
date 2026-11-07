@@ -158,7 +158,9 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 
 ## 15. SSH over NCM 全线打通 ✅
 
-* 正确访问方式：`ssh r11`（Mac 上已配 ProxyJump 别名：Mac→笔记本 192.168.31.90→手机 172.16.42.1）。
+* **Mac 本机直接直连（手机直插 Mac USB 时，推荐）**：
+  直接执行 `ssh r11-usb`（已在 Mac `~/.ssh/config` 配好 IPv6 Link-Local 别名 `fe80::f811:cbff:fe8a:3475%%en12`），零延迟、免路由器、免独占串口，秒级直达 root shell。
+* **跨机跳板访问（手机插在笔记本时）**：`ssh r11`（Mac 上已配 ProxyJump 别名：Mac→笔记本 192.168.31.90→手机 172.16.42.1）。
 * 三个坑及修复：
   1. **Mac 不能直接测 172.16.42.1**（NCM 在笔记本上，Mac 的连接经家路由/VPN 落到陌生主机——之前"Connection closed"全是假象）。笔记本上策略路由 table 2022 也曾把 172.16.x 劫持进 tun0，已用 `ip rule add to 172.16.42.0/24 lookup main priority 100` 修正。
   2. rootfs 从 Mac 构建遗留 uid 501 属主 → ssh 拒绝运行（"Bad owner or permissions"）。已修 `/usr/lib/systemd/ssh{,_config}.d/*.conf` 属主（注意 `chown -R` 不跟符号链接，真身在 /usr/lib/systemd 下）。
