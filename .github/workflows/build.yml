@@ -112,6 +112,8 @@ jobs:
       - name: Collect Artifacts
         run: |
           mkdir -p out
+          cp linux/drivers/net/wireless/ath/ath10k/ath10k_core.ko out/ 2>/dev/null || true
+          cp linux/drivers/net/wireless/ath/ath10k/ath10k_snoc.ko out/ 2>/dev/null || true
           cp r11-cph1707-boot.img \
              r11t.dtb \
              qcom_q6v5_mss.ko \
