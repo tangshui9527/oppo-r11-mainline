@@ -1,0 +1,52 @@
+From: OPPO R11 mainline bringup <r11t@local>
+Subject: [PATCH] ath10k: qmi: fix diag task starvation and add force_fw_ready option
+
+On Qualcomm Hexagon MSS / WCN3990 firmware, FW logging defaults to DIAG mode (mode 2).
+Without a host DIAG router consuming the DIAG log stream, the internal DIAG buffer
+overflows within seconds, starving the 'diag' task in Hexagon RTOS and triggering a
+watchdog reset ('Task starvation: diag, ping: 4').
+Send QMI_WLFW_INI_REQ_V01 to set fw_log_mode (default 0: disable) during msa_ready.
+Also add force_fw_ready parameter to register the driver core if firmware does not
+send asynchronous FW_READY_IND.
+
+diff --git a/drivers/net/wireless/ath/ath10k/qmi.c b/drivers/net/wireless/ath/ath10k/qmi.c
+index f1d1fb5..2ffe9d4 100644
+--- a/drivers/net/wireless/ath/ath10k/qmi.c
++++ b/drivers/net/wireless/ath/ath10k/qmi.c
+@@ -44,6 +44,14 @@ MODULE_PARM_DESC(skip_empty_cal_report, "skip QMI cal report request if empty (d
+ static bool skip_bdf_dnld;
+ module_param(skip_bdf_dnld, bool, 0644);
+ MODULE_PARM_DESC(skip_bdf_dnld, "skip QMI BDF download (experimental)");
++
++static int fw_log_mode;
++module_param(fw_log_mode, int, 0644);
++MODULE_PARM_DESC(fw_log_mode, "QMI FW log mode in msa_ready (0: disable, 1: CE, 2: DIAG, -1: skip)");
++
++static bool force_fw_ready;
++module_param(force_fw_ready, bool, 0644);
++MODULE_PARM_DESC(force_fw_ready, "force ath10k core register without waiting for FW_READY_IND");
+ #define SMEM_IMAGE_VERSION_TABLE       469
+ #define SMEM_IMAGE_TABLE_CNSS_INDEX     13
+ #define SMEM_IMAGE_VERSION_ENTRY_SIZE	128
+@@ -1081,6 +1089,21 @@ static void ath10k_qmi_event_msa_ready(struct ath10k_qmi *qmi)
+ 		goto out;
+ 
+ 	ret = ath10k_qmi_mac_addr_send_sync_msg(qmi);
++	if (ret)
++		ath10k_dbg(qmi->ar, ATH10K_DBG_QMI, "mac addr msg returned %d\n", ret);
++
++	if (fw_log_mode >= 0) {
++		ret = ath10k_qmi_set_fw_log_mode(qmi->ar, (u8)fw_log_mode);
++		if (ret)
++			ath10k_warn(qmi->ar, "failed to set fw log mode %d: %d\n", fw_log_mode, ret);
++		else
++			ath10k_info(qmi->ar, "fw log mode %d set successfully\n", fw_log_mode);
++	}
++
++	if (force_fw_ready) {
++		ath10k_info(qmi->ar, "forcing FW ready indication\n");
++		ath10k_snoc_fw_indication(qmi->ar, ATH10K_QMI_EVENT_FW_READY_IND);
++	}
+ 
+ out:
+ 	return;
