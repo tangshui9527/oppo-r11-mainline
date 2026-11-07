@@ -2,8 +2,8 @@
 import asyncio
 import sys
 
-LOCAL_HOST = '172.16.42.7'
-LOCAL_PORT = 7890
+LOCAL_HOST = '0.0.0.0'
+LOCAL_PORT = 8080
 TARGET_HOST = '127.0.0.1'
 TARGET_PORT = 7890
 
