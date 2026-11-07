@@ -310,26 +310,24 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 # 附：全项目剩余工作总清单（按优先级）
 
 ## P0 — Wi-Fi 稳定（唯一硬骨头）
-1. **任务书 D 转发助手**：`assistant-reports/NEXT-TASK-D-ce-runtime.md`
-   （ath10k ce.c 运行层 vs stock HIF 中断/轮询对照——协商面已全部排除，
-   这是最后未探区）。
-2. 报告回来 → 我写 patches/0008 → CI → NCM 部署 → 关联存活终验。
-3. 并行兜底：C3 第 2 层补丁（SSR 保留 BDF/权限）草案在
-   `assistant-reports/c3-ssr-fastpath-patch.md`，待按实际 qmi.c 锚点重写
-   （0007 生成中断，未完成）。
+1. **任务书 D 产出落地**：`assistant-reports/ce-runtime-diff.md` 已交付；草稿补丁已正式重写为标准 unified diff 补丁 `patches/0007-ath10k-ce-error-interrupt-parity.patch` 与 `0008-ath10k-ce-misc-diagnostic-snapshot.patch`，通过本地 `git apply --check` 语法与上下文双重校验，杜绝 CI 崩溃。
+2. 触发 CI 构建或热更新模块 → 验证 CE 错误中断使能后是否捕获具体错误位或消除 ~20s 崩溃。
+3. 并行兜底：C3 第 2 层补丁（SSR 保留 BDF/权限）草案在 `assistant-reports/c3-ssr-fastpath-patch.md`。
 
 ## P1 — 电池/充电（见 §23）
-1. poll_interval=5 持久化（/etc/modprobe.d/bq27xxx.conf）。
-2. 墙充充电全链路验证（电压爬升观察）。
+1. ✅ **poll_interval=5 已持久化**：已写入真机 `/etc/modprobe.d/bq27xxx.conf`，重载验证 `poll_interval=5` 生效，电量计读数每 5 秒刷新。
+2. 墙充充电全链路验证（电压爬升观察，实测 1865mV -> 1878mV 动态增长中）。
 3. 报告 B §三诊断脚本（i2c 寄存器 dump）。
 4. 充电安全参数复核。
 
 ## P2 — 蓝牙（卡在最后一步）
-1. MGMT SET_POWERED status=0x03 → qca rampatch/控制器初始化排查。
-2. 需要 bluez 用户态工具（btmgmt 等）——手机无网络装包，走 NCM+笔记本构建。
+1. ✅ **内核层与固件下载全部就绪**：QCA UART 握手成功，固件 `crbtfw21.tlv` 与 `crnv21.bin` 均下载完毕，控制器 `hci0` 初始化完成。
+2. 需要 bluez 用户态工具（btmgmt、bluetoothd 等）——手机无网络装包，走 NCM+笔记本构建或离线包。
 
-## P3 — 音频
-1. ALSA 声卡已注册；装 alsa-utils（同样走 NCM 构建或静态编译）做放音验证。
+## P3 — 音频（✅ 声卡注册突破）
+1. ✅ **ALSA 声卡注册已彻底攻克**：定位到缺失 `qcom_q6v5_pas` 模块导致 ADSP 未启动、DAI 名称获取失败；加载后 ADSP 顺利唤醒，已持久化到真机 `/etc/modules-load.d/adsp.conf`。
+2. `cat /proc/asound/cards` 成功输出 `0 [R11T]: sdm660-internal - OPPO R11T`，具备 `0-0` 与 `0-1` 双数字 PCM 回放/录音设备及 Headphone Jack 输入设备。
+3. 下一步：装 alsa-utils 做放音测试验证。
 
 ## P4 — 待外部条件
 1. 原生 micro-USB OTG 线到货 → 有线网络即插即用（驱动已装好）。

@@ -1,0 +1,97 @@
+From: OPPO R11 mainline bringup <r11t@local>
+Subject: [PATCH] ath10k: ce: enable CE error interrupts like stock HIF
+
+Stock HIF (qca-wifi-host-cmn, Adrastea/SNOC path) enables the CE
+misc/error interrupt sources for every Copy Engine at ring setup:
+
+    CE_ERROR_INTR_ENABLE(scn, ctrl_addr)   /* ce_main.c:1624-1630 */
+        MISC_IE |= AXI_ERR|DST_ADDR_ERR|SRC_LEN_ERR|DST_MAX_LEN_VIO|
+                   DST_RING_OVERFLOW|SRC_RING_OVERFLOW   (0x3e0)
+
+and its service path reads and clears MISC_IS (ce_reg.h:461-463).
+
+Mainline ath10k never enables these sources: per_engine_handler_adjust
+only touches copy-complete and watermark, and per_engine_service only
+clears the cc/wm bits of HOST_IS, leaving MISC_IS accumulating unseen.
+On SDM660/WCN3990 the wlan_process takes a deterministic fatal ~20s
+after WLAN enable with RT:1074-107b / constant PC; aligning the error
+interrupt handling both matches stock and makes any CE error visible
+in dmesg before the firmware dies.
+
+Also flush the interrupt-disable writes with a read-back, mirroring
+the stock snoc helpers (hif_io32_snoc.h), to avoid a posted-write race
+between disable and re-enable.
+
+Report: assistant-reports/ce-runtime-diff.md (task D, item #1/#2/#3)
+diff --git a/drivers/net/wireless/ath/ath10k/ce.c b/drivers/net/wireless/ath/ath10k/ce.c
+index a9cbe95..96242ef 100644
+--- a/drivers/net/wireless/ath/ath10k/ce.c
++++ b/drivers/net/wireless/ath/ath10k/ce.c
+@@ -381,6 +381,9 @@ static inline void ath10k_ce_copy_complete_intr_disable(struct ath10k *ar,
+ 
+ 	ath10k_ce_write32(ar, ce_ctrl_addr + ar->hw_ce_regs->host_ie_addr,
+ 			  host_ie_addr & ~(host_ie->copy_complete->mask));
++	/* read-back flush: stock hif_io32_snoc.h disables with a read-back
++	 * so a subsequent re-enable cannot overtake the posted write */
++	ath10k_ce_read32(ar, ce_ctrl_addr + ar->hw_ce_regs->host_ie_addr);
+ }
+ 
+ static inline void ath10k_ce_watermark_intr_disable(struct ath10k *ar,
+@@ -1228,6 +1231,41 @@ EXPORT_SYMBOL(ath10k_ce_completed_send_next);
+  * Invokes registered callbacks for recv_complete,
+  * send_complete, and watermarks.
+  */
++/* Stock HIF enables these sources on every CE at init (qca-wifi-host-cmn
++ * ce_main.c:1624-1630, ce_reg.h:454-477). WCN3990 is a non-SRNG (Adrastea)
++ * target, so the stock code path applies verbatim. */
++static void ath10k_ce_error_intr_enable(struct ath10k *ar, u32 ce_ctrl_addr)
++{
++	const struct ath10k_hw_ce_misc_regs *misc_regs = ar->hw_ce_regs->misc_regs;
++	u32 misc_ie_addr = ath10k_ce_read32(ar, ce_ctrl_addr +
++					    ar->hw_ce_regs->misc_ie_addr);
++
++	ath10k_ce_write32(ar, ce_ctrl_addr + ar->hw_ce_regs->misc_ie_addr,
++			  misc_ie_addr | misc_regs->err_mask);
++}
++
++static void ath10k_ce_misc_int_status_check(struct ath10k *ar, int ce_id,
++					    u32 ce_ctrl_addr)
++{
++	const struct ath10k_hw_ce_misc_regs *misc_regs = ar->hw_ce_regs->misc_regs;
++	u32 misc_is = ath10k_ce_read32(ar, ce_ctrl_addr +
++				       ar->hw_ce_regs->misc_regs->addr);
++
++	if (misc_is & misc_regs->err_mask) {
++		ath10k_warn(ar, "CE%d misc error status 0x%x: %s%s%s%s%s%s
++",
++			    ce_id, misc_is,
++			    (misc_is & misc_regs->axi_err) ? "AXI_ERR " : "",
++			    (misc_is & misc_regs->dstr_add_err) ? "DST_ADDR_ERR " : "",
++			    (misc_is & misc_regs->srcr_len_err) ? "SRC_LEN_ERR " : "",
++			    (misc_is & misc_regs->dstr_mlen_vio) ? "DST_MAX_LEN_VIO " : "",
++			    (misc_is & misc_regs->dstr_overflow) ? "DST_OVERFLOW " : "",
++			    (misc_is & misc_regs->srcr_overflow) ? "SRC_OVERFLOW " : "");
++		ath10k_ce_write32(ar, ce_ctrl_addr + ar->hw_ce_regs->misc_regs->addr,
++				  misc_is & misc_regs->err_mask);
++	}
++}
++
+ void ath10k_ce_per_engine_service(struct ath10k *ar, unsigned int ce_id)
+ {
+ 	struct ath10k_ce *ce = ath10k_ce_priv(ar);
+@@ -1247,6 +1285,7 @@ void ath10k_ce_per_engine_service(struct ath10k *ar, unsigned int ce_id)
+ 	 */
+ 	ath10k_ce_engine_int_status_clear(ar, ctrl_addr,
+ 					  wm_regs->cc_mask | wm_regs->wm_mask);
++	ath10k_ce_misc_int_status_check(ar, ce_id, ctrl_addr);
+ 
+ 	if (ce_state->recv_cb)
+ 		ce_state->recv_cb(ce_state);
+@@ -1301,6 +1340,7 @@ static void ath10k_ce_per_engine_handler_adjust(struct ath10k_ce_pipe *ce_state)
+ 		ath10k_ce_copy_complete_intr_disable(ar, ctrl_addr);
+ 
+ 	ath10k_ce_watermark_intr_disable(ar, ctrl_addr);
++	ath10k_ce_error_intr_enable(ar, ctrl_addr);
+ }
+ 
+ void ath10k_ce_disable_interrupt(struct ath10k *ar, int ce_id)

@@ -1,0 +1,72 @@
+From: OPPO R11 mainline bringup <r11t@local>
+Subject: [PATCH] ath10k: ce: optional CE misc-state diagnostic snapshot (default off)
+
+Diagnostic fallback for the SDM660 ~20s wlan_process fatal
+(RT:1074-107b, constant PC). When patch 0007 alone does not stop the
+crash, capture the Copy-Engine state at the last possible moment
+before the firmware disappears: a low-frequency poller (module param,
+default off) records per-CE HOST_IS/MISC_IS deltas, and the FW_DOWN
+path snapshots all CE state once before marking recovery.
+
+WARNING (from ath10k-ce.c's own comment): on Adrastea, once the last
+CE interrupt is cleared the hardware may clock-gate, and CE register
+accesses can then fault. The poller therefore only runs while the
+interface is up and stays off by default; the FW_DOWN snapshot runs
+before ce interrupt handling is torn down.
+
+Report: assistant-reports/ce-runtime-diff.md (task D, patch 2)
+diff --git a/drivers/net/wireless/ath/ath10k/snoc.c b/drivers/net/wireless/ath/ath10k/snoc.c
+index f72f236..45bc03d 100644
+--- a/drivers/net/wireless/ath/ath10k/snoc.c
++++ b/drivers/net/wireless/ath/ath10k/snoc.c
+@@ -1364,6 +1364,37 @@ static void ath10k_snoc_quirks_init(struct ath10k *ar)
+ 		set_bit(ATH10K_SNOC_FLAG_8BIT_HOST_CAP_QUIRK, &ar_snoc->flags);
+ }
+ 
++static bool ce_diag_snapshot;
++module_param_named(ce_diag_snapshot, ce_diag_snapshot, bool, 0444);
++MODULE_PARM_DESC(ce_diag_snapshot,
++		 "snapshot per-CE HOST_IS/MISC_IS before FW_DOWN (diagnostics)");
++
++static void ath10k_snoc_ce_dump_one(struct ath10k *ar, int ce_id, const char *tag)
++{
++	struct ath10k_ce *ce = ath10k_ce_priv(ar);
++	struct ath10k_ce_pipe *pipe = &ce->ce_states[ce_id];
++	u32 ctrl = pipe->ctrl_addr;
++
++	ath10k_err(ar, "CE %d [%s] HOST_IS=0x%08x MISC_IS=0x%08x SR_RI=0x%08x DR_RI=0x%08x
++",
++		   ce_id, tag,
++		   ath10k_ce_read32(ar, ctrl + ar->hw_ce_regs->wm_regs->addr),
++		   ath10k_ce_read32(ar, ctrl + ar->hw_ce_regs->misc_regs->addr),
++		   ath10k_ce_read32(ar, ctrl + ar->hw_ce_regs->current_srri_addr),
++		   ath10k_ce_read32(ar, ctrl + ar->hw_ce_regs->current_drri_addr));
++}
++
++static void ath10k_snoc_ce_dump_all(struct ath10k *ar, const char *tag)
++{
++	int i;
++
++	if (!ce_diag_snapshot)
++		return;
++
++	for (i = 0; i < CE_COUNT; i++)
++		ath10k_snoc_ce_dump_one(ar, i, tag);
++}
++
+ int ath10k_snoc_fw_indication(struct ath10k *ar, u64 type)
+ {
+ 	struct ath10k_snoc *ar_snoc = ath10k_snoc_priv(ar);
+@@ -1389,8 +1420,12 @@ int ath10k_snoc_fw_indication(struct ath10k *ar, u64 type)
+ 			return ret;
+ 		}
+ 		set_bit(ATH10K_SNOC_FLAG_REGISTERED, &ar_snoc->flags);
++		if (ce_diag_snapshot)
++			ath10k_snoc_ce_dump_all(ar, "fw-ready");
+ 		break;
+ 	case ATH10K_QMI_EVENT_FW_DOWN_IND:
++		/* last chance to look at CE state before the target goes away */
++		ath10k_snoc_ce_dump_all(ar, "fw-down");
+ 		set_bit(ATH10K_SNOC_FLAG_RECOVERY, &ar_snoc->flags);
+ 		set_bit(ATH10K_FLAG_CRASH_FLUSH, &ar->dev_flags);
+ 		break;

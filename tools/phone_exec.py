@@ -5,10 +5,10 @@ import glob
 import re
 
 def get_serial_port():
-    candidates = glob.glob("/dev/cu.usbmodemr11t*")
+    candidates = glob.glob("/dev/cu.usbmodem*")
     if candidates:
         return candidates[0]
-    return "/dev/cu.usbmodemr11t_arch1"
+    return ""
 
 SERIAL_PORT = get_serial_port()
 

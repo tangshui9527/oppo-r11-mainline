@@ -16,7 +16,7 @@ MARKER = "__PUSH_END__"
 
 
 def get_port():
-    c = glob.glob("/dev/cu.usbmodemr11t*")
+    c = glob.glob("/dev/cu.usbmodem*")
     if not c:
         sys.exit("no serial port found")
     return c[0]
