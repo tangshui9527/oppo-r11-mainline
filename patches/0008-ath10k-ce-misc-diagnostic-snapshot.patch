@@ -36,10 +36,10 @@ index f72f236..45bc03d 100644
 +
 +	ath10k_err(ar, "CE %d [%s] HOST_IS=0x%08x MISC_IS=0x%08x SR_RI=0x%08x DR_RI=0x%08x\n",
 +		   ce_id, tag,
-+		   ath10k_ce_read32(ar, ctrl + ar->hw_ce_regs->wm_regs->addr),
-+		   ath10k_ce_read32(ar, ctrl + ar->hw_ce_regs->misc_regs->addr),
-+		   ath10k_ce_read32(ar, ctrl + ar->hw_ce_regs->current_srri_addr),
-+		   ath10k_ce_read32(ar, ctrl + ar->hw_ce_regs->current_drri_addr));
++		   ath10k_snoc_read32(ar, ctrl + ar->hw_ce_regs->wm_regs->addr),
++		   ath10k_snoc_read32(ar, ctrl + ar->hw_ce_regs->misc_regs->addr),
++		   ath10k_snoc_read32(ar, ctrl + ar->hw_ce_regs->current_srri_addr),
++		   ath10k_snoc_read32(ar, ctrl + ar->hw_ce_regs->current_drri_addr));
 +}
 +
 +static void ath10k_snoc_ce_dump_all(struct ath10k *ar, const char *tag)
