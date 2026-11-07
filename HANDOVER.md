@@ -309,6 +309,39 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 
 ---
 
+## 24. USB 网络代理网桥（常驻守护进程与免密联网手册）
+
+### 背景与解决的痛点
+在 Wi-Fi 暂未常驻期间，手机必须依赖 Type-C 数据线从 Mac 共享网络进行包管理（`pacman`）、代码拉取（`git`）与工具下载（`curl`）。
+* **旧方案局限**：原先使用 SSH 动态端口转发（`-R 7890`），只要断开 SSH，或者在**串口控制台（`/dev/cu.usbmodem*`）**操作，手机端代理即刻失效，报错 `Could not connect to server`。
+* **现行架构（全场景通用）**：
+  1. **Mac 端守护进程**：工作区提供专用异步代理桥 [`scripts/usb_proxy_bridge.py`](scripts/usb_proxy_bridge.py)，在 Mac 上常驻监听 `0.0.0.0:8080`，把来自 USB NCM 网卡（`en12`，网段 `172.16.42.0/24`）的所有 HTTP/HTTPS/SOCKS 流量透明转发给 Mac 本地代理（`127.0.0.1:7890`）。
+  2. **手机端自适应配置**：手机端 `/etc/profile.d/proxy.sh` 脚本在每次登录时自动探测宿主机 IP（当前动态分配为 `172.16.42.6`），自动导出 `http_proxy`、`https_proxy`、`all_proxy` 指向 `http://${HOST_IP}:8080`。
+  3. **效果**：无论在 Mac 的 `ssh r11-usb` 会话中，还是在物理串口控制台（`/dev/cu.usbmodem*`）中，联网工具（`curl`、`pacman` 等）全部开箱即用，不再受 SSH 连线状态制约。
+
+### 运维与恢复指令（后续接手必读）
+
+若后续接手人员重启了 Mac、切换了开发机，或手机端 `curl` 提示无法连接代理，按如下步骤一键恢复：
+
+1. **Mac 端启动/检查代理桥（后台常驻）**：
+   ```bash
+   cd /Users/tangshui/test/oppo-r11-mainline-workspace
+   # 检查是否已在运行：
+   ps aux | grep usb_proxy_bridge.py
+   # 若未运行，后台常驻启动：
+   nohup python3 scripts/usb_proxy_bridge.py > /tmp/usb_proxy_bridge.log 2>&1 &
+   ```
+   *验证*：`lsof -i :8080` 应显示 python3 正在监听。
+2. **手机端验证连通性**：
+   ```bash
+   # 串口控制台或 SSH 中均可执行：
+   source /etc/profile.d/proxy.sh
+   curl -I https://www.google.com   # 应秒回 HTTP/2 200
+   pacman -Sy                       # 应正常更新 core/extra 数据库
+   ```
+
+---
+
 # 附：全项目剩余工作总清单（按优先级）
 
 ## P0 — Wi-Fi 稳定（唯一硬骨头）
@@ -340,5 +373,6 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 2. 注意：长按电源强制重启=冷断电，ramoops 会丢；dmesg-history 在 eMMC 不丢。
 
 ## 基建资产（已稳定，可复用）
-`ssh r11`（NCM 双通道）｜CI 补丁流水线｜push_file 模块热替换｜reboot-fastboot｜
-参考版 recovery（组合键进）｜全分区原厂备份｜dmesg 磁盘记录器｜ramoops。
+`ssh r11-usb`（NCM 双通道/直连）｜USB 代理桥常驻服务（`scripts/usb_proxy_bridge.py`）｜
+CI 补丁流水线｜push_file 模块热替换｜reboot-fastboot｜参考版 recovery（组合键进）｜
+全分区原厂备份｜dmesg 磁盘记录器｜ramoops。
