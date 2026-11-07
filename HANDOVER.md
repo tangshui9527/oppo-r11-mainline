@@ -255,3 +255,12 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
   3. 验证：`lsusb`（手机侧主机枚举）、新 netdev、DHCP。
 * 未知项：OTG 角色/ID 引脚切换是否在运行中自动生效（可能需要重启或手动 role
   switch）；转接器芯片型号决定走哪个驱动。
+
+## 22. OTG 有线网络实测结论
+
+* 手机侧全就绪（usbnet/sr9800/dm9601/cdc_ether/ax88179_178a 模块已装、networkd
+  DHCP 配置好、dwc3 host VBUS 支持）。用户实测 Type-C 网卡 HLY-61 + C转micro
+  转接头 → **无任何角色切换事件**（dmesg history 642 行无 otg/role/vbus 记录）。
+* 根因：micro-USB OTG 依赖 ID 引脚接地，Type-C 设备经转接头无法产生该信号
+  （CC 协商不映射到 ID）。需**原生 micro-USB OTG 线（micro-B 公→USB-A 母）**
+  + USB-A 网卡，或原生 micro-USB 网卡。驱动与配置无需任何改动，换线即测。
