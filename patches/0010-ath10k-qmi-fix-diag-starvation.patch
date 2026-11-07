@@ -1,16 +1,22 @@
 From: OPPO R11 mainline bringup <r11t@local>
-Subject: [PATCH] ath10k: qmi: fix diag starvation, retry config 90, and settle rails
+Subject: [PATCH] ath10k: power on hardware early during probe, handle cfg error 90, and suppress diag starvation
 
-1. Suppress Hexagon DIAG logging (mode 0) during msa_ready to prevent 'Task starvation: diag'.
-2. Settle WCN3990 power rails and clocks for 100ms after ath10k_hw_power_on.
-3. Automatically retry QMI_WLFW_WLAN_CFG_REQ_V01 on error 90 (IncompatibleState) while FW settles.
-4. Add configurable delay (default 1000ms) when force_fw_ready is enabled.
+1. Early hardware power-on: In downstream Qualcomm kernels (icnss.c), WCN3990
+   regulators (0.8V cx/mx, 1.8V xo, 1.3V rfa, 3.3V ch0) and RF reference clock
+   are powered on BEFORE QMI communication so Hexagon modem firmware can detect
+   and calibrate the WCN3990 chip and send QMI_WLFW_FW_READY_IND_V01.
+   Make ath10k_hw_power_on idempotent and call it early in ath10k_snoc_probe.
+2. Graceful CFG 90 bypass: If Hexagon firmware rejects QMI_WLFW_WLAN_CFG_REQ_V01
+   with error 90 (IncompatibleState), bypass it and proceed to WLAN mode request,
+   matching downstream icnss behavior.
+3. Suppress Hexagon DIAG logging (fw_log_mode=0) to prevent 'Task starvation: diag'.
+4. Retain force_fw_ready parameter with configurable delay as a fallback.
 
 diff --git a/drivers/net/wireless/ath/ath10k/qmi.c b/drivers/net/wireless/ath/ath10k/qmi.c
-index f1d1fb5..b3b1ba3 100644
+index f1d1fb5..89d046a 100644
 --- a/drivers/net/wireless/ath/ath10k/qmi.c
 +++ b/drivers/net/wireless/ath/ath10k/qmi.c
-@@ -44,6 +44,18 @@ MODULE_PARM_DESC(skip_empty_cal_report, "skip QMI cal report request if empty (d
+@@ -44,6 +44,22 @@ MODULE_PARM_DESC(skip_empty_cal_report, "skip QMI cal report request if empty (d
  static bool skip_bdf_dnld;
  module_param(skip_bdf_dnld, bool, 0644);
  MODULE_PARM_DESC(skip_bdf_dnld, "skip QMI BDF download (experimental)");
@@ -26,49 +32,45 @@ index f1d1fb5..b3b1ba3 100644
 +static int force_fw_ready_delay_ms = 1000;
 +module_param(force_fw_ready_delay_ms, int, 0644);
 +MODULE_PARM_DESC(force_fw_ready_delay_ms, "delay in ms before forcing FW ready indication (default 1000)");
++
++static bool skip_qmi_cfg;
++module_param(skip_qmi_cfg, bool, 0644);
++MODULE_PARM_DESC(skip_qmi_cfg, "skip or bypass QMI WLAN CFG request if rejected (default false)");
  #define SMEM_IMAGE_VERSION_TABLE       469
  #define SMEM_IMAGE_TABLE_CNSS_INDEX     13
  #define SMEM_IMAGE_VERSION_ENTRY_SIZE	128
-@@ -470,11 +482,7 @@ ath10k_qmi_cfg_send_sync_msg(struct ath10k *ar,
- 	if (!req)
- 		return -ENOMEM;
- 
--	ret = qmi_txn_init(&qmi->qmi_hdl, &txn,
--			   wlfw_wlan_cfg_resp_msg_v01_ei,
--			   &resp);
--	if (ret < 0)
--		goto out;
-+	int retries = 15;
- 
- 	req->host_version_valid = 0;
- 
-@@ -512,6 +520,13 @@ ath10k_qmi_cfg_send_sync_msg(struct ath10k *ar,
- 	memcpy(req->shadow_reg, config->shadow_reg_cfg,
- 	       sizeof(struct wlfw_shadow_reg_cfg_s_v01) * req->shadow_reg_len);
- 
-+retry_cfg:
-+	ret = qmi_txn_init(&qmi->qmi_hdl, &txn,
-+			   wlfw_wlan_cfg_resp_msg_v01_ei,
-+			   &resp);
-+	if (ret < 0)
-+		goto out;
-+
- 	ret = qmi_send_request(&qmi->qmi_hdl, NULL, &txn,
- 			       QMI_WLFW_WLAN_CFG_REQ_V01,
- 			       WLFW_WLAN_CFG_REQ_MSG_V01_MAX_MSG_LEN,
-@@ -527,6 +542,11 @@ ath10k_qmi_cfg_send_sync_msg(struct ath10k *ar,
+@@ -527,6 +543,11 @@ ath10k_qmi_cfg_send_sync_msg(struct ath10k *ar,
  		goto out;
  
  	if (resp.resp.result != QMI_RESULT_SUCCESS_V01) {
-+		if (resp.resp.error == 90 && --retries > 0) {
-+			ath10k_info(ar, "qmi config rejected (90, IncompatibleState), retrying in 200ms... (%d left)\n", retries);
-+			msleep(200);
-+			goto retry_cfg;
++		if (resp.resp.error == 90 || skip_qmi_cfg) {
++			ath10k_warn(ar, "qmi config rejected (%d), bypassing config as optional for mission mode\n", resp.resp.error);
++			ret = 0;
++			goto out;
 +		}
  		ath10k_err(ar, "config request rejected: %d\n", resp.resp.error);
  		ret = -EINVAL;
  		goto out;
-@@ -1081,6 +1101,25 @@ static void ath10k_qmi_event_msa_ready(struct ath10k_qmi *qmi)
+@@ -551,10 +572,14 @@ int ath10k_qmi_wlan_enable(struct ath10k *ar,
+ 	ath10k_dbg(ar, ATH10K_DBG_QMI, "qmi mode %d config %p\n",
+ 		   mode, config);
+ 
+-	ret = ath10k_qmi_cfg_send_sync_msg(ar, config, version);
+-	if (ret) {
+-		ath10k_err(ar, "failed to send qmi config: %d\n", ret);
+-		return ret;
++	if (!skip_qmi_cfg) {
++		ret = ath10k_qmi_cfg_send_sync_msg(ar, config, version);
++		if (ret) {
++			ath10k_err(ar, "failed to send qmi config: %d\n", ret);
++			return ret;
++		}
++	} else {
++		ath10k_info(ar, "skipping qmi config request per module param\n");
+ 	}
+ 
+ 	ret = ath10k_qmi_mode_send_sync_msg(ar, mode);
+@@ -1081,6 +1106,25 @@ static void ath10k_qmi_event_msa_ready(struct ath10k_qmi *qmi)
  		goto out;
  
  	ret = ath10k_qmi_mac_addr_send_sync_msg(qmi);
@@ -95,15 +97,74 @@ index f1d1fb5..b3b1ba3 100644
  out:
  	return;
 diff --git a/drivers/net/wireless/ath/ath10k/snoc.c b/drivers/net/wireless/ath/ath10k/snoc.c
-index 8197f3e..02ac7c2 100644
+index 8197f3e..685ffaa 100644
 --- a/drivers/net/wireless/ath/ath10k/snoc.c
 +++ b/drivers/net/wireless/ath/ath10k/snoc.c
-@@ -1103,6 +1103,8 @@ static int ath10k_snoc_hif_power_up(struct ath10k *ar,
- 		return ret;
+@@ -1023,7 +1023,10 @@ static int ath10k_hw_power_on(struct ath10k *ar)
+ 	struct ath10k_snoc *ar_snoc = ath10k_snoc_priv(ar);
+ 	int ret;
+ 
+-	ath10k_dbg(ar, ATH10K_DBG_SNOC, "soc power on\n");
++	if (test_bit(ATH10K_SNOC_FLAG_POWERED_ON, &ar_snoc->flags))
++		return 0;
++
++	ath10k_info(ar, "soc power on (enabling regulators & clocks)\n");
+ 
+ 	ret = pwrseq_power_on(ar_snoc->pwrseq);
+ 	if (ret)
+@@ -1037,7 +1040,8 @@ static int ath10k_hw_power_on(struct ath10k *ar)
+ 	if (ret)
+ 		goto vreg_off;
+ 
+-	return ret;
++	set_bit(ATH10K_SNOC_FLAG_POWERED_ON, &ar_snoc->flags);
++	return 0;
+ 
+ vreg_off:
+ 	regulator_bulk_disable(ar_snoc->num_vregs, ar_snoc->vregs);
+@@ -1053,7 +1057,11 @@ static int ath10k_hw_power_off(struct ath10k *ar)
+ 	int ret_seq = 0;
+ 	int ret_vreg;
+ 
+-	ath10k_dbg(ar, ATH10K_DBG_SNOC, "soc power off\n");
++	if (!test_bit(ATH10K_SNOC_FLAG_POWERED_ON, &ar_snoc->flags))
++		return 0;
++
++	ath10k_info(ar, "soc power off (disabling regulators & clocks)\n");
++	clear_bit(ATH10K_SNOC_FLAG_POWERED_ON, &ar_snoc->flags);
+ 
+ 	clk_bulk_disable_unprepare(ar_snoc->num_clks, ar_snoc->clks);
+ 
+@@ -1880,6 +1888,12 @@ static int ath10k_snoc_probe(struct platform_device *pdev)
+ 		goto err_free_irq;
  	}
  
-+	msleep(100);
++	ret = ath10k_hw_power_on(ar);
++	if (ret) {
++		ath10k_err(ar, "failed to power on hardware during probe: %d\n", ret);
++		goto err_free_irq;
++	}
 +
- 	ret = ath10k_snoc_wlan_enable(ar, fw_mode);
+ 	ret = ath10k_fw_init(ar);
  	if (ret) {
- 		ath10k_err(ar, "failed to enable wcn3990: %d\n", ret);
+ 		ath10k_err(ar, "failed to initialize firmware: %d\n", ret);
+@@ -1928,6 +1942,7 @@ static int ath10k_snoc_free_resources(struct ath10k *ar)
+ 
+ 	ath10k_core_unregister(ar);
+ 	ath10k_fw_deinit(ar);
++	ath10k_hw_power_off(ar);
+ 	ath10k_snoc_free_irq(ar);
+ 	ath10k_snoc_release_resource(ar);
+ 	ath10k_modem_deinit(ar);
+diff --git a/drivers/net/wireless/ath/ath10k/snoc.h b/drivers/net/wireless/ath/ath10k/snoc.h
+index 1ecae34..775af12 100644
+--- a/drivers/net/wireless/ath/ath10k/snoc.h
++++ b/drivers/net/wireless/ath/ath10k/snoc.h
+@@ -51,6 +51,7 @@ enum ath10k_snoc_flags {
+ 	ATH10K_SNOC_FLAG_MODEM_STOPPED,
+ 	ATH10K_SNOC_FLAG_RECOVERY,
+ 	ATH10K_SNOC_FLAG_8BIT_HOST_CAP_QUIRK,
++	ATH10K_SNOC_FLAG_POWERED_ON,
+ };
+ 
+ struct clk_bulk_data;
