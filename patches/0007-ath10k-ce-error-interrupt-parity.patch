@@ -62,8 +62,7 @@ index a9cbe95..96242ef 100644
 +				       ar->hw_ce_regs->misc_regs->addr);
 +
 +	if (misc_is & misc_regs->err_mask) {
-+		ath10k_warn(ar, "CE%d misc error status 0x%x: %s%s%s%s%s%s
-+",
++		ath10k_warn(ar, "CE%d misc error status 0x%x: %s%s%s%s%s%s\n",
 +			    ce_id, misc_is,
 +			    (misc_is & misc_regs->axi_err) ? "AXI_ERR " : "",
 +			    (misc_is & misc_regs->dstr_add_err) ? "DST_ADDR_ERR " : "",
