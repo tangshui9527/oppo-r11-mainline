@@ -13,7 +13,7 @@ Subject: [PATCH] ath10k: power on hardware early during probe, handle cfg error 
 4. Retain force_fw_ready parameter with configurable delay as a fallback.
 
 diff --git a/drivers/net/wireless/ath/ath10k/qmi.c b/drivers/net/wireless/ath/ath10k/qmi.c
-index f1d1fb5..89d046a 100644
+index f1d1fb5..b3855c5 100644
 --- a/drivers/net/wireless/ath/ath10k/qmi.c
 +++ b/drivers/net/wireless/ath/ath10k/qmi.c
 @@ -44,6 +44,22 @@ MODULE_PARM_DESC(skip_empty_cal_report, "skip QMI cal report request if empty (d
@@ -51,7 +51,7 @@ index f1d1fb5..89d046a 100644
  		ath10k_err(ar, "config request rejected: %d\n", resp.resp.error);
  		ret = -EINVAL;
  		goto out;
-@@ -551,10 +572,14 @@ int ath10k_qmi_wlan_enable(struct ath10k *ar,
+@@ -551,14 +572,22 @@ int ath10k_qmi_wlan_enable(struct ath10k *ar,
  	ath10k_dbg(ar, ATH10K_DBG_QMI, "qmi mode %d config %p\n",
  		   mode, config);
  
@@ -70,7 +70,15 @@ index f1d1fb5..89d046a 100644
  	}
  
  	ret = ath10k_qmi_mode_send_sync_msg(ar, mode);
-@@ -1081,6 +1106,25 @@ static void ath10k_qmi_event_msa_ready(struct ath10k_qmi *qmi)
+ 	if (ret) {
++		if (skip_qmi_cfg) {
++			ath10k_warn(ar, "mode request returned %d, ignoring per skip_qmi_cfg to proceed to CE pipes\n", ret);
++			return 0;
++		}
+ 		ath10k_err(ar, "failed to send qmi mode: %d\n", ret);
+ 		return ret;
+ 	}
+@@ -1081,6 +1110,25 @@ static void ath10k_qmi_event_msa_ready(struct ath10k_qmi *qmi)
  		goto out;
  
  	ret = ath10k_qmi_mac_addr_send_sync_msg(qmi);

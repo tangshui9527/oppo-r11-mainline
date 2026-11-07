@@ -268,6 +268,12 @@ MODULE_PARM_DESC(skip_qmi_cfg, "skip or bypass QMI WLAN CFG request if rejected 
 \tif (ret) {
 \t\tath10k_err(ar, "failed to send qmi config: %d\\n", ret);
 \t\treturn ret;
+\t}
+
+\tret = ath10k_qmi_mode_send_sync_msg(ar, mode);
+\tif (ret) {
+\t\tath10k_err(ar, "failed to send qmi mode: %d\\n", ret);
+\t\treturn ret;
 \t}'''
 
     replace_wlan_enable = '''\tif (!skip_qmi_cfg) {
@@ -278,6 +284,16 @@ MODULE_PARM_DESC(skip_qmi_cfg, "skip or bypass QMI WLAN CFG request if rejected 
 \t\t}
 \t} else {
 \t\tath10k_info(ar, "skipping qmi config request per module param\\n");
+\t}
+
+\tret = ath10k_qmi_mode_send_sync_msg(ar, mode);
+\tif (ret) {
+\t\tif (skip_qmi_cfg) {
+\t\t\tath10k_warn(ar, "mode request returned %d, ignoring per skip_qmi_cfg to proceed to CE pipes\\n", ret);
+\t\t\treturn 0;
+\t\t}
+\t\tath10k_err(ar, "failed to send qmi mode: %d\\n", ret);
+\t\treturn ret;
 \t}'''
     assert target_wlan_enable in qmi_src, 'target_wlan_enable not found in qmi.c'
     qmi_src = qmi_src.replace(target_wlan_enable, replace_wlan_enable)
