@@ -304,3 +304,41 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 * 已彻底排除供电/电压因素（C2 阴性实验：FW 收到 3.7V 探针值后崩溃模式不变；
   且用户确认电池满电、TWRP 显示 100%）。Wi-Fi 崩溃与电池无关，走任务书 D
   （ce.c 运行层对照）路线。
+
+---
+
+# 附：全项目剩余工作总清单（按优先级）
+
+## P0 — Wi-Fi 稳定（唯一硬骨头）
+1. **任务书 D 转发助手**：`assistant-reports/NEXT-TASK-D-ce-runtime.md`
+   （ath10k ce.c 运行层 vs stock HIF 中断/轮询对照——协商面已全部排除，
+   这是最后未探区）。
+2. 报告回来 → 我写 patches/0008 → CI → NCM 部署 → 关联存活终验。
+3. 并行兜底：C3 第 2 层补丁（SSR 保留 BDF/权限）草案在
+   `assistant-reports/c3-ssr-fastpath-patch.md`，待按实际 qmi.c 锚点重写
+   （0007 生成中断，未完成）。
+
+## P1 — 电池/充电（见 §23）
+1. poll_interval=5 持久化（/etc/modprobe.d/bq27xxx.conf）。
+2. 墙充充电全链路验证（电压爬升观察）。
+3. 报告 B §三诊断脚本（i2c 寄存器 dump）。
+4. 充电安全参数复核。
+
+## P2 — 蓝牙（卡在最后一步）
+1. MGMT SET_POWERED status=0x03 → qca rampatch/控制器初始化排查。
+2. 需要 bluez 用户态工具（btmgmt 等）——手机无网络装包，走 NCM+笔记本构建。
+
+## P3 — 音频
+1. ALSA 声卡已注册；装 alsa-utils（同样走 NCM 构建或静态编译）做放音验证。
+
+## P4 — 待外部条件
+1. 原生 micro-USB OTG 线到货 → 有线网络即插即用（驱动已装好）。
+2. 任务 C 报告确认后：UP 主线社区共享成果（rejuvenate 补丁值得上游化）。
+
+## P5 — 卡死悬案
+1. ramoops + /var/log/dmesg-history.log 双保险已就位，下次卡死自动留证。
+2. 注意：长按电源强制重启=冷断电，ramoops 会丢；dmesg-history 在 eMMC 不丢。
+
+## 基建资产（已稳定，可复用）
+`ssh r11`（NCM 双通道）｜CI 补丁流水线｜push_file 模块热替换｜reboot-fastboot｜
+参考版 recovery（组合键进）｜全分区原厂备份｜dmesg 磁盘记录器｜ramoops。
