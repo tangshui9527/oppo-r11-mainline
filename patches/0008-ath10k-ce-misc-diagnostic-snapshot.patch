@@ -19,7 +19,7 @@ diff --git a/drivers/net/wireless/ath/ath10k/snoc.c b/drivers/net/wireless/ath/a
 index f72f236..45bc03d 100644
 --- a/drivers/net/wireless/ath/ath10k/snoc.c
 +++ b/drivers/net/wireless/ath/ath10k/snoc.c
-@@ -1364,6 +1364,37 @@ static void ath10k_snoc_quirks_init(struct ath10k *ar)
+@@ -1364,6 +1364,36 @@ static void ath10k_snoc_quirks_init(struct ath10k *ar)
  		set_bit(ATH10K_SNOC_FLAG_8BIT_HOST_CAP_QUIRK, &ar_snoc->flags);
  }
  
@@ -56,7 +56,7 @@ index f72f236..45bc03d 100644
  int ath10k_snoc_fw_indication(struct ath10k *ar, u64 type)
  {
  	struct ath10k_snoc *ar_snoc = ath10k_snoc_priv(ar);
-@@ -1389,8 +1420,12 @@ int ath10k_snoc_fw_indication(struct ath10k *ar, u64 type)
+@@ -1389,8 +1419,12 @@ int ath10k_snoc_fw_indication(struct ath10k *ar, u64 type)
  			return ret;
  		}
  		set_bit(ATH10K_SNOC_FLAG_REGISTERED, &ar_snoc->flags);
