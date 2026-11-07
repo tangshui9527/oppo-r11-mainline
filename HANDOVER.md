@@ -322,14 +322,14 @@ systemctl enable wpa_supplicant-wlan0.service   # 若存在该单元
 3. 报告 B §三诊断脚本（i2c 寄存器 dump）。
 4. 充电安全参数复核。
 
-## P2 — 蓝牙（卡在最后一步）
+## P2 — 蓝牙（✅ 全栈打通）
 1. ✅ **内核层与固件下载全部就绪**：QCA UART 握手成功，固件 `crbtfw21.tlv` 与 `crnv21.bin` 均下载完毕，控制器 `hci0` 初始化完成。
-2. 需要 bluez 用户态工具（btmgmt、bluetoothd 等）——手机无网络装包，走 NCM+笔记本构建或离线包。
+2. ✅ **BlueZ 用户态服务已激活并自启**：通过 USB 代理安装 `bluez` 和 `bluez-utils`，`bluetooth.service` 正常运行并开机自启。`bluetoothctl show` 识别到控制器 `60:21:01:00:93:22 (QCA)`，`Powered: yes`，支持 Central / Peripheral 角色。
 
-## P3 — 音频（✅ 声卡注册突破）
-1. ✅ **ALSA 声卡注册已彻底攻克**：定位到缺失 `qcom_q6v5_pas` 模块导致 ADSP 未启动、DAI 名称获取失败；加载后 ADSP 顺利唤醒，已持久化到真机 `/etc/modules-load.d/adsp.conf`。
-2. `cat /proc/asound/cards` 成功输出 `0 [R11T]: sdm660-internal - OPPO R11T`，具备 `0-0` 与 `0-1` 双数字 PCM 回放/录音设备及 Headphone Jack 输入设备。
-3. 下一步：装 alsa-utils 做放音测试验证。
+## P3 — 音频（✅ 全栈打通，放音验证完成）
+1. ✅ **ALSA 声卡注册已彻底攻克**：`qcom_q6v5_pas` 模块加载唤醒 ADSP，已持久化到真机 `/etc/modules-load.d/adsp.conf`。声卡 `0 [R11T]: sdm660-internal - OPPO R11T` 具备双 PCM 回放设备。
+2. ✅ **用户态工具与混音器路由就绪**：安装 `alsa-utils`，将 `SEC_MI2S_RX Audio Mixer MultiMedia1`（连接 NXP TFA9890 Smart PA 功放）开启。
+3. ✅ **放音实测与状态固化**：`speaker-test -D hw:0,0 -c 2 -r 48000 -t sine -f 440` 成功通过 Hexagon DSP AFE 播放，无任何内核错误。混音器状态已通过 `alsactl store` 保存至 `/var/lib/alsa/asound.state`。
 
 ## P4 — 待外部条件
 1. 原生 micro-USB OTG 线到货 → 有线网络即插即用（驱动已装好）。
